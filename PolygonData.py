@@ -1,8 +1,8 @@
-import json
 import requests
 import os
 import datetime as dt
 import MySQLdb as sqldb
+import csv
 
 os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
 os.environ['DB_USER'] = 'bighapa67'
@@ -12,13 +12,21 @@ os.environ['DB_NAME'] = 'pythondb'
 
 histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
 # symbol will need to become a loop over a .csv symbol list.
-symbol = 'AAPL'
+# symbol = 'AAPL'
+# Read tickers from a csv file
+with open('C:\\Users\\Ken\\Documents\\Trading\\Spreadsheets\\MasterReferenceSymbolList.csv', 'rt') as csvFile:
+    readCsv = csv.reader(csvFile)
+    tickers = []
+    for row in readCsv:
+        ticker = row[0]
+        tickers.append(ticker)
+
 startDate = '2019-01-01'
 endDate = '2019-02-01'
 unadjusted = 'false'
 
-queryString = (histRangeUrl + symbol + '/range/1/day/' + startDate + '/' + endDate + '?unadjusted='
-                            + unadjusted + '&apiKey=' + os.environ['API_KEY'])
+queryString = (histRangeUrl + ticker + '/range/1/day/' + startDate + '/' + endDate + '?unadjusted='
+               + unadjusted + '&apiKey=' + os.environ['API_KEY'])
 
 # dbConnect = sqldb.connect(user=os.environ(['DB_USER']),
 #                           password=os.environ(['DB_PSWD']),
@@ -41,7 +49,7 @@ responseDict = jsonResponse.json()
 
 # Nice simple explanation of how to handle nested dictionary JSON responses:
 # https://stackoverflow.com/questions/51788550/parsing-json-nested-dictionary-using-python
-ticker = responseDict['ticker']
+ticker = str(responseDict['ticker']).upper()
 resultsDict = responseDict['results']
 for x in resultsDict:
     openPx = x['o']
@@ -54,13 +62,19 @@ for x in resultsDict:
     convDate = dt.datetime.fromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
 
     cursor = dbConnect.cursor()
-    query = ("IF OBJECT_ID('[pythondb].[us_historicaldata]') IS NOT NULL \
-                        INSERT INTO us_historicaldata(Symbol, Date, Open, High, Low, Close, TR, Volume) \
-                        VALUES({ticker}, {convDate}, {openPx}, {highPx}, {lowPx}, {closePx}, {truerange} \
-                        , {volume} \
-                        GO")
-    cursor.execute(query)
 
+    # query = "BEGIN \
+    #         IF OBJECT_ID('[pythondb].[us_historicaldata]') IS NOT NULL \
+    #             INSERT INTO us_historicaldata(Symbol, Date, Open, High, Low, Close, TR, Volume) \
+    #             VALUES({ticker}, {convDate}, {openPx}, {highPx}, {lowPx}, {closePx}, {truerange} \
+    #             , {volume} \
+    #             GO"
+
+    query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
+            f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
+
+    cursor.execute(query)
+    dbConnect.commit()
 
     # print('Ticker: ' + str(ticker))
     # print('Open: ' + str(openPx))
