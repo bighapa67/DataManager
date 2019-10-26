@@ -2,6 +2,8 @@ import json
 import requests
 import os
 
+#Can't get the damn Push request to go through to GitHub!!!!!!!
+
 os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
 url = 'https://api.polygon.io/v1/last/stocks/'
 symbol = 'AAPL'
