@@ -24,7 +24,7 @@ os.environ['EMAIL_ACCOUNT'] = 'jonestrading67@gmail.com'
 os.environ['EMAIL_PSWD'] = 'Gkando!23O'
 
 
-#@atexit.register
+# @atexit.register
 def GetElapsedTime():
     end = time.time()
     elapsedTime = end - start
@@ -35,7 +35,8 @@ def GetElapsedTime():
                         f'{recordCounter/elapsedTime}\r')
     return elapsedTime
 
-#@atexit.register
+
+# @atexit.register
 def SendSMS(sw):
     email = os.environ['EMAIL_ACCOUNT']
     pas = os.environ['EMAIL_PSWD']
@@ -73,6 +74,7 @@ def SendSMS(sw):
     # lastly quit the server
     server.quit()
 
+
 @atexit.register
 def FinishUp():
     print('Running closing routine...')
@@ -92,18 +94,13 @@ unadjusted = 'false'
 histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
 # https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2019-10-20/2019-12-31?apiKey=Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t
 
-# Need to clean this up.
-# Read tickers from a csv file
-# with open('C:\\Users\\Ken\\Documents\\Trading\\Spreadsheets\\MasterReferenceSymbolList.csv', 'rt') as csvFile:
+# array to hold our ticker symbols
 tickers = []
 
 #########################################
 # Pandas approach
 
-# symbols_df = pd.read_csv('C:\\Users\\Ken\\Documents\\Trading\\Spreadsheets\\'
-#                          'StockOddsSymbols.csv', index_col='Symbol', skiprows=0)
 symbols_df = pd.read_csv('C:\\Users\\Ken\\Downloads\\StockOddsSymbols.csv', index_col='Symbol', skiprows=0)
-# symbols_df = pd.read_csv('C:\\Users\\Ken\\Downloads\\StockOddsSymbols.csv', skiprows=0)
 
 # Currently skipping symbols with '-' in them as I can't figure out the format Polygon wants.
 for index, row in symbols_df.iterrows():
@@ -112,7 +109,6 @@ for index, row in symbols_df.iterrows():
         continue
     else:
         tickers.append(ticker)
-
 ##########################################
 
 ##########################################
@@ -144,11 +140,7 @@ dbConnect = sqldb.connect(user='bighapa67',
 pbar = tqdm(total=len(tickers))
 
 for ticker in tickers:
-    # pass
     pbar.update(1)
-
-    if ticker != 'ABR-A':
-        stop = 1
 
     try:
         queryString = (histRangeUrl + ticker + '/range/1/day/' + startDate + '/' + endDate + '?unadjusted='
@@ -176,16 +168,6 @@ for ticker in tickers:
             convDate = dt.datetime.fromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
 
             cursor = dbConnect.cursor()
-
-            # query = "BEGIN \
-            #         IF OBJECT_ID('[pythondb].[us_historicaldata]') IS NOT NULL \
-            #             INSERT INTO us_historicaldata(Symbol, Date, Open, High, Low, Close, TR, Volume) \
-            #             VALUES({ticker}, {convDate}, {openPx}, {highPx}, {lowPx}, {closePx}, {truerange} \
-            #             , {volume} \
-            #             GO"
-
-            # query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
-            #         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
             try:
                 query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
