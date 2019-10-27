@@ -15,6 +15,16 @@ from email.mime.multipart import MIMEMultipart
 start = time.time()
 recordCounter = 1
 
+os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
+os.environ['DB_USER'] = 'bighapa67'
+os.environ['DB_PSWD'] = 'kando1'
+os.environ['DB_HOST'] = 'localhost'
+os.environ['DB_NAME'] = 'pythondb'
+os.environ['EMAIL_ACCOUNT'] = 'jonestrading67@gmail.com'
+os.environ['EMAIL_PSWD'] = 'Gkando!23O'
+
+
+#@atexit.register
 def GetElapsedTime():
     end = time.time()
     elapsedTime = end - start
@@ -23,8 +33,10 @@ def GetElapsedTime():
         # writer = csv.writer(txtFile, quoting=csv.QUOTE_MINIMAL)
         txtFile.write(f'ElapsedTime was: {elapsedTime} | Records: {recordCounter} | Records/Sec: '
                         f'{recordCounter/elapsedTime}\r')
+    return elapsedTime
 
-def SendSMS():
+#@atexit.register
+def SendSMS(sw):
     email = os.environ['EMAIL_ACCOUNT']
     pas = os.environ['EMAIL_PSWD']
 
@@ -50,7 +62,7 @@ def SendSMS():
     msg['Subject'] = "Data get alert.\n"
 
     # Make sure you also add new lines to your body
-    body = f"Data download completed @: {current_time}\n"
+    body = f"Data download completed @ {current_time}; in {round(sw/60,2)} minutes.\n"
 
     # and then attach that body furthermore you can also send html content.
     msg.attach(MIMEText(body, 'plain'))
@@ -61,16 +73,18 @@ def SendSMS():
     # lastly quit the server
     server.quit()
 
-
+@atexit.register
 def FinishUp():
-    GetElapsedTime()
+    print('Running closing routine...')
+    sw = GetElapsedTime()
+    SendSMS(sw)
 
 
-os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
-os.environ['DB_USER'] = 'bighapa67'
-os.environ['DB_PSWD'] = 'kando1'
-os.environ['DB_HOST'] = 'localhost'
-os.environ['DB_NAME'] = 'pythondb'
+# os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
+# os.environ['DB_USER'] = 'bighapa67'
+# os.environ['DB_PSWD'] = 'kando1'
+# os.environ['DB_HOST'] = 'localhost'
+# os.environ['DB_NAME'] = 'pythondb'
 
 startDate = '2019-10-20'
 endDate = '2019-12-31'
@@ -204,4 +218,4 @@ for ticker in tickers:
 #     print('No iterable list was presented... \r\n'
 #           'Make sure the .csv file is not open and contains more than one symbol.')
 
-atexit.register(FinishUp)
+#atexit.register(FinishUp)
