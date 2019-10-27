@@ -4,6 +4,21 @@ import datetime as dt
 import MySQLdb as sqldb
 import csv
 import pandas as pd
+import atexit
+import time
+
+start = time.time()
+recordCounter = 1
+
+def GetElapsedTime():
+    end = time.time()
+    elapsedTime = end - start
+    with open('C:\\Users\\Ken\\Documents\\Trading\\Spreadsheets\\ElapsedTime.txt', 'a+') as txtFile:
+        # writer = csv.writer(txtFile, quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        # writer = csv.writer(txtFile, quoting=csv.QUOTE_MINIMAL)
+        txtFile.write(f'ElapsedTime was: {elapsedTime} | Records: {recordCounter} | Records/Sec: '
+                        f'{recordCounter/elapsedTime}\r')
+
 
 os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
 os.environ['DB_USER'] = 'bighapa67'
@@ -11,28 +26,36 @@ os.environ['DB_PSWD'] = 'kando1'
 os.environ['DB_HOST'] = 'localhost'
 os.environ['DB_NAME'] = 'pythondb'
 
-startDate = '2019-01-01'
-endDate = '2019-02-01'
+startDate = '2019-08-01'
+endDate = '2019-10-25'
 unadjusted = 'false'
 histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
 
+# Need to clean this up.
 # Read tickers from a csv file
-with open('C:\\Users\\Ken\\Documents\\Trading\\Spreadsheets\\MasterReferenceSymbolList.csv', 'rt') as csvFile:
-    # tickers = []
-    #
-    # # Pandas approach
-    # symbols_df = pd.read_csv('C:\\Users\\Ken\\Documents\\Trading\\Spreadsheets\\'
-    #                          'MasterReferenceSymbolList.csv', index_col='Symbol', skiprows=0)
-    # for index, row in symbols_df.iterrows():
-    #     ticker = index
-    #     tickers.append(ticker)
+# with open('C:\\Users\\Ken\\Documents\\Trading\\Spreadsheets\\MasterReferenceSymbolList.csv', 'rt') as csvFile:
+tickers = []
 
-    # Short list approach
-    tickers = ['aapl']
+#########################################
+# Pandas approach
 
-# queryString = (histRangeUrl + ticker + '/range/1/day/' + startDate + '/' + endDate + '?unadjusted='
-#                + unadjusted + '&apiKey=' + os.environ['API_KEY'])
+# symbols_df = pd.read_csv('C:\\Users\\Ken\\Documents\\Trading\\Spreadsheets\\'
+#                          'StockOddsSymbols.csv', index_col='Symbol', skiprows=0)
+symbols_df = pd.read_csv('C:\\Users\\Ken\\Downloads\\StockOddsSymbols.csv', index_col='Symbol', skiprows=0)
+#symbols_df = pd.read_csv('C:\\Users\\Ken\\Downloads\\StockOddsSymbols.csv', skiprows=0)
 
+# for index, row in symbols_df.iterrows():
+#     ticker = index
+#     tickers.append(ticker)
+##########################################
+
+##########################################
+# Short list approach
+
+tickers = ['ABR-A']
+##########################################
+
+# Still need to parameterize the MySql connection.
 # dbConnect = sqldb.connect(user=os.environ(['DB_USER']),
 #                           password=os.environ(['DB_PSWD']),
 #                           host=os.environ(['DB_HOST']),
@@ -88,6 +111,7 @@ for ticker in tickers:
 
             cursor.execute(query)
             dbConnect.commit()
+            recordCounter += 1
         except sqldb._exceptions.IntegrityError:
             continue
         finally:
@@ -101,3 +125,4 @@ for ticker in tickers:
         # print('TrueRange: ' + str(trueRange))
         # print('Volume: ' + str(volume))
         # print('Date: ' + str(convDate))
+atexit.register(GetElapsedTime)
