@@ -82,12 +82,6 @@ def FinishUp():
     SendSMS(sw)
 
 
-# os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
-# os.environ['DB_USER'] = 'bighapa67'
-# os.environ['DB_PSWD'] = 'kando1'
-# os.environ['DB_HOST'] = 'localhost'
-# os.environ['DB_NAME'] = 'pythondb'
-
 startDate = '2019-10-20'
 endDate = '2019-12-31'
 unadjusted = 'false'
