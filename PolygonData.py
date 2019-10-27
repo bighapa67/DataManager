@@ -6,6 +6,11 @@ import csv
 import pandas as pd
 import atexit
 import time
+from tqdm import tqdm
+import traceback
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 start = time.time()
 recordCounter = 1
@@ -19,6 +24,47 @@ def GetElapsedTime():
         txtFile.write(f'ElapsedTime was: {elapsedTime} | Records: {recordCounter} | Records/Sec: '
                         f'{recordCounter/elapsedTime}\r')
 
+def SendSMS():
+    email = os.environ['EMAIL_ACCOUNT']
+    pas = os.environ['EMAIL_PSWD']
+
+    sms_gateway = '7735512347@txt.att.net'
+    smtp = "smtp.gmail.com"
+    port = 587
+    # This will start our email server
+    server = smtplib.SMTP(smtp, port)
+    # Starting the server
+    server.starttls()
+    # Now we need to login
+    server.login(email, pas)
+
+    now = dt.datetime.now()
+    current_time = now.strftime('%H:%M:%S')
+
+    # Now we use the MIME module to structure our message.
+    msg = MIMEMultipart()
+    msg['From'] = email
+    msg['To'] = sms_gateway
+
+    # Make sure you add a new line in the subject
+    msg['Subject'] = "Data get alert.\n"
+
+    # Make sure you also add new lines to your body
+    body = f"Data download completed @: {current_time}\n"
+
+    # and then attach that body furthermore you can also send html content.
+    msg.attach(MIMEText(body, 'plain'))
+
+    sms = msg.as_string()
+    server.sendmail(email, sms_gateway, sms)
+
+    # lastly quit the server
+    server.quit()
+
+
+def FinishUp():
+    GetElapsedTime()
+
 
 os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
 os.environ['DB_USER'] = 'bighapa67'
@@ -26,10 +72,11 @@ os.environ['DB_PSWD'] = 'kando1'
 os.environ['DB_HOST'] = 'localhost'
 os.environ['DB_NAME'] = 'pythondb'
 
-startDate = '2019-08-01'
-endDate = '2019-10-25'
+startDate = '2019-10-20'
+endDate = '2019-12-31'
 unadjusted = 'false'
 histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
+# https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2019-10-20/2019-12-31?apiKey=Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t
 
 # Need to clean this up.
 # Read tickers from a csv file
@@ -42,17 +89,22 @@ tickers = []
 # symbols_df = pd.read_csv('C:\\Users\\Ken\\Documents\\Trading\\Spreadsheets\\'
 #                          'StockOddsSymbols.csv', index_col='Symbol', skiprows=0)
 symbols_df = pd.read_csv('C:\\Users\\Ken\\Downloads\\StockOddsSymbols.csv', index_col='Symbol', skiprows=0)
-#symbols_df = pd.read_csv('C:\\Users\\Ken\\Downloads\\StockOddsSymbols.csv', skiprows=0)
+# symbols_df = pd.read_csv('C:\\Users\\Ken\\Downloads\\StockOddsSymbols.csv', skiprows=0)
 
-# for index, row in symbols_df.iterrows():
-#     ticker = index
-#     tickers.append(ticker)
+# Currently skipping symbols with '-' in them as I can't figure out the format Polygon wants.
+for index, row in symbols_df.iterrows():
+    ticker = index
+    if '-' in ticker:
+        continue
+    else:
+        tickers.append(ticker)
+
 ##########################################
 
 ##########################################
 # Short list approach
 
-tickers = ['ABR-A']
+# tickers = ['ABR-A']
 ##########################################
 
 # Still need to parameterize the MySql connection.
@@ -72,9 +124,24 @@ dbConnect = sqldb.connect(user='bighapa67',
                           charset='utf8'
                           )
 
+# I wonder how to accomplish the 'iterable check' without having to copy the entire code block
+# over again except for the 'tqdm(tickers)' bit.
+
+pbar = tqdm(total=len(tickers))
+
 for ticker in tickers:
-    queryString = (histRangeUrl + ticker + '/range/1/day/' + startDate + '/' + endDate + '?unadjusted='
-                   + unadjusted + '&apiKey=' + os.environ['API_KEY'])
+    # pass
+    pbar.update(1)
+
+    if ticker != 'ABR-A':
+        stop = 1
+
+    try:
+        queryString = (histRangeUrl + ticker + '/range/1/day/' + startDate + '/' + endDate + '?unadjusted='
+                       + unadjusted + '&apiKey=' + os.environ['API_KEY'])
+    except:
+        print(f'Fuck, something went wrong with ticker {ticker}')
+        traceback.print_exc()
 
     jsonResponse = requests.get(queryString)
     responseDict = jsonResponse.json()
@@ -83,46 +150,58 @@ for ticker in tickers:
     # https://stackoverflow.com/questions/51788550/parsing-json-nested-dictionary-using-python
     ticker = str(responseDict['ticker']).upper()
     resultsDict = responseDict['results']
-    for x in resultsDict:
-        openPx = x['o']
-        highPx = x['h']
-        lowPx = x['l']
-        closePx = x['c']
-        volume = x['v']
-        trueRange = abs(highPx - lowPx)
-        rawDate = x['t']
-        convDate = dt.datetime.fromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
+    try:
+        for x in resultsDict:
+            openPx = x['o']
+            highPx = x['h']
+            lowPx = x['l']
+            closePx = x['c']
+            volume = x['v']
+            trueRange = abs(highPx - lowPx)
+            rawDate = x['t']
+            convDate = dt.datetime.fromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
 
-        cursor = dbConnect.cursor()
+            cursor = dbConnect.cursor()
 
-        # query = "BEGIN \
-        #         IF OBJECT_ID('[pythondb].[us_historicaldata]') IS NOT NULL \
-        #             INSERT INTO us_historicaldata(Symbol, Date, Open, High, Low, Close, TR, Volume) \
-        #             VALUES({ticker}, {convDate}, {openPx}, {highPx}, {lowPx}, {closePx}, {truerange} \
-        #             , {volume} \
-        #             GO"
+            # query = "BEGIN \
+            #         IF OBJECT_ID('[pythondb].[us_historicaldata]') IS NOT NULL \
+            #             INSERT INTO us_historicaldata(Symbol, Date, Open, High, Low, Close, TR, Volume) \
+            #             VALUES({ticker}, {convDate}, {openPx}, {highPx}, {lowPx}, {closePx}, {truerange} \
+            #             , {volume} \
+            #             GO"
 
-        # query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
-        #         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
+            # query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
+            #         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
-        try:
-            query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
-                    f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
+            try:
+                query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
+                        f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
-            cursor.execute(query)
-            dbConnect.commit()
-            recordCounter += 1
-        except sqldb._exceptions.IntegrityError:
-            continue
-        finally:
-            cursor.close()
+                cursor.execute(query)
+                dbConnect.commit()
+                recordCounter += 1
+            except sqldb._exceptions.IntegrityError:
+                continue
+            finally:
+                cursor.close()
+    except:
+        print('Something went wrong with the JSON results')
+        print(f'Error on ticker: {ticker}')
+        traceback.print_exc()
+        continue
 
-        # print('Ticker: ' + str(ticker))
-        # print('Open: ' + str(openPx))
-        # print('High: ' + str(highPx))
-        # print('Low: ' + str(lowPx))
-        # print('Close: ' + str(closePx))
-        # print('TrueRange: ' + str(trueRange))
-        # print('Volume: ' + str(volume))
-        # print('Date: ' + str(convDate))
-atexit.register(GetElapsedTime)
+
+
+            # print('Ticker: ' + str(ticker))
+            # print('Open: ' + str(openPx))
+            # print('High: ' + str(highPx))
+            # print('Low: ' + str(lowPx))
+            # print('Close: ' + str(closePx))
+            # print('TrueRange: ' + str(trueRange))
+            # print('Volume: ' + str(volume))
+            # print('Date: ' + str(convDate))
+# else:
+#     print('No iterable list was presented... \r\n'
+#           'Make sure the .csv file is not open and contains more than one symbol.')
+
+atexit.register(FinishUp)
