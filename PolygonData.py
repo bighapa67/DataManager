@@ -14,6 +14,7 @@ from email.mime.multipart import MIMEMultipart
 
 start = time.time()
 recordCounter = 1
+queryCounter = 1
 
 os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
 os.environ['DB_USER'] = 'bighapa67'
@@ -82,7 +83,7 @@ def FinishUp():
     SendSMS(sw)
 
 
-startDate = '2019-10-20'
+startDate = '2019-01-01'
 endDate = '2019-12-31'
 unadjusted = 'false'
 histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
@@ -164,12 +165,24 @@ for ticker in tickers:
             cursor = dbConnect.cursor()
 
             try:
+                # This pause was necessary as Polygon seemed to block me at around 1000 requests in some
+                # short amount of time.
+                # if queryCounter % 1000 == 0:
+                #     time.sleep(1)  # in seconds
+                #     queryCounter = 1
+
                 query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
                         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
+                if queryCounter % 1000 == 0:
+                    time.sleep(1)  # in seconds
+                    queryCounter = 1
+                    dbConnect.commit()
+
                 cursor.execute(query)
-                dbConnect.commit()
+                # dbConnect.commit()
                 recordCounter += 1
+                queryCounter += 1
             except sqldb._exceptions.IntegrityError:
                 continue
             finally:
