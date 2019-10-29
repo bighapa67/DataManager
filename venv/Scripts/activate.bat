@@ -10,6 +10,9 @@ if defined _OLD_CODEPAGE (
 
 set "VIRTUAL_ENV=C:\Users\kjone\PycharmProjects\DataManager\venv"
 
+set "PYDEVD_USE_CYTHON=NO"
+set "PYDEVD_USE_FRAME=NO"
+
 if not defined PROMPT (
     set "PROMPT=$P$G"
 )

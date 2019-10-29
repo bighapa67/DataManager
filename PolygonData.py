@@ -11,10 +11,14 @@ import traceback
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import logging
 
 start = time.time()
 recordCounter = 1
 queryCounter = 1
+
+# Set the desired logging resolution here:
+logging.basicConfig(filename='logging.log', level=logging.DEBUG)
 
 os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
 os.environ['DB_USER'] = 'bighapa67'
@@ -84,12 +88,12 @@ def FinishUp():
 
 
 startDate = '2019-01-01'
-endDate = '2019-12-31'
+endDate = '2019-01-05'
 unadjusted = 'false'
 histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
 # https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2019-10-20/2019-12-31?apiKey=Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t
 
-# array to hold our ticker symbols
+# Array to hold our ticker symbols, regardless of the approach that is chosen.
 tickers = []
 
 #########################################
@@ -101,6 +105,7 @@ symbols_df = pd.read_csv('C:\\Users\\Ken\\Downloads\\StockOddsSymbols.csv', inde
 for index, row in symbols_df.iterrows():
     ticker = index
     if '-' in ticker:
+        logging.info(f"Ticker: {ticker} was skipped due to a char that we can't yet request correctly.")
         continue
     else:
         tickers.append(ticker)
@@ -142,6 +147,7 @@ for ticker in tickers:
                        + unadjusted + '&apiKey=' + os.environ['API_KEY'])
     except:
         print(f'Fuck, something went wrong with ticker {ticker}')
+        logging.debug(f'Ticker: {ticker} was not recognized by Polygon.')
         traceback.print_exc()
 
     jsonResponse = requests.get(queryString)
@@ -160,21 +166,18 @@ for ticker in tickers:
             volume = x['v']
             trueRange = abs(highPx - lowPx)
             rawDate = x['t']
-            convDate = dt.datetime.fromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
+            # This almost caused a HUGE problem.  The basic datetime.fromtimestamp apparently returns the local time
+            # of the machine
+            convDate = dt.datetime.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
 
             cursor = dbConnect.cursor()
 
             try:
-                # This pause was necessary as Polygon seemed to block me at around 1000 requests in some
-                # short amount of time.
-                # if queryCounter % 1000 == 0:
-                #     time.sleep(1)  # in seconds
-                #     queryCounter = 1
-
                 query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
                         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
-                if queryCounter % 1000 == 0:
+                # This pause was necessary as Polygon seemed to block me at around 1000 requests in some
+                if queryCounter % 500 == 0:
                     time.sleep(1)  # in seconds
                     queryCounter = 1
                     dbConnect.commit()
@@ -184,12 +187,14 @@ for ticker in tickers:
                 recordCounter += 1
                 queryCounter += 1
             except sqldb._exceptions.IntegrityError:
+                logging.debug(f'Ticker: {ticker} failed to INSERT to the DB.')
                 continue
             finally:
                 cursor.close()
     except:
         print('Something went wrong with the JSON results')
         print(f'Error on ticker: {ticker}')
+        logging.debug(f'Ticker: {ticker} failed while attempting to parse the JSON response (responseDict)')
         traceback.print_exc()
         continue
 
