@@ -18,7 +18,8 @@ recordCounter = 1
 queryCounter = 1
 
 # Set the desired logging resolution here:
-logging.basicConfig(filename='logging.log', level=logging.DEBUG)
+logging.basicConfig(filename='logging.log', level=logging.INFO,
+                    format='%(asctime)s - %(name)s - %(threadName)s - %(levelname)s - %(message)s')
 
 os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
 os.environ['DB_USER'] = 'bighapa67'
@@ -80,7 +81,7 @@ def SendSMS(sw):
     server.quit()
 
 
-@atexit.register
+#@atexit.register
 def FinishUp():
     print('Running closing routine...')
     sw = GetElapsedTime()
@@ -99,7 +100,7 @@ tickers = []
 #########################################
 # Pandas approach
 
-symbols_df = pd.read_csv('C:\\Users\\Ken\\Downloads\\StockOddsSymbols.csv', index_col='Symbol', skiprows=0)
+symbols_df = pd.read_csv('C:\\Users\\Ken\\Google Drive\\StockOdds\\StockOddsSymbols.csv', index_col='Symbol', skiprows=0)
 
 # Currently skipping symbols with '-' in them as I can't figure out the format Polygon wants.
 for index, row in symbols_df.iterrows():
@@ -147,7 +148,7 @@ for ticker in tickers:
                        + unadjusted + '&apiKey=' + os.environ['API_KEY'])
     except:
         print(f'Fuck, something went wrong with ticker {ticker}')
-        logging.debug(f'Ticker: {ticker} was not recognized by Polygon.')
+        logging.info(f'Ticker: {ticker} was not recognized by Polygon.')
         traceback.print_exc()
 
     jsonResponse = requests.get(queryString)
@@ -187,17 +188,16 @@ for ticker in tickers:
                 recordCounter += 1
                 queryCounter += 1
             except sqldb._exceptions.IntegrityError:
-                logging.debug(f'Ticker: {ticker} failed to INSERT to the DB.')
+                logging.info(f'Ticker: {ticker} failed to INSERT to the DB.')
                 continue
             finally:
                 cursor.close()
     except:
         print('Something went wrong with the JSON results')
         print(f'Error on ticker: {ticker}')
-        logging.debug(f'Ticker: {ticker} failed while attempting to parse the JSON response (responseDict)')
+        logging.info(f'Ticker: {ticker} failed while attempting to parse the JSON response (responseDict)')
         traceback.print_exc()
         continue
-
 
 
             # print('Ticker: ' + str(ticker))
