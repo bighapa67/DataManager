@@ -30,7 +30,6 @@ os.environ['EMAIL_ACCOUNT'] = 'jonestrading67@gmail.com'
 os.environ['EMAIL_PSWD'] = 'Gkando!23O'
 
 
-# @atexit.register
 def GetElapsedTime():
     end = time.time()
     elapsedTime = end - start
@@ -42,7 +41,6 @@ def GetElapsedTime():
     return elapsedTime
 
 
-# @atexit.register
 def SendSMS(sw):
     email = os.environ['EMAIL_ACCOUNT']
     pas = os.environ['EMAIL_PSWD']
@@ -81,15 +79,15 @@ def SendSMS(sw):
     server.quit()
 
 
-#@atexit.register
+@atexit.register
 def FinishUp():
     print('Running closing routine...')
     sw = GetElapsedTime()
     SendSMS(sw)
 
 
-startDate = '2019-01-01'
-endDate = '2019-01-05'
+startDate = '2000-01-01'
+endDate = '2019-10-29'
 unadjusted = 'false'
 histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
 # https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2019-10-20/2019-12-31?apiKey=Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t
@@ -143,20 +141,21 @@ pbar = tqdm(total=len(tickers))
 for ticker in tickers:
     pbar.update(1)
 
-    try:
-        queryString = (histRangeUrl + ticker + '/range/1/day/' + startDate + '/' + endDate + '?unadjusted='
-                       + unadjusted + '&apiKey=' + os.environ['API_KEY'])
-    except:
-        print(f'Fuck, something went wrong with ticker {ticker}')
-        logging.info(f'Ticker: {ticker} was not recognized by Polygon.')
-        traceback.print_exc()
+    queryString = (histRangeUrl + ticker + '/range/1/day/' + startDate + '/' + endDate + '?unadjusted='
+                   + unadjusted + '&apiKey=' + os.environ['API_KEY'])
 
-    jsonResponse = requests.get(queryString)
-    responseDict = jsonResponse.json()
+    try:
+        jsonResponse = requests.get(queryString)
+        responseDict = jsonResponse.json()
+    except:
+        print(f'Ticker: {ticker}; failed to get the JSON response from Polygon.')
+        logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Polygon.')
 
     # Nice simple explanation of how to handle nested dictionary JSON responses:
     # https://stackoverflow.com/questions/51788550/parsing-json-nested-dictionary-using-python
-    ticker = str(responseDict['ticker']).upper()
+    # REALLY wanted to do .upper() here, but we need lower case "p's" to request data for preferred
+    # stocks (e.g. ABR-A).
+    ticker = str(responseDict['ticker'])
     resultsDict = responseDict['results']
     try:
         for x in resultsDict:
@@ -197,7 +196,11 @@ for ticker in tickers:
         print(f'Error on ticker: {ticker}')
         logging.info(f'Ticker: {ticker} failed while attempting to parse the JSON response (responseDict)')
         traceback.print_exc()
+        cursor.close()
         continue
+    finally:
+        dbConnect.commit()
+
 
 
             # print('Ticker: ' + str(ticker))
