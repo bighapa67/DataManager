@@ -188,7 +188,8 @@ for ticker in tickers:
                 queryCounter += 1
             except sqldb._exceptions.IntegrityError:
                 logging.info(f'Ticker: {ticker} failed to INSERT to the DB.')
-                continue
+                break
+                # continue
             finally:
                 cursor.close()
     except:
