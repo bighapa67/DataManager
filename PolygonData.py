@@ -146,26 +146,37 @@ for ticker in tickers:
     pbar.update(1)
 
     try:
+        # Send the entire ticker array to the data source helper
         resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
         # resultsDict = poly.GetData(startDate, endDate, tickers)
 
+        # for x in resultsDict:
+        #     openPx = x['o']
+        #     highPx = x['h']
+        #     lowPx = x['l']
+        #     closePx = x['c']
+        #     volume = x['v']
+        #     trueRange = abs(highPx - lowPx)
+        #     rawDate = x['t']
+        #     # This almost caused a HUGE problem.  The basic datetime.fromtimestamp apparently returns the local time
+        #     # of the server, which was apparently far enough east of me that it was converting into T-1!!!
+        #     convDate = dt.datetime.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
+
         for x in resultsDict:
-            openPx = x['o']
-            highPx = x['h']
-            lowPx = x['l']
-            closePx = x['c']
-            volume = x['v']
+            symbol = resultsDict['ticker']
+            convDate = resultsDict['']
+            openPx = resultsDict['openPx']
+            highPx = resultsDict['highPx']
+            lowPx = resultsDict['lowPx']
+            closePx = resultsDict['closePx']
             trueRange = abs(highPx - lowPx)
-            rawDate = x['t']
-            # This almost caused a HUGE problem.  The basic datetime.fromtimestamp apparently returns the local time
-            # of the machine
-            convDate = dt.datetime.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
+            volume = resultsDict['volume']
 
             cursor = dbConnect.cursor()
 
             try:
                 query = f'INSERT INTO pythondb.test_table (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
-                        f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
+                        f'VALUES("{symbol}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
                 # query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
                 #         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'

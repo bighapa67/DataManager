@@ -47,6 +47,8 @@ def GetData(startDate, endDate, dataFreq, tickers):
             # resultsDict = responseDict['results']
             resultsDict = responseDict
 
+            # This needs to convert ALL the records in the resultsDict.
+            # Right now I'm just writing over the first record over and over.
             for x in resultsDict:
                 returnDict = {'openPx': x['open'],
                               'highPx': x['high'],
@@ -54,7 +56,7 @@ def GetData(startDate, endDate, dataFreq, tickers):
                               'closePx': x['close'],
                               'volume': x['volume'],
                               'rawDate': x['date']}
-            return returnDict
+                return returnDict
         except:
             print(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
             logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
