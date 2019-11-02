@@ -12,6 +12,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import logging
+import TiingoData as tiingo
 
 start = time.time()
 recordCounter = 1
@@ -21,7 +22,8 @@ queryCounter = 1
 logging.basicConfig(filename='logging.log', level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(threadName)s - %(levelname)s - %(message)s')
 
-os.environ['API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
+os.environ['POLYGON_API_KEY'] = 'Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t'
+os.environ['TIINGO_API_KEY'] = 'a3797816acfb2650321edf1ef4e06c3a69acde30'
 os.environ['DB_USER'] = 'bighapa67'
 os.environ['DB_PSWD'] = 'kando1'
 os.environ['DB_HOST'] = 'localhost'
@@ -86,8 +88,8 @@ def FinishUp():
     SendSMS(sw)
 
 
-startDate = '2000-01-01'
-endDate = '2019-10-29'
+startDate = '2019-10-28'
+endDate = '2019-11-02'     # Note that the end date is NONINCLUSIVE
 unadjusted = 'false'
 histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
 # https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2019-10-20/2019-12-31?apiKey=Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t
@@ -116,22 +118,21 @@ for index, row in symbols_df.iterrows():
 # tickers = ['ABR-A']
 ##########################################
 
-# Still need to parameterize the MySql connection.
-# dbConnect = sqldb.connect(user=os.environ(['DB_USER']),
-#                           password=os.environ(['DB_PSWD']),
-#                           host=os.environ(['DB_HOST']),
-#                           database=os.environ(['DB_NAME']),
-#                           use_unicode=True,
-#                           charset='utf8'
-#                           )
-
-dbConnect = sqldb.connect(user='bighapa67',
-                          password='kando1',
-                          host='localhost',
-                          database='pythondb',
+dbConnect = sqldb.connect(user=os.environ['DB_USER'],
+                          password=os.environ['DB_PSWD'],
+                          host=os.environ['DB_HOST'],
+                          database=os.environ['DB_NAME'],
                           use_unicode=True,
                           charset='utf8'
                           )
+
+# dbConnect = sqldb.connect(user='bighapa67',
+#                           password='kando1',
+#                           host='localhost',
+#                           database='pythondb',
+#                           use_unicode=True,
+#                           charset='utf8'
+#                           )
 
 # I wonder how to accomplish the 'iterable check' without having to copy the entire code block
 # over again except for the 'tqdm(tickers)' bit.
@@ -142,7 +143,7 @@ for ticker in tickers:
     pbar.update(1)
 
     queryString = (histRangeUrl + ticker + '/range/1/day/' + startDate + '/' + endDate + '?unadjusted='
-                   + unadjusted + '&apiKey=' + os.environ['API_KEY'])
+                   + unadjusted + '&apiKey=' + os.environ['POLYGON_API_KEY'])
 
     try:
         jsonResponse = requests.get(queryString)
@@ -173,8 +174,11 @@ for ticker in tickers:
             cursor = dbConnect.cursor()
 
             try:
-                query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
+                query = f'INSERT INTO pythondb.test_table (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
                         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
+
+                # query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
+                #         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
                 # This pause was necessary as Polygon seemed to block me at around 1000 requests in some
                 if queryCounter % 500 == 0:
@@ -187,6 +191,7 @@ for ticker in tickers:
                 recordCounter += 1
                 queryCounter += 1
             except sqldb._exceptions.IntegrityError:
+                print(f'Ticker: {ticker} failed to INSERT to the DB.')
                 logging.info(f'Ticker: {ticker} failed to INSERT to the DB.')
                 break
                 # continue
