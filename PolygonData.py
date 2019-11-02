@@ -13,6 +13,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import logging
 import TiingoData as tiingo
+import PolygonEssentials as poly
 
 start = time.time()
 recordCounter = 1
@@ -81,7 +82,7 @@ def SendSMS(sw):
     server.quit()
 
 
-@atexit.register
+# @atexit.register
 def FinishUp():
     print('Running closing routine...')
     sw = GetElapsedTime()
@@ -89,9 +90,10 @@ def FinishUp():
 
 
 startDate = '2019-10-28'
-endDate = '2019-11-02'     # Note that the end date is NONINCLUSIVE
+endDate = '2019-11-02'
+dataFreq = 'daily'
 unadjusted = 'false'
-histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
+# histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
 # https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2019-10-20/2019-12-31?apiKey=Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t
 
 # Array to hold our ticker symbols, regardless of the approach that is chosen.
@@ -134,6 +136,7 @@ dbConnect = sqldb.connect(user=os.environ['DB_USER'],
 #                           charset='utf8'
 #                           )
 
+
 # I wonder how to accomplish the 'iterable check' without having to copy the entire code block
 # over again except for the 'tqdm(tickers)' bit.
 
@@ -142,23 +145,10 @@ pbar = tqdm(total=len(tickers))
 for ticker in tickers:
     pbar.update(1)
 
-    queryString = (histRangeUrl + ticker + '/range/1/day/' + startDate + '/' + endDate + '?unadjusted='
-                   + unadjusted + '&apiKey=' + os.environ['POLYGON_API_KEY'])
-
     try:
-        jsonResponse = requests.get(queryString)
-        responseDict = jsonResponse.json()
-    except:
-        print(f'Ticker: {ticker}; failed to get the JSON response from Polygon.')
-        logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Polygon.')
+        resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
+        # resultsDict = poly.GetData(startDate, endDate, tickers)
 
-    # Nice simple explanation of how to handle nested dictionary JSON responses:
-    # https://stackoverflow.com/questions/51788550/parsing-json-nested-dictionary-using-python
-    # REALLY wanted to do .upper() here, but we need lower case "p's" to request data for preferred
-    # stocks (e.g. ABR-A).
-    ticker = str(responseDict['ticker'])
-    resultsDict = responseDict['results']
-    try:
         for x in resultsDict:
             openPx = x['o']
             highPx = x['h']
