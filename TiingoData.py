@@ -45,18 +45,21 @@ def GetData(startDate, endDate, dataFreq, tickers):
         try:
             jsonResponse = requests.get(queryString, headers=headers)
             responseDict = jsonResponse.json()
-            i = 1
+
+            # Created a counter to serve as the key for the dictionary to be returned to the main program.
+            i = 0
 
             # Tiingo's JSON response looks really clean.  I didn't even need the extra step.
+            # Left this code here for continuity among the data source helpers.
             # resultsDict = responseDict['results']
             resultsDict = responseDict
+
+            # Initialize our return dictionary
             returnDict = {}
 
-            # This needs to convert ALL the records in the resultsDict.
-            # Right now I'm just writing over the first record over and over.
+            # Iterate through the results and create EodRecord objects for each of results returned.
             for x in resultsDict:
                 rawDate = x['date']
-                # convDate = dt.strftime(rawDate, '%Y-%m-%d')
                 convDate = dt.strptime(rawDate, '%Y-%m-%dT%H:%M:%S.%fZ')
                 finalDate = dt.strftime(convDate, '%Y-%m-%d')
 

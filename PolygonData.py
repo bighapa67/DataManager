@@ -162,15 +162,16 @@ for ticker in tickers:
         #     # of the server, which was apparently far enough east of me that it was converting into T-1!!!
         #     convDate = dt.datetime.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
 
-        for x in resultsDict:
+        # Can't seem to figure out how to unpack my dictionary!!!
+        for key, value in resultsDict.items():
             symbol = ticker
-            convDate = resultsDict['']
-            openPx = resultsDict['openPx']
-            highPx = resultsDict['highPx']
-            lowPx = resultsDict['lowPx']
-            closePx = resultsDict['closePx']
+            convDate = value.date[0]
+            openPx = value.open[0]
+            highPx = value.high[0]
+            lowPx = value.low[0]
+            closePx = value.close[0]
             trueRange = abs(highPx - lowPx)
-            volume = resultsDict['volume']
+            volume = value.volume[0]
 
             cursor = dbConnect.cursor()
 
@@ -199,10 +200,10 @@ for ticker in tickers:
             finally:
                 cursor.close()
     except:
+        traceback.print_exc()
         print('Something went wrong with the JSON results')
         print(f'Error on ticker: {ticker}')
         logging.info(f'Ticker: {ticker} failed while attempting to parse the JSON response (responseDict)')
-        traceback.print_exc()
         cursor.close()
         continue
     finally:
