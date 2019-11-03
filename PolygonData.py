@@ -19,6 +19,12 @@ start = time.time()
 recordCounter = 1
 queryCounter = 1
 
+# User defined parameters
+startDate = '2019-10-18'
+endDate = '2019-10-28'
+dataFreq = 'daily'
+unadjusted = 'false'
+
 # Set the desired logging resolution here:
 logging.basicConfig(filename='logging.log', level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(threadName)s - %(levelname)s - %(message)s')
@@ -88,13 +94,6 @@ def FinishUp():
     sw = GetElapsedTime()
     SendSMS(sw)
 
-
-startDate = '2019-10-28'
-endDate = '2019-11-02'
-dataFreq = 'daily'
-unadjusted = 'false'
-# histRangeUrl = 'https://api.polygon.io/v2/aggs/ticker/'
-# https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2019-10-20/2019-12-31?apiKey=Xq_bQM92tq78l3FNagTWix06raWaq7y1ptr7_t
 
 # Array to hold our ticker symbols, regardless of the approach that is chosen.
 tickers = []
@@ -171,7 +170,7 @@ for ticker in tickers:
             lowPx = value.low[0]
             closePx = value.close[0]
             trueRange = abs(highPx - lowPx)
-            volume = value.volume[0]
+            volume = value.volume
 
             cursor = dbConnect.cursor()
 
@@ -183,6 +182,8 @@ for ticker in tickers:
                 #         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
                 # This pause was necessary as Polygon seemed to block me at around 1000 requests in some
+                # If the length of the 'tickers' list is less than 500 then the .commit is executed at the end
+                # of the main try block.
                 if queryCounter % 500 == 0:
                     time.sleep(1)  # in seconds
                     queryCounter = 1
@@ -208,8 +209,6 @@ for ticker in tickers:
         continue
     finally:
         dbConnect.commit()
-
-
 
             # print('Ticker: ' + str(ticker))
             # print('Open: ' + str(openPx))
