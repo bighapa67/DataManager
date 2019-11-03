@@ -3,6 +3,7 @@ import requests
 import logging
 import time
 from tqdm import tqdm
+from StockRecord import EodRecord as rec
 
 """
 I think the idea is to set the parameters for ALL data sources once in the main.py.
@@ -42,21 +43,27 @@ def GetData(startDate, endDate, dataFreq, tickers):
         try:
             jsonResponse = requests.get(queryString, headers=headers)
             responseDict = jsonResponse.json()
+            i = 0
 
             # Tiingo's JSON response looks really clean.  I didn't even need the extra step.
             # resultsDict = responseDict['results']
             resultsDict = responseDict
+            returnDict[] =
 
             # This needs to convert ALL the records in the resultsDict.
             # Right now I'm just writing over the first record over and over.
             for x in resultsDict:
-                returnDict = {'openPx': x['open'],
+                record = {'openPx': x['open'],
                               'highPx': x['high'],
                               'lowPx': x['low'],
                               'closePx': x['close'],
                               'volume': x['volume'],
                               'rawDate': x['date']}
-                return returnDict
+                # returnDict = {i: record}
+                returnDict[i] = record
+                i+=1
+
+            return returnDict
         except:
             print(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
             logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
