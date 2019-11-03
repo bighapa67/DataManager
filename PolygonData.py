@@ -163,7 +163,7 @@ for ticker in tickers:
         #     convDate = dt.datetime.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
 
         for x in resultsDict:
-            symbol = resultsDict['ticker']
+            symbol = ticker
             convDate = resultsDict['']
             openPx = resultsDict['openPx']
             highPx = resultsDict['highPx']

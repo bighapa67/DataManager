@@ -1,9 +1,11 @@
 import os
+from datetime import datetime as dt
 import requests
 import logging
 import time
 from tqdm import tqdm
-from StockRecord import EodRecord as rec
+from StockRecord import EodRecord
+import traceback
 
 """
 I think the idea is to set the parameters for ALL data sources once in the main.py.
@@ -43,29 +45,37 @@ def GetData(startDate, endDate, dataFreq, tickers):
         try:
             jsonResponse = requests.get(queryString, headers=headers)
             responseDict = jsonResponse.json()
-            i = 0
+            i = 1
 
             # Tiingo's JSON response looks really clean.  I didn't even need the extra step.
             # resultsDict = responseDict['results']
             resultsDict = responseDict
-            returnDict[] =
+            returnDict = {}
 
             # This needs to convert ALL the records in the resultsDict.
             # Right now I'm just writing over the first record over and over.
             for x in resultsDict:
-                record = {'openPx': x['open'],
-                              'highPx': x['high'],
-                              'lowPx': x['low'],
-                              'closePx': x['close'],
-                              'volume': x['volume'],
-                              'rawDate': x['date']}
-                # returnDict = {i: record}
-                returnDict[i] = record
-                i+=1
+                rawDate = x['date']
+                # convDate = dt.strftime(rawDate, '%Y-%m-%d')
+                convDate = dt.strptime(rawDate, '%Y-%m-%dT%H:%M:%S.%fZ')
+                finalDate = dt.strftime(convDate, '%Y-%m-%d')
+
+                myRecord = EodRecord(
+                    finalDate,
+                    x['open'],
+                    x['high'],
+                    x['low'],
+                    x['close'],
+                    x['volume']
+                )
+
+                returnDict[i] = myRecord
+                i += 1
 
             return returnDict
         except:
             print(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
+            traceback.print_exc()
             logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
 
             # Lol... I doubt this is correct...
