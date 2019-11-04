@@ -23,7 +23,7 @@ def GetData(startDate, endDate, tickers):
         #                + unadjusted + '&apiKey=' + os.environ['POLYGON_API_KEY'])
 
         queryString = f'https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{startDate}/{endDate}?' \
-                      f'apiKey=' + os.environ['POLYGON_API_KEY']
+                      f'unadjusted=false&apiKey=' + os.environ['POLYGON_API_KEY']
 
         try:
             jsonResponse = requests.get(queryString)
