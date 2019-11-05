@@ -3,6 +3,7 @@ import requests
 import logging
 from datetime import datetime as dt
 from StockRecord import EodRecord
+import traceback
 
 """
 Trying to split the specifics of the data sources from non-request specific code.
@@ -30,15 +31,27 @@ def GetData(startDate, endDate, tickers):
             i = 0
             jsonResponse = requests.get(queryString)
             responseDict = jsonResponse.json()
+            responseList = responseDict['results']
 
             # Iterate through the results and create EodRecord objects for each of results returned.
-            # for x in responseDict:
-            for key, value in responseDict.items():
-                rawData = value['results'[0]]
-                # rawDate = x['t']
+            # for key, value in responseDict.items():
+            #     rawData = value['results'[0]]
+            #     # rawDate = x['t']
+            #     convDate = dt.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
+            #     # convDate = dt.strptime(rawDate, '%Y-%m-%dT%H:%M:%S.%fZ')
+            #     # finalDate = dt.strftime(convDate, '%Y-%m-%d')
+
+            for x in responseList:
+                openPx = x['o']
+                highPx = x['h']
+                lowPx = x['l']
+                closePx = x['c']
+                volume = x['v']
+                trueRange = abs(highPx - lowPx)
+                rawDate = x['t']
+
+                # This almost caused a HUGE problem.  The basic datetime.fromtimestamp
                 convDate = dt.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
-                # convDate = dt.strptime(rawDate, '%Y-%m-%dT%H:%M:%S.%fZ')
-                # finalDate = dt.strftime(convDate, '%Y-%m-%d')
 
                 myRecord = EodRecord(
                     convDate,
@@ -55,12 +68,9 @@ def GetData(startDate, endDate, tickers):
             return returnDict
 
         except:
+            traceback.print_exc()
             print(f'Ticker: {ticker}; failed to get the JSON response from Polygon.')
             logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Polygon.')
-        finally:
-            ticker = str(responseDict['ticker'])
-            resultsList = responseDict['results']
-            return  resultsList
 
 
 # for x in resultsDict:
