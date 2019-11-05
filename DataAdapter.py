@@ -161,7 +161,6 @@ for ticker in tickers:
         #     # of the server, which was apparently far enough east of me that it was converting into T-1!!!
         #     convDate = dt.datetime.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
 
-        # Can't seem to figure out how to unpack my dictionary!!!
         for key, value in resultsDict.items():
             symbol = ticker
             convDate = value.date[0]

@@ -51,14 +51,14 @@ def GetData(startDate, endDate, dataFreq, tickers):
 
             # Tiingo's JSON response looks really clean.  I didn't even need the extra step.
             # Left this code here for continuity among the data source helpers.
-            # resultsDict = responseDict['results']
-            resultsDict = responseDict
+            # resultsList = responseDict['results']
+            resultsList = responseDict
 
             # Initialize our return dictionary
             returnDict = {}
 
             # Iterate through the results and create EodRecord objects for each of results returned.
-            for x in resultsDict:
+            for x in resultsList:
                 rawDate = x['date']
                 convDate = dt.strptime(rawDate, '%Y-%m-%dT%H:%M:%S.%fZ')
                 finalDate = dt.strftime(convDate, '%Y-%m-%d')
