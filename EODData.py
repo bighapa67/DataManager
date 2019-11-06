@@ -1,3 +1,4 @@
+import os
 from datetime import datetime as dt
 import pandas as pd
 import traceback
@@ -24,7 +25,10 @@ def GetData(startDate, endDate, tickers):
         # Need to add the same file path validity check until we decide on a cloud location for all
         # our files.
         # Will likely do three of these data frames (one for each exchange) and then combine them.
-        eod_df = pd.read_csv('C:\\Users\\kjone\\Google Drive\\StockOdds\\AMEX_20191105_test.csv')
+        if os.path.exists('C:\\Users\\kjone\\Google Drive\\StockOdds\\AMEX_20191105_test.csv'):
+            eod_df = pd.read_csv('C:\\Users\\kjone\\Google Drive\\StockOdds\\AMEX_20191105_test.csv')
+        elif os.path.exists('C:\\Users\\Ken\\Google Drive\\StockOdds\\AMEX_20191105_test.csv'):
+            eod_df = pd.read_csv('C:\\Users\\Ken\\Google Drive\\StockOdds\\AMEX_20191105_test.csv')
 
         # pbar = tqdm(eod_df.count())
         returnDict = {}
@@ -32,21 +36,25 @@ def GetData(startDate, endDate, tickers):
         for index, row in eod_df.iterrows():
             # pbar.update(1)
 
-            rawDate = row['Date']
-            convDate = dt.strptime(rawDate, '%d-%b-%Y')
-            finalDate = dt.strftime(convDate, '%Y-%m-%d')
+            # Since EODData auto-sends up csv files for our exchanges (currently AMEX, NASDAQ, NYSE), we need
+            # to filter the data for only the symbols we're interested in.
+            if row['Symbol'] in tickers:
+                rawDate = row['Date']
+                convDate = dt.strptime(rawDate, '%d-%b-%Y')
+                finalDate = dt.strftime(convDate, '%Y-%m-%d')
 
-            myRecord = EodRecord(
-                row['Symbol'],
-                finalDate,
-                row['Open'],
-                row['High'],
-                row['Low'],
-                row['Close'],
-                0,
-            )
-
-            returnDict[index] = myRecord
+                myRecord = EodRecord(
+                    row['Symbol'],
+                    finalDate,
+                    row['Open'],
+                    row['High'],
+                    row['Low'],
+                    row['Close'],
+                    0,
+                )
+                returnDict[index] = myRecord
+            else:
+                continue
 
         return returnDict
 

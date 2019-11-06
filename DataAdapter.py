@@ -159,9 +159,9 @@ dbConnect = sqldb.connect(user=os.environ['DB_USER'],
 
 try:
     # Send the entire ticker array to the data source helper
-    resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
+    # resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
     # resultsDict = poly.GetData(startDate, endDate, tickers)
-    # resultsDict = eod.GetData(startDate, endDate, tickers)
+    resultsDict = eod.GetData(startDate, endDate, tickers)
 
     # for x in resultsDict:
     #     openPx = x['o']
