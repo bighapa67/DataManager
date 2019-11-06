@@ -14,6 +14,7 @@ from email.mime.multipart import MIMEMultipart
 import logging
 import TiingoData as tiingo
 import PolygonData as poly
+import EODData as eod
 
 start = time.time()
 recordCounter = 1
@@ -101,7 +102,15 @@ tickers = []
 #########################################
 # Pandas approach
 
-symbols_df = pd.read_csv('C:\\Users\\Ken\\Google Drive\\StockOdds\\StockOddsSymbols.csv', index_col='Symbol', skiprows=0)
+# Had to add the check to account for differing paths to Google Drive between laptop and desktop.
+if os.path.exists('C:\\Users\\Ken\\Google Drive\\StockOdds\\StockOddsSymbols.csv'):
+    symbols_df = pd.read_csv('C:\\Users\\Ken\\Google Drive\\StockOdds\\StockOddsSymbols.csv', index_col='Symbol',
+                             skiprows=0)
+elif os.path.exists('C:\\Users\\kjone\\Google Drive\\StockOdds\\StockOddsSymbols.csv'):
+    symbols_df = pd.read_csv('C:\\Users\\kjone\\Google Drive\\StockOdds\\StockOddsSymbols.csv', index_col='Symbol',
+                             skiprows=0)
+else:
+    print('User defined file path not found for symbols csv.')
 
 # Currently skipping symbols with '-' in them as I can't figure out the format Polygon wants.
 for index, row in symbols_df.iterrows():
@@ -148,6 +157,7 @@ for ticker in tickers:
         # Send the entire ticker array to the data source helper
         # resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
         resultsDict = poly.GetData(startDate, endDate, tickers)
+        # resultsDict = eod.GetData(startDate, endDate, tickers)
 
         # for x in resultsDict:
         #     openPx = x['o']
