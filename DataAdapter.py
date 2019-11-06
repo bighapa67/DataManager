@@ -156,8 +156,8 @@ for ticker in tickers:
     try:
         # Send the entire ticker array to the data source helper
         # resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
-        resultsDict = poly.GetData(startDate, endDate, tickers)
-        # resultsDict = eod.GetData(startDate, endDate, tickers)
+        # resultsDict = poly.GetData(startDate, endDate, tickers)
+        resultsDict = eod.GetData(startDate, endDate, tickers)
 
         # for x in resultsDict:
         #     openPx = x['o']
@@ -202,7 +202,8 @@ for ticker in tickers:
                 # dbConnect.commit()
                 recordCounter += 1
                 queryCounter += 1
-            except sqldb._exceptions.IntegrityError:
+            except:
+                traceback.print_exc()
                 print(f'Ticker: {ticker} failed to INSERT to the DB.')
                 logging.info(f'Ticker: {ticker} failed to INSERT to the DB.')
                 break
@@ -211,7 +212,7 @@ for ticker in tickers:
                 cursor.close()
     except:
         traceback.print_exc()
-        print('Something went wrong with the JSON results')
+        print('Something went wrong with the query results')
         print(f'Error on ticker: {ticker}')
         logging.info(f'Ticker: {ticker} failed while attempting to parse the JSON response (responseDict)')
         cursor.close()

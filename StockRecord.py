@@ -1,5 +1,6 @@
 class EodRecord:
-    def __init__(self, date, open, high, low, close, volume):
+    def __init__(self, symbol, date, open, high, low, close, volume):
+        self.symbol = symbol,
         self.date = date,
         self.open = open,
         self.high = high,
