@@ -29,7 +29,7 @@ logging.basicConfig(filename='logging.log', level=logging.INFO,
 
 def GetData(startDate, endDate, dataFreq, tickers):
 
-    # pbar = tqdm(total=len(tickers))
+    pbar = tqdm(total=len(tickers))
 
     # Initialize our return dictionary
     returnDict = {}
@@ -37,9 +37,10 @@ def GetData(startDate, endDate, dataFreq, tickers):
     # Created a counter to serve as the key for the dictionary to be returned to the main program.
     count = 0
 
-    for ticker in tqdm(tickers, desc='TiingoData'):
-        pass
-        # pbar.update(1)
+    # for ticker in tqdm(tickers, desc='TiingoData'):
+    for ticker in tickers:
+        # pass
+        pbar.update(1)
 
         # Passing the API key through os.environ.
         headers = {'Content-Type': 'application/json',
