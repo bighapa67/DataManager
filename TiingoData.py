@@ -12,12 +12,9 @@ I think the idea is to set the parameters for ALL data sources once in the main.
 Each of these sources will live in their own file which will contain any helper code
 necessary to get the job done.
 
-Parameters needed:
-API Key (set as an os.environ so not needed)
-Start Date
-End Date
-Tickers Array []
-
+Tiingo specific symbol adjustments:
+Pref stocks (usually hyphenated); "JPM-P-A"; JPM Class A
+"." symbols; "BRK-B"; BRK.B
 """
 
 # Set the desired logging resolution here:
@@ -26,8 +23,14 @@ logging.basicConfig(filename='logging.log', level=logging.INFO,
 
 # baseUrl = 'https://api.tiingo.com/tiingo/daily/'
 
+# def TickerTransform(tickers):
+#     for ticker in tickers:
+#         stop = 0
+
+
 
 def GetData(startDate, endDate, dataFreq, tickers):
+    # TickerTransform(tickers)
 
     # pbar = tqdm(total=len(tickers))
 
@@ -41,6 +44,13 @@ def GetData(startDate, endDate, dataFreq, tickers):
         # for ticker in tqdm(tickers, desc='TiingoData'):
         for ticker in tickers:
             # pass
+            if '-' in ticker:
+                adjTicker = ticker.replace('-', '-P-')
+            elif '.' in ticker:
+                adjTicker = ticker.replace('.', '-')
+            else:
+                adjTicker = ticker
+
             pbar.update(1)
 
             # Passing the API key through os.environ.
@@ -48,7 +58,10 @@ def GetData(startDate, endDate, dataFreq, tickers):
                        'Authorization': 'Token ' + os.environ['TIINGO_API_KEY']}
 
             # Query string specific to this data source's URL.
-            queryString = f'https://api.tiingo.com/tiingo/daily/{ticker}/prices?startDate={startDate}&endDate={endDate}' \
+            # We use adjTicker here to transform our symbol to conform with this specific source's syntax.
+            # However, when creating our StockRecord we use OUR ticker so we have a uniform ticker across
+            # all sources.
+            queryString = f'https://api.tiingo.com/tiingo/daily/{adjTicker}/prices?startDate={startDate}&endDate={endDate}' \
                           f'&format=json&resampleFreq={dataFreq}'
 
             try:
