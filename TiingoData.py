@@ -23,16 +23,8 @@ logging.basicConfig(filename='logging.log', level=logging.INFO,
 
 # baseUrl = 'https://api.tiingo.com/tiingo/daily/'
 
-# def TickerTransform(tickers):
-#     for ticker in tickers:
-#         stop = 0
-
-
 
 def GetData(startDate, endDate, dataFreq, tickers):
-    # TickerTransform(tickers)
-
-    # pbar = tqdm(total=len(tickers))
 
     # Initialize our return dictionary
     returnDict = {}
@@ -102,15 +94,3 @@ def GetData(startDate, endDate, dataFreq, tickers):
                 logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
 
     return returnDict
-
-# for x in resultsDict:
-#     openPx = x['o']
-#     highPx = x['h']
-#     lowPx = x['l']
-#     closePx = x['c']
-#     volume = x['v']
-#     trueRange = abs(highPx - lowPx)
-#     rawDate = x['t']
-#     # This almost caused a HUGE problem.  The basic datetime.fromtimestamp apparently returns the local time
-#     # of the machine
-#     convDate = dt.datetime.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
