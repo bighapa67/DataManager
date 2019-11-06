@@ -150,75 +150,78 @@ dbConnect = sqldb.connect(user=os.environ['DB_USER'],
 
 pbar = tqdm(total=len(tickers))
 
-for ticker in tickers:
-    pbar.update(1)
+# for ticker in tickers:
+    # pbar.update(1)
 
-    try:
-        # Send the entire ticker array to the data source helper
-        # resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
-        # resultsDict = poly.GetData(startDate, endDate, tickers)
-        resultsDict = eod.GetData(startDate, endDate, tickers)
+try:
+    # Send the entire ticker array to the data source helper
+    resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
+    # resultsDict = poly.GetData(startDate, endDate, tickers)
+    # resultsDict = eod.GetData(startDate, endDate, tickers)
 
-        # for x in resultsDict:
-        #     openPx = x['o']
-        #     highPx = x['h']
-        #     lowPx = x['l']
-        #     closePx = x['c']
-        #     volume = x['v']
-        #     trueRange = abs(highPx - lowPx)
-        #     rawDate = x['t']
-        #     # This almost caused a HUGE problem.  The basic datetime.fromtimestamp apparently returns the local time
-        #     # of the server, which was apparently far enough east of me that it was converting into T-1!!!
-        #     convDate = dt.datetime.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
+    # for x in resultsDict:
+    #     openPx = x['o']
+    #     highPx = x['h']
+    #     lowPx = x['l']
+    #     closePx = x['c']
+    #     volume = x['v']
+    #     trueRange = abs(highPx - lowPx)
+    #     rawDate = x['t']
+    #     # This almost caused a HUGE problem.  The basic datetime.fromtimestamp apparently returns the local time
+    #     # of the server, which was apparently far enough east of me that it was converting into T-1!!!
+    #     convDate = dt.datetime.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
 
-        for key, value in resultsDict.items():
-            symbol = ticker
-            convDate = value.date[0]
-            openPx = value.open[0]
-            highPx = value.high[0]
-            lowPx = value.low[0]
-            closePx = value.close[0]
-            trueRange = abs(highPx - lowPx)
-            volume = value.volume
+    for key, value in resultsDict.items():
+        symbol = value.symbol[0]
+        convDate = value.date[0]
+        openPx = value.open[0]
+        highPx = value.high[0]
+        lowPx = value.low[0]
+        closePx = value.close[0]
+        trueRange = abs(highPx - lowPx)
+        volume = value.volume
 
-            cursor = dbConnect.cursor()
+        cursor = dbConnect.cursor()
 
-            try:
-                query = f'INSERT INTO pythondb.test_table (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
-                        f'VALUES("{symbol}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
+        # if symbol == 'FB':
+        #     stop = 1
 
-                # query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
-                #         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
+        try:
+            query = f'INSERT INTO pythondb.test_table (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
+                    f'VALUES("{symbol}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
-                # This pause was necessary as Polygon seemed to block me at around 1000 requests in some
-                # If the length of the 'tickers' list is less than 500 then the .commit is executed at the end
-                # of the main try block.
-                if queryCounter % 500 == 0:
-                    time.sleep(1)  # in seconds
-                    queryCounter = 1
-                    dbConnect.commit()
+            # query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
+            #         f'VALUES("{ticker}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
-                cursor.execute(query)
-                # dbConnect.commit()
-                recordCounter += 1
-                queryCounter += 1
-            except:
-                traceback.print_exc()
-                print(f'Ticker: {ticker} failed to INSERT to the DB.')
-                logging.info(f'Ticker: {ticker} failed to INSERT to the DB.')
-                break
-                # continue
-            finally:
-                cursor.close()
-    except:
-        traceback.print_exc()
-        print('Something went wrong with the query results')
-        print(f'Error on ticker: {ticker}')
-        logging.info(f'Ticker: {ticker} failed while attempting to parse the JSON response (responseDict)')
-        cursor.close()
-        continue
-    finally:
-        dbConnect.commit()
+            # This pause was necessary as Polygon seemed to block me at around 1000 requests in some
+            # If the length of the 'tickers' list is less than 500 then the .commit is executed at the end
+            # of the main try block.
+            if queryCounter % 500 == 0:
+                time.sleep(1)  # in seconds
+                queryCounter = 1
+                dbConnect.commit()
+
+            cursor.execute(query)
+            # dbConnect.commit()
+            recordCounter += 1
+            queryCounter += 1
+        except:
+            traceback.print_exc()
+            print(f'Ticker: {ticker} failed to INSERT to the DB.')
+            logging.info(f'Ticker: {ticker} failed to INSERT to the DB.')
+            break
+            # continue
+        finally:
+            cursor.close()
+except:
+    traceback.print_exc()
+    print('Something went wrong with the query results')
+    print(f'Error on ticker: {ticker}')
+    logging.info(f'Ticker: {ticker} failed while attempting to parse the JSON response (responseDict)')
+    cursor.close()
+    # continue
+finally:
+    dbConnect.commit()
 
             # print('Ticker: ' + str(ticker))
             # print('Open: ' + str(openPx))

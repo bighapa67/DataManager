@@ -31,7 +31,14 @@ def GetData(startDate, endDate, dataFreq, tickers):
 
     # pbar = tqdm(total=len(tickers))
 
-    for ticker in tickers:
+    # Initialize our return dictionary
+    returnDict = {}
+
+    # Created a counter to serve as the key for the dictionary to be returned to the main program.
+    count = 0
+
+    for ticker in tqdm(tickers, desc='TiingoData'):
+        pass
         # pbar.update(1)
 
         # Passing the API key through os.environ.
@@ -44,46 +51,48 @@ def GetData(startDate, endDate, dataFreq, tickers):
 
         try:
             jsonResponse = requests.get(queryString, headers=headers)
-            responseDict = jsonResponse.json()
+            responseList = jsonResponse.json()
 
             # Created a counter to serve as the key for the dictionary to be returned to the main program.
-            i = 0
+            # i = 0
 
             # Tiingo's JSON response looks really clean.  I didn't even need the extra step.
             # Left this code here for continuity among the data source helpers.
             # resultsList = responseDict['results']
-            resultsList = responseDict
+            resultsList = responseList
 
             # Initialize our return dictionary
-            returnDict = {}
+            # returnDict = {}
 
-            # Iterate through the results and create EodRecord objects for each of results returned.
-            for x in resultsList:
-                rawDate = x['date']
-                convDate = dt.strptime(rawDate, '%Y-%m-%dT%H:%M:%S.%fZ')
-                finalDate = dt.strftime(convDate, '%Y-%m-%d')
+            if len(resultsList) != 0:
+                # Iterate through the results and create EodRecord objects for each of results returned.
+                for x in resultsList:
+                    rawDate = x['date']
+                    convDate = dt.strptime(rawDate, '%Y-%m-%dT%H:%M:%S.%fZ')
+                    finalDate = dt.strftime(convDate, '%Y-%m-%d')
 
-                myRecord = EodRecord(
-                    finalDate,
-                    x['open'],
-                    x['high'],
-                    x['low'],
-                    x['close'],
-                    x['volume']
-                )
+                    myRecord = EodRecord(
+                        ticker,
+                        finalDate,
+                        x['open'],
+                        x['high'],
+                        x['low'],
+                        x['close'],
+                        x['volume']
+                    )
 
-                returnDict[i] = myRecord
-                i += 1
+                    returnDict[count] = myRecord
+                    count += 1
 
-            return returnDict
+            else:
+                print(f'Ticker: {ticker}; received an empty JSON response from Tiingo.')
+
         except:
             print(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
             traceback.print_exc()
             logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
 
-            # Lol... I doubt this is correct...
-            return f'{ticker} failed to get a JSON response from Tiingo.'
-
+    return returnDict
 
 # for x in resultsDict:
 #     openPx = x['o']

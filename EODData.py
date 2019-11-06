@@ -30,6 +30,7 @@ def GetData(startDate, endDate, tickers):
             finalDate = dt.strftime(convDate, '%Y-%m-%d')
 
             myRecord = EodRecord(
+                row['Symbol'],
                 finalDate,
                 row['Open'],
                 row['High'],
