@@ -148,16 +148,16 @@ dbConnect = sqldb.connect(user=os.environ['DB_USER'],
 # I wonder how to accomplish the 'iterable check' without having to copy the entire code block
 # over again except for the 'tqdm(tickers)' bit.
 
-pbar = tqdm(total=len(tickers))
+# pbar = tqdm(total=len(tickers))
 
 # for ticker in tickers:
     # pbar.update(1)
 
 try:
     # Send the entire ticker array to the data source helper
-    resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
+    # resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
     # resultsDict = poly.GetData(startDate, endDate, tickers)
-    # resultsDict = eod.GetData(startDate, endDate, tickers)
+    resultsDict = eod.GetData(startDate, endDate, tickers)
 
     # for x in resultsDict:
     #     openPx = x['o']

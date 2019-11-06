@@ -29,7 +29,7 @@ logging.basicConfig(filename='logging.log', level=logging.INFO,
 
 def GetData(startDate, endDate, dataFreq, tickers):
 
-    pbar = tqdm(total=len(tickers))
+    # pbar = tqdm(total=len(tickers))
 
     # Initialize our return dictionary
     returnDict = {}
@@ -37,61 +37,56 @@ def GetData(startDate, endDate, dataFreq, tickers):
     # Created a counter to serve as the key for the dictionary to be returned to the main program.
     count = 0
 
-    # for ticker in tqdm(tickers, desc='TiingoData'):
-    for ticker in tickers:
-        # pass
-        pbar.update(1)
+    with tqdm(total=len(tickers)) as pbar:
+        # for ticker in tqdm(tickers, desc='TiingoData'):
+        for ticker in tickers:
+            # pass
+            pbar.update(1)
 
-        # Passing the API key through os.environ.
-        headers = {'Content-Type': 'application/json',
-                   'Authorization': 'Token ' + os.environ['TIINGO_API_KEY']}
+            # Passing the API key through os.environ.
+            headers = {'Content-Type': 'application/json',
+                       'Authorization': 'Token ' + os.environ['TIINGO_API_KEY']}
 
-        # Query string specific to this data source's URL.
-        queryString = f'https://api.tiingo.com/tiingo/daily/{ticker}/prices?startDate={startDate}&endDate={endDate}' \
-                      f'&format=json&resampleFreq={dataFreq}'
+            # Query string specific to this data source's URL.
+            queryString = f'https://api.tiingo.com/tiingo/daily/{ticker}/prices?startDate={startDate}&endDate={endDate}' \
+                          f'&format=json&resampleFreq={dataFreq}'
 
-        try:
-            jsonResponse = requests.get(queryString, headers=headers)
-            responseList = jsonResponse.json()
+            try:
+                jsonResponse = requests.get(queryString, headers=headers)
+                responseList = jsonResponse.json()
 
-            # Created a counter to serve as the key for the dictionary to be returned to the main program.
-            # i = 0
+                # Tiingo's JSON response looks really clean.  I didn't even need the extra step.
+                # Left this code here for continuity among the data source helpers.
+                # resultsList = responseDict['results']
+                resultsList = responseList
 
-            # Tiingo's JSON response looks really clean.  I didn't even need the extra step.
-            # Left this code here for continuity among the data source helpers.
-            # resultsList = responseDict['results']
-            resultsList = responseList
+                if len(resultsList) != 0:
+                    # Iterate through the results and create EodRecord objects for each of results returned.
+                    for x in resultsList:
+                        rawDate = x['date']
+                        convDate = dt.strptime(rawDate, '%Y-%m-%dT%H:%M:%S.%fZ')
+                        finalDate = dt.strftime(convDate, '%Y-%m-%d')
 
-            # Initialize our return dictionary
-            # returnDict = {}
+                        myRecord = EodRecord(
+                            ticker,
+                            finalDate,
+                            x['open'],
+                            x['high'],
+                            x['low'],
+                            x['close'],
+                            x['volume']
+                        )
 
-            if len(resultsList) != 0:
-                # Iterate through the results and create EodRecord objects for each of results returned.
-                for x in resultsList:
-                    rawDate = x['date']
-                    convDate = dt.strptime(rawDate, '%Y-%m-%dT%H:%M:%S.%fZ')
-                    finalDate = dt.strftime(convDate, '%Y-%m-%d')
+                        returnDict[count] = myRecord
+                        count += 1
 
-                    myRecord = EodRecord(
-                        ticker,
-                        finalDate,
-                        x['open'],
-                        x['high'],
-                        x['low'],
-                        x['close'],
-                        x['volume']
-                    )
+                else:
+                    print(f'Ticker: {ticker}; received an empty JSON response from Tiingo.')
 
-                    returnDict[count] = myRecord
-                    count += 1
-
-            else:
-                print(f'Ticker: {ticker}; received an empty JSON response from Tiingo.')
-
-        except:
-            print(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
-            traceback.print_exc()
-            logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
+            except:
+                print(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
+                traceback.print_exc()
+                logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
 
     return returnDict
 
