@@ -25,6 +25,10 @@ def GetData(startDate, endDate, tickers):
         # Need to add the same file path validity check until we decide on a cloud location for all
         # our files.
         # Will likely do three of these data frames (one for each exchange) and then combine them.
+        # Going to need to add a mechanism to figure out which file name (date really) we're looking for
+        # for each of the three exchanges along with a way for the program to automatically handle a situation where
+        # we normally process the files at say 5:00pm CT, but for some reason the files aren't available.  We
+        # may then have to access the files after midnight (i.e. T+1 or more).
         if os.path.exists('C:\\Users\\kjone\\Google Drive\\StockOdds\\AMEX_20191105_test.csv'):
             eod_df = pd.read_csv('C:\\Users\\kjone\\Google Drive\\StockOdds\\AMEX_20191105_test.csv')
         elif os.path.exists('C:\\Users\\Ken\\Google Drive\\StockOdds\\AMEX_20191105_test.csv'):
