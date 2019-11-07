@@ -26,38 +26,53 @@ def GetData(startDate, endDate, tickers):
     for ticker in tickers:
         pbar.update(1)
 
+        # Currently have to skip tickers with "unique" characters because Polygon is too busy looking at offices
+        # to fix the damn problem.....
+        if '-' in ticker:
+            continue
+        elif '+' in ticker:
+            continue
+
         queryString = f'https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{startDate}/{endDate}?' \
                       f'unadjusted=false&apiKey=' + os.environ['POLYGON_API_KEY']
 
         try:
             jsonResponse = requests.get(queryString)
             responseDict = jsonResponse.json()
-            responseList = responseDict['results']
+            resultsList = responseDict['results']
 
-            for x in responseList:
-                openPx = x['o']
-                highPx = x['h']
-                lowPx = x['l']
-                closePx = x['c']
-                volume = x['v']
-                trueRange = abs(highPx - lowPx)
-                rawDate = x['t']
+            if len() != 0 and jsonResponse.status_code == 200:
+                for x in resultsList:
+                    openPx = x['o']
+                    highPx = x['h']
+                    lowPx = x['l']
+                    closePx = x['c']
+                    volume = x['v']
+                    trueRange = abs(highPx - lowPx)
+                    rawDate = x['t']
 
-                # This almost caused a HUGE problem.  The basic datetime.fromtimestamp
-                convDate = dt.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
+                    # This almost caused a HUGE problem.  The basic datetime.fromtimestamp
+                    convDate = dt.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
 
-                myRecord = EodRecord(
-                    ticker,
-                    convDate,
-                    x['o'],
-                    x['h'],
-                    x['l'],
-                    x['c'],
-                    x['v']
-                )
+                    myRecord = EodRecord(
+                        ticker,
+                        convDate,
+                        x['o'],
+                        x['h'],
+                        x['l'],
+                        x['c'],
+                        x['v']
+                    )
 
-                returnDict[count] = myRecord
-                count += 1
+                    returnDict[count] = myRecord
+                    count += 1
+            elif jsonResponse.status_code != 200:
+                print(str(jsonResponse.content))
+            else:
+                print(f'Ticker: {ticker} - received an empty JSON response from Polygon.')
+                with open('C:\\Users\\Public\\Documents\\PolygonSymbolErrors.txt', 'a') as f:
+                    f.write(f'{ticker}\n')
+
 
         except:
             traceback.print_exc()

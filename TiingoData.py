@@ -111,8 +111,8 @@ def GetData(startDate, endDate, dataFreq, tickers):
                     print(str(jsonResponse.content))
                 else:
                     print(f'Ticker: {ticker} - received an empty JSON response from Tiingo.')
-                    with open('C:\\Users\\Public\\Documents\\TiingoSymbolErrors.txt', 'w') as f:
-                        f.write(ticker)
+                    with open('C:\\Users\\Public\\Documents\\TiingoSymbolErrors.txt', 'a') as f:
+                        f.write(f'{ticker}\n')
 
             except:
                 print(f'Ticker: {ticker} - failed to receive a JSON response from Tiingo.')

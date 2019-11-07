@@ -21,8 +21,8 @@ recordCounter = 1
 queryCounter = 1
 
 # User defined parameters
-startDate = '2019-11-05'
-endDate = '2019-11-05'
+startDate = '2019-11-06'
+endDate = '2019-11-06'
 dataFreq = 'daily'
 unadjusted = 'false'
 
@@ -159,8 +159,8 @@ dbConnect = sqldb.connect(user=os.environ['DB_USER'],
 
 try:
     # Send the entire ticker array to the data source helper
-    resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
-    # resultsDict = poly.GetData(startDate, endDate, tickers)
+    # resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
+    resultsDict = poly.GetData(startDate, endDate, tickers)
     # resultsDict = eod.GetData(startDate, endDate, tickers)
 
     for key, value in resultsDict.items():
@@ -179,7 +179,7 @@ try:
         #     stop = 1
 
         try:
-            query = f'INSERT INTO pythondb.test_table (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
+            query = f'INSERT INTO pythondb.polygon_test (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
                     f'VALUES("{symbol}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
             # query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
