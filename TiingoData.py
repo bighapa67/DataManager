@@ -4,6 +4,7 @@ import requests
 import logging
 import time
 from tqdm import tqdm
+from tqdm import trange
 from StockRecord import EodRecord
 import traceback
 
@@ -32,18 +33,35 @@ def GetData(startDate, endDate, dataFreq, tickers):
     # Created a counter to serve as the key for the dictionary to be returned to the main program.
     count = 0
 
-    with tqdm(total=len(tickers)) as pbar:
+    # pbar = tqdm(total=len(tickers))
+    tiingo_pbar = tqdm(total=len(tickers), desc='Tiingo')
+
+    try:
+        # with tqdm(total=len(tickers)) as pbar:
         # for ticker in tqdm(tickers, desc='TiingoData'):
+        #for ticker in trange(len(tickers)):
         for ticker in tickers:
             # pass
+            tiingo_pbar.update(1)
+
+            # index = ticker.index('-')
+            # length = len(ticker)
+
+            # Had an issue with CEQP-.  Is this just because the '-' is at the end of the symbol?
+            # if '-' in ticker and index != length - 1:
             if '-' in ticker:
-                adjTicker = ticker.replace('-', '-P-')
+                # index = ticker.index('-')
+                # length = len(ticker)
+                if ticker.index('-') != len(ticker) - 1:
+                    adjTicker = ticker.replace('-', '-P-')
+                else:
+                    adjTicker = ticker.replace('-', '-P')
             elif '.' in ticker:
                 adjTicker = ticker.replace('.', '-')
+            elif '+' in ticker:
+                adjTicker = ticker.replace('+', '-WS')
             else:
                 adjTicker = ticker
-
-            pbar.update(1)
 
             # Passing the API key through os.environ.
             headers = {'Content-Type': 'application/json',
@@ -65,7 +83,7 @@ def GetData(startDate, endDate, dataFreq, tickers):
                 # resultsList = responseDict['results']
                 resultsList = responseList
 
-                if len(resultsList) != 0:
+                if len(resultsList) != 0 and jsonResponse.status_code == 200:
                     # Iterate through the results and create EodRecord objects for each of results returned.
                     for x in resultsList:
                         rawDate = x['date']
@@ -85,12 +103,23 @@ def GetData(startDate, endDate, dataFreq, tickers):
                         returnDict[count] = myRecord
                         count += 1
 
+                        # if count % 100 == 0:
+                        #     print(f'Completed: {count}')
+
+                elif jsonResponse.status_code != 200:
+                    # print(f'Ticker: {ticker} - failed to receive a JSON response from Tiingo.')
+                    print(str(jsonResponse.content))
                 else:
-                    print(f'Ticker: {ticker}; received an empty JSON response from Tiingo.')
+                    print(f'Ticker: {ticker} - received an empty JSON response from Tiingo.')
+                    with open('C:\\Users\\Public\\Documents\\TiingoSymbolErrors.txt', 'w') as f:
+                        f.write(ticker)
 
             except:
-                print(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
+                print(f'Ticker: {ticker} - failed to receive a JSON response from Tiingo.')
                 traceback.print_exc()
-                logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Tiingo.')
-
-    return returnDict
+                logging.INFO(f'Ticker: {ticker} - failed to receive a JSON response from Tiingo.')
+                continue
+    except:
+        traceback.print_exc()
+    finally:
+        return returnDict

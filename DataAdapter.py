@@ -21,8 +21,8 @@ recordCounter = 1
 queryCounter = 1
 
 # User defined parameters
-startDate = '2019-10-18'
-endDate = '2019-10-28'
+startDate = '2019-11-05'
+endDate = '2019-11-05'
 dataFreq = 'daily'
 unadjusted = 'false'
 
@@ -159,21 +159,9 @@ dbConnect = sqldb.connect(user=os.environ['DB_USER'],
 
 try:
     # Send the entire ticker array to the data source helper
-    # resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
+    resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
     # resultsDict = poly.GetData(startDate, endDate, tickers)
-    resultsDict = eod.GetData(startDate, endDate, tickers)
-
-    # for x in resultsDict:
-    #     openPx = x['o']
-    #     highPx = x['h']
-    #     lowPx = x['l']
-    #     closePx = x['c']
-    #     volume = x['v']
-    #     trueRange = abs(highPx - lowPx)
-    #     rawDate = x['t']
-    #     # This almost caused a HUGE problem.  The basic datetime.fromtimestamp apparently returns the local time
-    #     # of the server, which was apparently far enough east of me that it was converting into T-1!!!
-    #     convDate = dt.datetime.utcfromtimestamp(rawDate / 1000).strftime('%Y-%m-%d')
+    # resultsDict = eod.GetData(startDate, endDate, tickers)
 
     for key, value in resultsDict.items():
         symbol = value.symbol[0]
@@ -213,8 +201,8 @@ try:
             traceback.print_exc()
             print(f'Ticker: {ticker} failed to INSERT to the DB.')
             logging.info(f'Ticker: {ticker} failed to INSERT to the DB.')
-            break
-            # continue
+            # break
+            continue
         finally:
             cursor.close()
 except:
