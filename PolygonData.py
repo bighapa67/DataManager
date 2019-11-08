@@ -41,7 +41,7 @@ def GetData(startDate, endDate, tickers):
             responseDict = jsonResponse.json()
             resultsList = responseDict['results']
 
-            if len() != 0 and jsonResponse.status_code == 200:
+            if resultsList and jsonResponse.status_code == 200:
                 for x in resultsList:
                     openPx = x['o']
                     highPx = x['h']
@@ -73,10 +73,11 @@ def GetData(startDate, endDate, tickers):
                 with open('C:\\Users\\Public\\Documents\\PolygonSymbolErrors.txt', 'a') as f:
                     f.write(f'{ticker}\n')
 
-
         except:
-            traceback.print_exc()
+            with open('C:\\Users\\Public\\Documents\\PolygonSymbolErrors.txt', 'a') as f:
+                f.write(f'{ticker}; {str(traceback.print_exc())}\n')
+            # traceback.print_exc()
             print(f'Ticker: {ticker}; failed to get the JSON response from Polygon.')
             logging.INFO(f'Ticker: {ticker}; failed to get the JSON response from Polygon.')
-
+            continue
     return returnDict

@@ -21,10 +21,17 @@ recordCounter = 1
 queryCounter = 1
 
 # User defined parameters
-startDate = '2019-11-06'
-endDate = '2019-11-06'
+startDate = '2019-11-07'
+endDate = '2019-11-07'
 dataFreq = 'daily'
 unadjusted = 'false'
+
+# CHOOSE YOUR OUTPUT DB TABLE:
+########################################################################
+# table_name = 'pythondb.eodd_test'
+table_name = 'pythondb.tiingo_test'
+# table_name = 'pythondb.polygon_test'
+########################################################################
 
 # Set the desired logging resolution here:
 logging.basicConfig(filename='logging.log', level=logging.INFO,
@@ -88,7 +95,8 @@ def SendSMS(sw):
     # lastly quit the server
     server.quit()
 
-
+# Just enable the decorator if you want to receive a text when the program terminates.
+# Nice to know if it shut down prematurely without having to constantly check on it.
 # @atexit.register
 def FinishUp():
     print('Running closing routine...')
@@ -140,28 +148,13 @@ dbConnect = sqldb.connect(user=os.environ['DB_USER'],
                           charset='utf8'
                           )
 
-# dbConnect = sqldb.connect(user='bighapa67',
-#                           password='kando1',
-#                           host='localhost',
-#                           database='pythondb',
-#                           use_unicode=True,
-#                           charset='utf8'
-#                           )
-
-
-# I wonder how to accomplish the 'iterable check' without having to copy the entire code block
-# over again except for the 'tqdm(tickers)' bit.
-
-# pbar = tqdm(total=len(tickers))
-
-# for ticker in tickers:
-    # pbar.update(1)
-
 try:
+    ###########################################################################
     # Send the entire ticker array to the data source helper
-    # resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
-    resultsDict = poly.GetData(startDate, endDate, tickers)
+    resultsDict = tiingo.GetData(startDate, endDate, dataFreq, tickers)
+    # resultsDict = poly.GetData(startDate, endDate, tickers)
     # resultsDict = eod.GetData(startDate, endDate, tickers)
+    ###########################################################################
 
     for key, value in resultsDict.items():
         symbol = value.symbol[0]
@@ -179,7 +172,7 @@ try:
         #     stop = 1
 
         try:
-            query = f'INSERT INTO pythondb.polygon_test (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
+            query = f'INSERT INTO {table_name} (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
                     f'VALUES("{symbol}", "{convDate}", {openPx}, {highPx}, {lowPx}, {closePx}, {trueRange}, {volume})'
 
             # query = f'INSERT INTO pythondb.us_historicaldata (Symbol, Date, Open, High, Low, Close, TR, Volume)' \
@@ -188,15 +181,18 @@ try:
             # This pause was necessary as Polygon seemed to block me at around 1000 requests in some
             # If the length of the 'tickers' list is less than 500 then the .commit is executed at the end
             # of the main try block.
-            if queryCounter % 500 == 0:
-                time.sleep(1)  # in seconds
-                queryCounter = 1
-                dbConnect.commit()
+            # if queryCounter % 500 == 0:
+            #     time.sleep(1)  # in seconds
+            #     queryCounter = 1
+            #     dbConnect.commit()
 
             cursor.execute(query)
             # dbConnect.commit()
             recordCounter += 1
             queryCounter += 1
+        except sqldb.IntegrityError:
+            print(f'{ticker}: already exists in {table_name}')
+            continue
         except:
             traceback.print_exc()
             print(f'Ticker: {ticker} failed to INSERT to the DB.')
@@ -213,6 +209,7 @@ except:
     cursor.close()
     # continue
 finally:
+    print(f'Writing data to {table_name}')
     dbConnect.commit()
 
             # print('Ticker: ' + str(ticker))

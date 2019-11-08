@@ -1,4 +1,5 @@
 import os
+import time
 from datetime import datetime as dt
 import requests
 import logging
@@ -33,13 +34,13 @@ def GetData(startDate, endDate, dataFreq, tickers):
     # Created a counter to serve as the key for the dictionary to be returned to the main program.
     count = 0
 
-    # pbar = tqdm(total=len(tickers))
+    # Created a query counter to allow us to pause every x requests.
+    # Seemed that Tiingo would timeout on me if I just let thousands of requests run at full speed.
+    query_count = 0
+
     tiingo_pbar = tqdm(total=len(tickers), desc='Tiingo')
 
     try:
-        # with tqdm(total=len(tickers)) as pbar:
-        # for ticker in tqdm(tickers, desc='TiingoData'):
-        #for ticker in trange(len(tickers)):
         for ticker in tickers:
             # pass
             tiingo_pbar.update(1)
@@ -73,6 +74,12 @@ def GetData(startDate, endDate, dataFreq, tickers):
             # all sources.
             queryString = f'https://api.tiingo.com/tiingo/daily/{adjTicker}/prices?startDate={startDate}&endDate={endDate}' \
                           f'&format=json&resampleFreq={dataFreq}'
+
+            query_count += 1
+
+            # This pause was necessary as Polygon seemed to block me at around 1000 requests in some
+            if query_count % 1000 == 0:
+                time.sleep(1)  # in seconds
 
             try:
                 jsonResponse = requests.get(queryString, headers=headers)
