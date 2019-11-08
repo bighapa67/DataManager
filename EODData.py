@@ -1,4 +1,5 @@
 import os
+import time
 from datetime import datetime as dt
 import pandas as pd
 import traceback
@@ -18,6 +19,7 @@ Apparently EOD doesn't include volume?  Filling it in with zero for now in my st
 
 
 def GetData(startDate, endDate, tickers):
+    start = time.time()
     filename = '19_11_07_composite.csv'
     count = 0
     eodd_pbar = tqdm(total=len(tickers), desc='EODData')
@@ -67,7 +69,9 @@ def GetData(startDate, endDate, tickers):
                     f.write(f'{ticker}\n')
 
                 continue
-
+        end = time.time()
+        total_time = end - start
+        print(f'Operation took: {total_time}')
         return returnDict
 
     except:
