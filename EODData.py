@@ -38,8 +38,6 @@ def GetData(startDate, endDate, tickers):
         returnDict = {}
         data_filter = eod_df['Symbol']
 
-        # for index, row in eod_df.iterrows():
-            # eodd_pbar.update(1)
         for ticker in tickers:
             eodd_pbar.update(1)
 
@@ -50,9 +48,7 @@ def GetData(startDate, endDate, tickers):
                 # Since EODData auto-sends up csv files for our exchanges (currently AMEX, NASDAQ, NYSE), we need
                 # to filter the data for only the symbols we're interested in.
                 rawDate = dataRow['Date'].values
-                # tempVar = rawDate[0]
-                tempVar = '7-Nov-19'
-                convDate = dt.strptime(tempVar, '%d-%b-%y')
+                convDate = dt.strptime(rawDate[0], '%d-%b-%y')
                 finalDate = dt.strftime(convDate, '%Y-%m-%d')
 
                 myRecord = EodRecord(

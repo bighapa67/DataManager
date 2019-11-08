@@ -42,11 +42,7 @@ def GetData(startDate, endDate, dataFreq, tickers):
 
     try:
         for ticker in tickers:
-            # pass
             tiingo_pbar.update(1)
-
-            # index = ticker.index('-')
-            # length = len(ticker)
 
             # Had an issue with CEQP-.  Is this just because the '-' is at the end of the symbol?
             # if '-' in ticker and index != length - 1:
@@ -109,9 +105,6 @@ def GetData(startDate, endDate, dataFreq, tickers):
 
                         returnDict[count] = myRecord
                         count += 1
-
-                        # if count % 100 == 0:
-                        #     print(f'Completed: {count}')
 
                 elif jsonResponse.status_code != 200:
                     # print(f'Ticker: {ticker} - failed to receive a JSON response from Tiingo.')
