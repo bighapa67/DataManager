@@ -1,5 +1,7 @@
 import pandas as pd
+import numpy as np
 import datetime as dt
+import pyodbc
 import requests
 from bs4 import BeautifulSoup
 from database_connector import DatabaseConnector
@@ -9,31 +11,8 @@ import datetime as dt
 # import json
 
 
-# def get_data():
-#     url = 'https://www.earningswhispers.com/calendar'
-#     response = requests.get(url)
-#
-#     soup = BeautifulSoup(response.content, 'html.parser')
-#
-#     # Click "Show More" button to reveal all data
-#     show_more_button = soup.find('button', {'id': 'showMoreButton'})
-#     if show_more_button:
-#         show_more_url = 'https://www.earningswhispers.com' + show_more_button['onclick'].split("'")[1]
-#         show_more_response = requests.get(show_more_url)
-#         soup = BeautifulSoup(show_more_response.content, 'html.parser')
-#
-#     # Extract the data from the table
-#     table = soup.find('table', {'id': 'ecdata'})
-#     df = pd.read_html(str(table))[0]
-#
-#     # Filter for only the data for Monday, 2/13
-#     df = df[df['Date'] == '02/13/2023']
-#
-#     return(df)
-
-
-def get_data2():
-    url = 'https://www.earningswhispers.com/calendar'
+def get_data(url):
+    # url = 'https://www.earningswhispers.com/calendar'
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
 
@@ -78,40 +57,89 @@ def get_data2():
     return(df)
 
 
-def connect_to_db(server, database):
-
-    table = 'EarningsWhispers'
-    connector = DatabaseConnector('FRANKENSTEIN\SQLEXPRESS', 'TimeSeriesDB')
+def connect_to_db(server, database, driver):
+    connector = DatabaseConnector(server, database)
     connection = connector.get_connection()
     cursor = connection.cursor()
-    engine = create_engine('mssql+pyodbc://FRANKENSTEIN\SQLEXPRESS/TimeSeriesDB?driver=ODBC+Driver+17+for+SQL+Server')
-    # engine = create_engine(
-    #     "mssql+pyodbc://your_username:your_password@your_server/your_database?driver=ODBC+Driver+17+for+SQL+Server")
+    # engine = create_engine('mssql+pyodbc://FRANKENSTEIN\SQLEXPRESS/TimeSeriesDB?driver=ODBC+Driver+17+for+SQL+Server')
+    engine = create_engine(f'mssql+pyodbc://{server}/{database}?driver={driver}')
 
-    # Test the connection
-    # query = "SELECT * FROM dbo.DummyTable4"
-    # cursor.execute(query)
-    # rows = cursor.fetchall()
-    # columns = [column[0] for column in cursor.description]
-    # df = pd.DataFrame.from_records(data=rows, columns=columns)
     return connector, connection, cursor, engine
+
+
+def transform_datatypes(data_df):
+    # First we need to clean any strange characters from the data
+    data_df['EPS_est'] = data_df['EPS_est'].str.replace('$', '')
+    data_df['EPS_est'] = data_df['EPS_est'].str.replace('(', '-')
+    data_df['EPS_est'] = data_df['EPS_est'].str.replace(')', '')
+
+    data_df['Rev_est'] = data_df['Rev_est'].str.replace('$', '')
+    data_df['Rev_est'] = data_df['Rev_est'].str.replace(' M', '')
+    data_df['Rev_est'] = data_df['Rev_est'].str.replace(' B', '')
+    data_df['RevGrowth_est'] = data_df['RevGrowth_est'].str.replace('%', '')
+
+    # convert the values to numbers and set non-numeric values to NaN
+    # EarningsWhispers uses a dash to indicate no data, so we need to convert that to NaN.
+    # data_df['EPS_est'] = pd.to_numeric(data_df['EPS_est'], errors='coerce')
+    # data_df['Rev_est'] = pd.to_numeric(data_df['Rev_est'], errors='coerce')
+    # data_df['RevGrowth_est'] = pd.to_numeric(data_df['RevGrowth_est'], errors='coerce')
+    data_df = data_df.replace('-', np.nan)
+
+    # Format our numerical data to the correct data types
+    data_df['EPS_est'] = data_df['EPS_est'].astype(float)
+    data_df['Rev_est'] = data_df['Rev_est'].astype(float)
+    data_df['RevGrowth_est'] = data_df['RevGrowth_est'].astype(float)
+    data_df['RevGrowth_est'] = data_df['RevGrowth_est']/100
+
+    return data_df
 
 
 if __name__ == '__main__':
     # Connect to the database
     server = 'FRANKENSTEIN\SQLEXPRESS'
     database = 'TimeSeriesDB'
-    connector, connection, cursor, engine = connect_to_db(server, database)
+    driver = 'ODBC+Driver+17+for+SQL+Server'
+    table = 'EarningsWhispers'
+    # url = 'https://www.earningswhispers.com/calendar'
+    url = 'https://www.earningswhispers.com/calendar?sb=c&d=2&t=all&v=s'
 
-    data_df = get_data2()
+    connector, connection, cursor, engine = connect_to_db(server, database, driver)
+
+    data_df = get_data(url)
+    data_df = transform_datatypes(data_df)
+
+    # Reorder the columns so they make sense visually in case we need to inspect the data
     columns = ['Date', 'Ticker', 'AnnTime', 'EPS_est', 'Rev_est', 'RevGrowth_est']
     data_df = data_df.reindex(columns=columns)
 
-    # Write the data to the database
-    data_df.to_sql('EarningsWhispers', engine, if_exists='append', index=False)
+    # check if the data already exists in the table
+    # exists = pd.read_sql_query(f'SELECT 1 FROM {table} WHERE "Date" = data_df["Date"] AND "Ticker" = data_df["Ticker"]',
+    #                            engine)
 
-    print(data_df.info())
-    print(data_df)
+    # insert the data into the table if it doesn't exist
+    # if not exists.empty:
+    #     # Write the data to the database
+    #     data_df.to_sql(table, engine, if_exists='append', index=False)
+    # else:
+    #     # update the existing record
+    #     pass
+
+    # Write the data to the database
+    # It may be necessary in the future to evaluate the df line-by-line if somehow some records for the day
+    # already exist, but others don't.  I can't readily think of how that would happen though.
+    try:
+        data_df.to_sql(table, engine, if_exists='append', index=False)
+        print('Records added successfully!!!')
+    except Exception as e:
+        error_str = e.args[0]
+        if 'pyodbc.IntegrityError' in error_str:
+            print('Record already exists')
+            print(error_str)
+        else:
+            print(e)
+
+    # print(data_df.info())
+    # print(data_df)
 
     # Close the connection
     connector.close_connection(connection)
