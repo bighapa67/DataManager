@@ -100,8 +100,11 @@ if __name__ == '__main__':
     database = 'TimeSeriesDB'
     driver = 'ODBC+Driver+17+for+SQL+Server'
     table = 'EarningsWhispers'
-    # url = 'https://www.earningswhispers.com/calendar'
-    url = 'https://www.earningswhispers.com/calendar?sb=c&d=2&t=all&v=s'
+
+    # The second url shows the format for getting data for future days.
+    # "2&T" is T+1 (tomorrow), "3&T" is T+2 (day after tomorrow), etc.
+    url = 'https://www.earningswhispers.com/calendar'
+    # url = 'https://www.earningswhispers.com/calendar?sb=c&d=2&t=all&v=s'
 
     connector, connection, cursor, engine = connect_to_db(server, database, driver)
 
