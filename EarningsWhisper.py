@@ -12,7 +12,6 @@ import datetime as dt
 
 
 def get_data(url):
-    # url = 'https://www.earningswhispers.com/calendar'
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
 
