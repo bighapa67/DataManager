@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import SqlConnection as sc
 
 """
 This program is meant to be used in conjunction with the output from the IQLink Launcher tool provided by
@@ -50,9 +51,19 @@ def read_price_data():
 def read_nav_data():
     # Unfortunately, IQFeed doesn't seem to be returning MFQS data (like XFFCX, XDFPX, etc.)
     # I ended up pulling the data from RealTick using my DailyHistoricalPriceDB_WPF program.
-    d
+    from_sql_df = pd.read_sql(f'SELECT * FROM {sc.db_table}', sc.engine)
+
+    # df = sc.read_from_sqlserver()
+
+    return from_sql_df
+
+# Write the data to a csv file
+def save_to_csv(df):
+    df.to_csv(r'F:\ResultData' + fr'\CEF_Price_Data.csv', index=False)
 
 
 if __name__ == '__main__':
     price_df = read_price_data()
+    # save_to_csv(price_df)
     nav_df = read_nav_data()
+
