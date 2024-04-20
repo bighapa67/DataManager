@@ -1,0 +1,1304 @@
+[<li class="cor bmo showconf nwh"><div id="T-MNDY">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/mndy'">monday.com Ltd.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/mndy'">MNDY</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/mndy'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/mndy'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/mndy'">($0.37)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/mndy'">$141.29 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/mndy'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/mndy'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/mndy'">$0.44</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/mndy'">$149.92 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-MNDY" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MNDY');" width="100"></canvas><script>showsurprise("s-MNDY","218.9%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-MNDY" onclick="changeGrowth('T-MNDY');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MNDY');" width="100"></canvas><script>showgrowth("re-MNDY"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-MNDY" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MNDY');" width="100"></canvas><script>showsurprise("rs-MNDY","6.1%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-MNDY" onclick="changeGrowth('T-MNDY');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MNDY');" width="100"></canvas><script>showgrowth("rr-MNDY","56.9%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">6.1%</div><div class="revgrowthfull green">56.9%</div>
+<div class="epssurpfull green">218.9%</div><div class="epsgrowthfull"> - </div>
+<div class="guidance pos"><div class="direction icon-arrow-up"></div></div>
+</div>
+<div class="unselectedoptions" id="O-MNDY" onclick="toggleoptions('O-MNDY');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=MNDY'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-MNDY" onclick="watchthis('W-MNDY','MNDY');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://ir.monday.com'" title="conference call is available"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$MNDY%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%207:00%20AM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/mndy');" title="Tweet MNDY's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('MNDY');" title="share MNDY's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is MNDY's stock going now?</div>
+<div class="sentbotheading" id="S-MNDY"><div class="yourovote" onclick="price('MNDY','3')">Down</div><div class="yourovote" onclick="price('MNDY','2')">Flat</div><div class="yourovote" onclick="price('MNDY','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors bmo showconf nwh"><div id="T-ALX">
+<div class="confirm icon-check" title="Last confirmed on 1/25/2023"></div>
+<div class="company" onclick="javascript:location.href='stocks/alx'">Alexanders Inc.</div>
+<div class="ticker" onclick="javascript:location.href='stocks/alx'">ALX</div>
+<div class="time" onclick="javascript:location.href='stocks/alx'">8:55 AM ET</div>
+<div class="epstitle" onclick="javascript:location.href='stocks/alx'">EPS:</div>
+<div class="revtitle" onclick="javascript:location.href='stocks/alx'">Rev:</div>
+<div class="estimate" onclick="javascript:location.href='stocks/alx'">$4.08</div>
+<div class="revest" onclick="javascript:location.href='stocks/alx'">$51.70 M</div>
+<div class="revgrowthprint">4.1%</div>
+<div class="growth"><canvas class="calgrowth" height="100" id="e-ALX" onclick="changeGrowth('T-ALX');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ALX');" width="100"></canvas><script>showepsgrowth("e-ALX","-3.5%");</script></div>
+<div class="revgrowth"><canvas class="calgrowth" height="100" id="r-ALX" onclick="changeGrowth('T-ALX');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ALX');" width="100"></canvas><script>showrevgrowth("r-ALX","4.1%");</script></div>
+</div>
+<div class="vote"><div class="votebutton" id="ALX"><div class="yourvote" onclick="surprise('ALX','1')"><span class="bigvote">Beat</span><span class="smallvote">+</span></div><div class="yourvote" onclick="surprise('ALX','2')"><span class="bigvote">Meet</span><span class="smallvote">=</span></div><div class="yourvote" onclick="surprise('ALX','3')"><span class="bigvote">Miss</span><span class="smallvote">-</span></div></div></div>
+<div class="unselectedoptions" id="O-ALX" onclick="toggleoptions('O-ALX');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=ALX'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-ALX" onclick="watchthis('W-ALX','ALX');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" title="conference call is available at 10:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$ALX%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%208:55%20AM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/alx');" title="Tweet ALX's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('ALX');" title="share ALX's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is ALX's stock going now?</div>
+<div class="sentbotheading" id="S-ALX"><div class="yourovote" onclick="price('ALX','3')">Down</div><div class="yourovote" onclick="price('ALX','2')">Flat</div><div class="yourovote" onclick="price('ALX','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor bmo showconf nwh"><div id="T-CHKP">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/chkp'">Check Point Software Technologies</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/chkp'">CHKP</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/chkp'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/chkp'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/chkp'">$2.19</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/chkp'">$631.84 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/chkp'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/chkp'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/chkp'">$2.45</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/chkp'">$638.50 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-CHKP" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CHKP');" width="100"></canvas><script>showsurprise("s-CHKP","11.9%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-CHKP" onclick="changeGrowth('T-CHKP');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CHKP');" width="100"></canvas><script>showgrowth("re-CHKP","7.9%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-CHKP" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CHKP');" width="100"></canvas><script>showsurprise("rs-CHKP","1.1%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-CHKP" onclick="changeGrowth('T-CHKP');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CHKP');" width="100"></canvas><script>showgrowth("rr-CHKP","6.6%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">1.1%</div><div class="revgrowthfull green">6.6%</div>
+<div class="epssurpfull green">11.9%</div><div class="epsgrowthfull green">7.9%</div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-CHKP" onclick="toggleoptions('O-CHKP');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=CHKP'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-CHKP" onclick="watchthis('W-CHKP','CHKP');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://www.checkpoint.com/ir'" title="conference call is available at 8:30:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$CHKP%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%205:00%20AM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/chkp');" title="Tweet CHKP's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('CHKP');" title="share CHKP's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is CHKP's stock going now?</div>
+<div class="sentbotheading" id="S-CHKP"><div class="yourovote" onclick="price('CHKP','3')">Down</div><div class="yourovote" onclick="price('CHKP','2')">Flat</div><div class="yourovote" onclick="price('CHKP','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors bmo showconf nwh"><div id="T-THS">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/ths'">TreeHouse Foods Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/ths'">THS</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/ths'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/ths'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/ths'">$0.91</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/ths'">$1.03 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/ths'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/ths'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/ths'">$0.98</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/ths'">$996.20 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-THS" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-THS');" width="100"></canvas><script>showsurprise("s-THS","7.7%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-THS" onclick="changeGrowth('T-THS');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-THS');" width="100"></canvas><script>showgrowth("re-THS","790.9%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-THS" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-THS');" width="100"></canvas><script>showsurprise("rs-THS","-3.3%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-THS" onclick="changeGrowth('T-THS');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-THS');" width="100"></canvas><script>showgrowth("rr-THS","-14.6%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-3.3%</div><div class="revgrowthfull red">-14.6%</div>
+<div class="epssurpfull green">7.7%</div><div class="epsgrowthfull green">790.9%</div>
+<div class="guidance neg"><div class="direction icon-arrow-down"></div></div>
+</div>
+<div class="unselectedoptions" id="O-THS" onclick="toggleoptions('O-THS');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=THS'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-THS" onclick="watchthis('W-THS','THS');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://www.treehousefoods.com/investors'" title="conference call is available at 8:30:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$THS%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%206:55%20AM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/ths');" title="Tweet THS's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('THS');" title="share THS's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is THS's stock going now?</div>
+<div class="sentbotheading" id="S-THS"><div class="yourovote" onclick="price('THS','3')">Down</div><div class="yourovote" onclick="price('THS','2')">Flat</div><div class="yourovote" onclick="price('THS','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor bmo showconf nwh"><div id="T-ROIV">
+<div class="confirm icon-check" title="Last confirmed on 1/30/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/roiv'">Roivant Sciences Ltd.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/roiv'">ROIV</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/roiv'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/roiv'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/roiv'">($0.36)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/roiv'">$14.29 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/roiv'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/roiv'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/roiv'">($0.49)</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/roiv'">$17.05 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-ROIV" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ROIV');" width="100"></canvas><script>showsurprise("s-ROIV","-36.1%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-ROIV" onclick="changeGrowth('T-ROIV');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ROIV');" width="100"></canvas><script>showgrowth("re-ROIV"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-ROIV" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ROIV');" width="100"></canvas><script>showsurprise("rs-ROIV","19.3%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-ROIV" onclick="changeGrowth('T-ROIV');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ROIV');" width="100"></canvas><script>showgrowth("rr-ROIV","-29.9%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">19.3%</div><div class="revgrowthfull red">-29.9%</div>
+<div class="epssurpfull red">-36.1%</div><div class="epsgrowthfull"> - </div>
+</div>
+<div class="unselectedoptions" id="O-ROIV" onclick="toggleoptions('O-ROIV');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=ROIV'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-ROIV" onclick="watchthis('W-ROIV','ROIV');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://investor.roivant.com/'" title="conference call is available"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$ROIV%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%207:00%20AM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/roiv');" title="Tweet ROIV's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('ROIV');" title="share ROIV's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is ROIV's stock going now?</div>
+<div class="sentbotheading" id="S-ROIV"><div class="yourovote" onclick="price('ROIV','3')">Down</div><div class="yourovote" onclick="price('ROIV','2')">Flat</div><div class="yourovote" onclick="price('ROIV','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors bmo showconf nwh"><div id="T-CX">
+<div class="confirm icon-check" title="Last confirmed on 2/10/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/cx'">Cemex S.A.B. de C.V.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/cx'">CX</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/cx'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/cx'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/cx'"> - </div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/cx'">$3.89 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/cx'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/cx'">Reported</div>
+<div class="actual" onclick="javascript:location.href='epsdetails/cx'">($0.12)</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/cx'">$3.87 B</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-CX" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CX');" width="100"></canvas><script>showsurprise("s-CX"," - ","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-CX" onclick="changeGrowth('T-CX');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CX');" width="100"></canvas><script>showgrowth("re-CX","-180.0%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-CX" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CX');" width="100"></canvas><script>showsurprise("rs-CX","-0.6%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-CX" onclick="changeGrowth('T-CX');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CX');" width="100"></canvas><script>showgrowth("rr-CX","6.9%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-0.6%</div><div class="revgrowthfull green">6.9%</div>
+<div class="epssurpfull"> - </div><div class="epsgrowthfull red">-180.0%</div>
+</div>
+<div class="unselectedoptions" id="O-CX" onclick="toggleoptions('O-CX');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=CX'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-CX" onclick="watchthis('W-CX','CX');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://www.cemex.com/InvestorCenter.aspx'" title="conference call is available at 10:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$CX%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20BMO%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/cx');" title="Tweet CX's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('CX');" title="share CX's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is CX's stock going now?</div>
+<div class="sentbotheading" id="S-CX"><div class="yourovote" onclick="price('CX','3')">Down</div><div class="yourovote" onclick="price('CX','2')">Flat</div><div class="yourovote" onclick="price('CX','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor bmo showconf nwh"><div id="T-DDL">
+<div class="confirm icon-check" title="Last confirmed on 2/6/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/ddl'">Dingdong (Cayman) Limited</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/ddl'">DDL</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/ddl'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/ddl'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/ddl'">$0.03</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/ddl'">$945.78 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/ddl'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/ddl'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/ddl'">$0.08</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/ddl'">$899.01 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-DDL" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-DDL');" width="100"></canvas><script>showsurprise("s-DDL","166.7%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-DDL" onclick="changeGrowth('T-DDL');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-DDL');" width="100"></canvas><script>showgrowth("re-DDL"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-DDL" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-DDL');" width="100"></canvas><script>showsurprise("rs-DDL","-4.9%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-DDL" onclick="changeGrowth('T-DDL');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-DDL');" width="100"></canvas><script>showgrowth("rr-DDL","4.5%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-4.9%</div><div class="revgrowthfull green">4.5%</div>
+<div class="epssurpfull green">166.7%</div><div class="epsgrowthfull"> - </div>
+</div>
+<div class="unselectedoptions" id="O-DDL" onclick="toggleoptions('O-DDL');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=DDL'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-DDL" onclick="watchthis('W-DDL','DDL');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://ir.100.me'" title="conference call is available at 12:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$DDL%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%206:20%20AM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/ddl');" title="Tweet DDL's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('DDL');" title="share DDL's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is DDL's stock going now?</div>
+<div class="sentbotheading" id="S-DDL"><div class="yourovote" onclick="price('DDL','3')">Down</div><div class="yourovote" onclick="price('DDL','2')">Flat</div><div class="yourovote" onclick="price('DDL','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors bmo showconf nwh"><div id="T-FIS">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/fis'">Fidelity National Information Services Inc</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/fis'">FIS</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/fis'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/fis'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/fis'">$1.70</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/fis'">$3.68 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/fis'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/fis'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/fis'">$1.71</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/fis'">$3.71 B</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-FIS" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-FIS');" width="100"></canvas><script>showsurprise("s-FIS","0.6%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-FIS" onclick="changeGrowth('T-FIS');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-FIS');" width="100"></canvas><script>showgrowth("re-FIS","-10.9%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-FIS" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-FIS');" width="100"></canvas><script>showsurprise("rs-FIS","0.9%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-FIS" onclick="changeGrowth('T-FIS');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-FIS');" width="100"></canvas><script>showgrowth("rr-FIS","1.1%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">0.9%</div><div class="revgrowthfull green">1.1%</div>
+<div class="epssurpfull green">0.6%</div><div class="epsgrowthfull red">-10.9%</div>
+<div class="guidance neg"><div class="direction icon-arrow-down"></div></div>
+</div>
+<div class="unselectedoptions" id="O-FIS" onclick="toggleoptions('O-FIS');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=FIS'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-FIS" onclick="watchthis('W-FIS','FIS');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://www.investor.fisglobal.com'" title="conference call is available at 8:30:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$FIS%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%207:00%20AM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/fis');" title="Tweet FIS's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('FIS');" title="share FIS's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is FIS's stock going now?</div>
+<div class="sentbotheading" id="S-FIS"><div class="yourovote" onclick="price('FIS','3')">Down</div><div class="yourovote" onclick="price('FIS','2')">Flat</div><div class="yourovote" onclick="price('FIS','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor bmo showconf nwh"><div id="T-OWL">
+<div class="confirm icon-check" title="Last confirmed on 2/10/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/owl'">Blue Owl Capital Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/owl'">OWL</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/owl'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/owl'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/owl'">$0.15</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/owl'">$381.39 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/owl'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/owl'">Reported</div>
+<div class="actual" onclick="javascript:location.href='epsdetails/owl'">$0.15</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/owl'">$395.51 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-OWL" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OWL');" width="100"></canvas><script>showsurprise("s-OWL","0.0%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-OWL" onclick="changeGrowth('T-OWL');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OWL');" width="100"></canvas><script>showgrowth("re-OWL","25.0%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-OWL" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OWL');" width="100"></canvas><script>showsurprise("rs-OWL","3.7%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-OWL" onclick="changeGrowth('T-OWL');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OWL');" width="100"></canvas><script>showgrowth("rr-OWL","37.1%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">3.7%</div><div class="revgrowthfull green">37.1%</div>
+<div class="epssurpfull">0.0%</div><div class="epsgrowthfull green">25.0%</div>
+</div>
+<div class="unselectedoptions" id="O-OWL" onclick="toggleoptions('O-OWL');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=OWL'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-OWL" onclick="watchthis('W-OWL','OWL');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" title="conference call is available at 12:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$OWL%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%207:00%20AM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/owl');" title="Tweet OWL's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('OWL');" title="share OWL's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is OWL's stock going now?</div>
+<div class="sentbotheading" id="S-OWL"><div class="yourovote" onclick="price('OWL','3')">Down</div><div class="yourovote" onclick="price('OWL','2')">Flat</div><div class="yourovote" onclick="price('OWL','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors bmo showconf nwh"><div id="T-TDC">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/tdc'">Teradata Corp</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/tdc'">TDC</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/tdc'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/tdc'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/tdc'">$0.30</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/tdc'">$422.75 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/tdc'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/tdc'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/tdc'">$0.35</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/tdc'">$452.00 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-TDC" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-TDC');" width="100"></canvas><script>showsurprise("s-TDC","16.7%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-TDC" onclick="changeGrowth('T-TDC');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-TDC');" width="100"></canvas><script>showgrowth("re-TDC"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-TDC" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-TDC');" width="100"></canvas><script>showsurprise("rs-TDC","6.9%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-TDC" onclick="changeGrowth('T-TDC');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-TDC');" width="100"></canvas><script>showgrowth("rr-TDC","-4.8%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">6.9%</div><div class="revgrowthfull red">-4.8%</div>
+<div class="epssurpfull green">16.7%</div><div class="epsgrowthfull"> - </div>
+<div class="guidance pos"><div class="direction icon-arrow-up"></div></div>
+</div>
+<div class="unselectedoptions" id="O-TDC" onclick="toggleoptions('O-TDC');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=TDC'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-TDC" onclick="watchthis('W-TDC','TDC');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://investor.teradata.com'" title="conference call is available at 5:00:00 PM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$TDC%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20BMO%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/tdc');" title="Tweet TDC's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('TDC');" title="share TDC's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is TDC's stock going now?</div>
+<div class="sentbotheading" id="S-TDC"><div class="yourovote" onclick="price('TDC','3')">Down</div><div class="yourovote" onclick="price('TDC','2')">Flat</div><div class="yourovote" onclick="price('TDC','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor bmo showconf nwh"><div id="T-SANW">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/sanw'">S&amp;W Seed Company</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/sanw'">SANW</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/sanw'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/sanw'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/sanw'">($0.12)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/sanw'">$11.80 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/sanw'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/sanw'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/sanw'">($0.13)</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/sanw'">$12.94 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-SANW" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SANW');" width="100"></canvas><script>showsurprise("s-SANW","-8.3%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-SANW" onclick="changeGrowth('T-SANW');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SANW');" width="100"></canvas><script>showgrowth("re-SANW"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-SANW" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SANW');" width="100"></canvas><script>showsurprise("rs-SANW","9.6%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-SANW" onclick="changeGrowth('T-SANW');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SANW');" width="100"></canvas><script>showgrowth("rr-SANW","2.4%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">9.6%</div><div class="revgrowthfull green">2.4%</div>
+<div class="epssurpfull red">-8.3%</div><div class="epsgrowthfull"> - </div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-SANW" onclick="toggleoptions('O-SANW');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=SANW'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-SANW" onclick="watchthis('W-SANW','SANW');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://swseedco.com/investors/'" title="conference call is available at 4:30:00 PM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$SANW%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%208:00%20AM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/sanw');" title="Tweet SANW's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('SANW');" title="share SANW's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is SANW's stock going now?</div>
+<div class="sentbotheading" id="S-SANW"><div class="yourovote" onclick="price('SANW','3')">Down</div><div class="yourovote" onclick="price('SANW','2')">Flat</div><div class="yourovote" onclick="price('SANW','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-PLTR">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/pltr'">Palantir Technologies Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/pltr'">PLTR</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/pltr'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/pltr'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/pltr'">$0.03</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/pltr'">$505.95 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/pltr'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/pltr'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/pltr'">$0.04</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/pltr'">$508.62 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-PLTR" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-PLTR');" width="100"></canvas><script>showsurprise("s-PLTR","33.3%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-PLTR" onclick="changeGrowth('T-PLTR');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-PLTR');" width="100"></canvas><script>showgrowth("re-PLTR"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-PLTR" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-PLTR');" width="100"></canvas><script>showsurprise("rs-PLTR","0.5%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-PLTR" onclick="changeGrowth('T-PLTR');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-PLTR');" width="100"></canvas><script>showgrowth("rr-PLTR","17.5%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">0.5%</div><div class="revgrowthfull green">17.5%</div>
+<div class="epssurpfull green">33.3%</div><div class="epsgrowthfull"> - </div>
+<div class="guidance neg"><div class="direction icon-arrow-down"></div></div>
+</div>
+<div class="unselectedoptions" id="O-PLTR" onclick="toggleoptions('O-PLTR');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=PLTR'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-PLTR" onclick="watchthis('W-PLTR','PLTR');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://investors.palantir.com'" title="conference call is available"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$PLTR%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20AMC%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/pltr');" title="Tweet PLTR's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('PLTR');" title="share PLTR's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is PLTR's stock going now?</div>
+<div class="sentbotheading" id="S-PLTR"><div class="yourovote" onclick="price('PLTR','3')">Down</div><div class="yourovote" onclick="price('PLTR','2')">Flat</div><div class="yourovote" onclick="price('PLTR','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-CAR">
+<div class="confirm icon-check" title="Last confirmed on 2/3/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/car'">Avis Budget Group, Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/car'">CAR</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/car'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/car'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/car'">$6.85</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/car'">$2.71 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/car'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/car'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/car'">$10.46</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/car'">$2.77 B</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-CAR" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CAR');" width="100"></canvas><script>showsurprise("s-CAR","52.7%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-CAR" onclick="changeGrowth('T-CAR');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CAR');" width="100"></canvas><script>showgrowth("re-CAR","47.7%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-CAR" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CAR');" width="100"></canvas><script>showsurprise("rs-CAR","2.3%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-CAR" onclick="changeGrowth('T-CAR');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CAR');" width="100"></canvas><script>showgrowth("rr-CAR","7.9%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">2.3%</div><div class="revgrowthfull green">7.9%</div>
+<div class="epssurpfull green">52.7%</div><div class="epsgrowthfull green">47.7%</div>
+</div>
+<div class="unselectedoptions" id="O-CAR" onclick="toggleoptions('O-CAR');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=CAR'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-CAR" onclick="watchthis('W-CAR','CAR');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://ir.avisbudgetgroup.com/'" title="conference call is available at 8:30:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$CAR%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:00%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/car');" title="Tweet CAR's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('CAR');" title="share CAR's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is CAR's stock going now?</div>
+<div class="sentbotheading" id="S-CAR"><div class="yourovote" onclick="price('CAR','3')">Down</div><div class="yourovote" onclick="price('CAR','2')">Flat</div><div class="yourovote" onclick="price('CAR','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-ANET">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/anet'">Arista Networks, Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/anet'">ANET</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/anet'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/anet'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/anet'">$1.21</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/anet'">$1.20 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/anet'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/anet'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/anet'">$1.41</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/anet'">$1.28 B</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-ANET" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ANET');" width="100"></canvas><script>showsurprise("s-ANET","16.5%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-ANET" onclick="changeGrowth('T-ANET');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ANET');" width="100"></canvas><script>showgrowth("re-ANET","78.5%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-ANET" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ANET');" width="100"></canvas><script>showsurprise("rs-ANET","6.3%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-ANET" onclick="changeGrowth('T-ANET');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ANET');" width="100"></canvas><script>showgrowth("rr-ANET","54.7%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">6.3%</div><div class="revgrowthfull green">54.7%</div>
+<div class="epssurpfull green">16.5%</div><div class="epsgrowthfull green">78.5%</div>
+<div class="guidance pos"><div class="direction icon-arrow-up"></div></div>
+</div>
+<div class="unselectedoptions" id="O-ANET" onclick="toggleoptions('O-ANET');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=ANET'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-ANET" onclick="watchthis('W-ANET','ANET');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://investors.arista.com'" title="conference call is available at 4:30:00 PM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$ANET%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:05%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/anet');" title="Tweet ANET's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('ANET');" title="share ANET's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is ANET's stock going now?</div>
+<div class="sentbotheading" id="S-ANET"><div class="yourovote" onclick="price('ANET','3')">Down</div><div class="yourovote" onclick="price('ANET','2')">Flat</div><div class="yourovote" onclick="price('ANET','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-SEDG">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/sedg'">SolarEdge Technologies, Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/sedg'">SEDG</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/sedg'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/sedg'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/sedg'">$1.54</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/sedg'">$875.38 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/sedg'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/sedg'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/sedg'">$2.86</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/sedg'">$890.70 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-SEDG" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SEDG');" width="100"></canvas><script>showsurprise("s-SEDG","85.7%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-SEDG" onclick="changeGrowth('T-SEDG');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SEDG');" width="100"></canvas><script>showgrowth("re-SEDG","177.7%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-SEDG" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SEDG');" width="100"></canvas><script>showsurprise("rs-SEDG","1.8%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-SEDG" onclick="changeGrowth('T-SEDG');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SEDG');" width="100"></canvas><script>showgrowth("rr-SEDG","61.4%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">1.8%</div><div class="revgrowthfull green">61.4%</div>
+<div class="epssurpfull green">85.7%</div><div class="epsgrowthfull green">177.7%</div>
+<div class="guidance pos"><div class="direction icon-arrow-up"></div></div>
+</div>
+<div class="unselectedoptions" id="O-SEDG" onclick="toggleoptions('O-SEDG');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=SEDG'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-SEDG" onclick="watchthis('W-SEDG','SEDG');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://investors.solaredge.com'" title="conference call is available at 5:00:00 PM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$SEDG%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:00%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/sedg');" title="Tweet SEDG's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('SEDG');" title="share SEDG's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is SEDG's stock going now?</div>
+<div class="sentbotheading" id="S-SEDG"><div class="yourovote" onclick="price('SEDG','3')">Down</div><div class="yourovote" onclick="price('SEDG','2')">Flat</div><div class="yourovote" onclick="price('SEDG','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-CDNS">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/cdns'">Cadence Design Systems, Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/cdns'">CDNS</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/cdns'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/cdns'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/cdns'">$0.92</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/cdns'">$882.72 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/cdns'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/cdns'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/cdns'">$0.96</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/cdns'">$899.88 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-CDNS" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CDNS');" width="100"></canvas><script>showsurprise("s-CDNS","4.3%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-CDNS" onclick="changeGrowth('T-CDNS');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CDNS');" width="100"></canvas><script>showgrowth("re-CDNS"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-CDNS" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CDNS');" width="100"></canvas><script>showsurprise("rs-CDNS","1.9%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-CDNS" onclick="changeGrowth('T-CDNS');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CDNS');" width="100"></canvas><script>showgrowth("rr-CDNS","16.4%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">1.9%</div><div class="revgrowthfull green">16.4%</div>
+<div class="epssurpfull green">4.3%</div><div class="epsgrowthfull"> - </div>
+<div class="guidance pos"><div class="direction icon-arrow-up"></div></div>
+</div>
+<div class="unselectedoptions" id="O-CDNS" onclick="toggleoptions('O-CDNS');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=CDNS'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-CDNS" onclick="watchthis('W-CDNS','CDNS');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://www.cadence.com/cadence/investor_relations'" title="conference call is available at 5:00:00 PM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$CDNS%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:05%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/cdns');" title="Tweet CDNS's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('CDNS');" title="share CDNS's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is CDNS's stock going now?</div>
+<div class="sentbotheading" id="S-CDNS"><div class="yourovote" onclick="price('CDNS','3')">Down</div><div class="yourovote" onclick="price('CDNS','2')">Flat</div><div class="yourovote" onclick="price('CDNS','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-LSCC">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/lscc'">Lattice Semiconductor Corp.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/lscc'">LSCC</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/lscc'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/lscc'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/lscc'">$0.48</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/lscc'">$175.20 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/lscc'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/lscc'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/lscc'">$0.49</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/lscc'">$175.96 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-LSCC" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-LSCC');" width="100"></canvas><script>showsurprise("s-LSCC","2.1%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-LSCC" onclick="changeGrowth('T-LSCC');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-LSCC');" width="100"></canvas><script>showgrowth("re-LSCC","69.0%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-LSCC" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-LSCC');" width="100"></canvas><script>showsurprise("rs-LSCC","0.4%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-LSCC" onclick="changeGrowth('T-LSCC');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-LSCC');" width="100"></canvas><script>showgrowth("rr-LSCC","24.1%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">0.4%</div><div class="revgrowthfull green">24.1%</div>
+<div class="epssurpfull green">2.1%</div><div class="epsgrowthfull green">69.0%</div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-LSCC" onclick="toggleoptions('O-LSCC');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=LSCC'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-LSCC" onclick="watchthis('W-LSCC','LSCC');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://ir.latticesemi.com'" title="conference call is available at 5:00:00 PM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$LSCC%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:00%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/lscc');" title="Tweet LSCC's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('LSCC');" title="share LSCC's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is LSCC's stock going now?</div>
+<div class="sentbotheading" id="S-LSCC"><div class="yourovote" onclick="price('LSCC','3')">Down</div><div class="yourovote" onclick="price('LSCC','2')">Flat</div><div class="yourovote" onclick="price('LSCC','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-FE">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/fe'">FirstEnergy Corp.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/fe'">FE</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/fe'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/fe'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/fe'">$0.53</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/fe'">$2.54 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/fe'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/fe'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/fe'">$0.50</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/fe'">$3.18 B</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-FE" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-FE');" width="100"></canvas><script>showsurprise("s-FE","-5.7%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-FE" onclick="changeGrowth('T-FE');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-FE');" width="100"></canvas><script>showgrowth("re-FE","-2.0%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-FE" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-FE');" width="100"></canvas><script>showsurprise("rs-FE","25.1%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-FE" onclick="changeGrowth('T-FE');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-FE');" width="100"></canvas><script>showgrowth("rr-FE","19.4%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">25.1%</div><div class="revgrowthfull green">19.4%</div>
+<div class="epssurpfull red">-5.7%</div><div class="epsgrowthfull red">-2.0%</div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-FE" onclick="toggleoptions('O-FE');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=FE'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-FE" onclick="watchthis('W-FE','FE');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://investors.firstenergycorp.com'" title="conference call is available at 10:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$FE%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:20%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/fe');" title="Tweet FE's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('FE');" title="share FE's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is FE's stock going now?</div>
+<div class="sentbotheading" id="S-FE"><div class="yourovote" onclick="price('FE','3')">Down</div><div class="yourovote" onclick="price('FE','2')">Flat</div><div class="yourovote" onclick="price('FE','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-MEDP">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/medp'">Medpace Holdings Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/medp'">MEDP</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/medp'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/medp'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/medp'">$1.78</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/medp'">$386.01 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/medp'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/medp'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/medp'">$2.12</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/medp'">$394.10 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-MEDP" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MEDP');" width="100"></canvas><script>showsurprise("s-MEDP","19.1%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-MEDP" onclick="changeGrowth('T-MEDP');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MEDP');" width="100"></canvas><script>showgrowth("re-MEDP","60.6%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-MEDP" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MEDP');" width="100"></canvas><script>showsurprise("rs-MEDP","2.1%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-MEDP" onclick="changeGrowth('T-MEDP');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MEDP');" width="100"></canvas><script>showgrowth("rr-MEDP","27.7%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">2.1%</div><div class="revgrowthfull green">27.7%</div>
+<div class="epssurpfull green">19.1%</div><div class="epsgrowthfull green">60.6%</div>
+<div class="guidance pos"><div class="direction icon-arrow-up"></div></div>
+</div>
+<div class="unselectedoptions" id="O-MEDP" onclick="toggleoptions('O-MEDP');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=MEDP'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-MEDP" onclick="watchthis('W-MEDP','MEDP');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://investor.medpace.com/'" title="conference call is available at 8:30:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$MEDP%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:15%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/medp');" title="Tweet MEDP's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('MEDP');" title="share MEDP's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is MEDP's stock going now?</div>
+<div class="sentbotheading" id="S-MEDP"><div class="yourovote" onclick="price('MEDP','3')">Down</div><div class="yourovote" onclick="price('MEDP','2')">Flat</div><div class="yourovote" onclick="price('MEDP','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-QIPT">
+<div class="confirm icon-check" title="Last confirmed on 2/10/2023"></div>
+<div class="company" onclick="javascript:location.href='stocks/qipt'">Quipt Home Medical Corp.</div>
+<div class="ticker" onclick="javascript:location.href='stocks/qipt'">QIPT</div>
+<div class="time" onclick="javascript:location.href='stocks/qipt'">5:00 PM ET</div>
+<div class="epstitle" onclick="javascript:location.href='stocks/qipt'">EPS:</div>
+<div class="revtitle" onclick="javascript:location.href='stocks/qipt'">Rev:</div>
+<div class="estimate" onclick="javascript:location.href='stocks/qipt'">$0.01</div>
+<div class="revest" onclick="javascript:location.href='stocks/qipt'">$41.27 M</div>
+<div class="revgrowthprint">39.8%</div>
+<div class="growth"><canvas class="calgrowth" height="100" id="e-QIPT" onclick="changeGrowth('T-QIPT');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-QIPT');" width="100"></canvas><script>showepsgrowth("e-QIPT"," - ");</script></div>
+<div class="revgrowth"><canvas class="calgrowth" height="100" id="r-QIPT" onclick="changeGrowth('T-QIPT');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-QIPT');" width="100"></canvas><script>showrevgrowth("r-QIPT","39.8%");</script></div>
+</div>
+<div class="vote"><div class="votebutton" id="QIPT"><div class="yourvote" onclick="surprise('QIPT','1')"><span class="bigvote">Beat</span><span class="smallvote">+</span></div><div class="yourvote" onclick="surprise('QIPT','2')"><span class="bigvote">Meet</span><span class="smallvote">=</span></div><div class="yourvote" onclick="surprise('QIPT','3')"><span class="bigvote">Miss</span><span class="smallvote">-</span></div></div></div>
+<div class="unselectedoptions" id="O-QIPT" onclick="toggleoptions('O-QIPT');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=QIPT'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-QIPT" onclick="watchthis('W-QIPT','QIPT');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" title="conference call is available at 12:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$QIPT%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%205:00%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/qipt');" title="Tweet QIPT's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('QIPT');" title="share QIPT's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is QIPT's stock going now?</div>
+<div class="sentbotheading" id="S-QIPT"><div class="yourovote" onclick="price('QIPT','3')">Down</div><div class="yourovote" onclick="price('QIPT','2')">Flat</div><div class="yourovote" onclick="price('QIPT','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-AMKR">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/amkr'">Amkor Technology, Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/amkr'">AMKR</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/amkr'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/amkr'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/amkr'">$0.70</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/amkr'">$1.85 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/amkr'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/amkr'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/amkr'">$0.67</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/amkr'">$1.91 B</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-AMKR" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-AMKR');" width="100"></canvas><script>showsurprise("s-AMKR","-4.3%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-AMKR" onclick="changeGrowth('T-AMKR');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-AMKR');" width="100"></canvas><script>showgrowth("re-AMKR","-23.9%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-AMKR" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-AMKR');" width="100"></canvas><script>showsurprise("rs-AMKR","3.0%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-AMKR" onclick="changeGrowth('T-AMKR');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-AMKR');" width="100"></canvas><script>showgrowth("rr-AMKR","10.5%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">3.0%</div><div class="revgrowthfull green">10.5%</div>
+<div class="epssurpfull red">-4.3%</div><div class="epsgrowthfull red">-23.9%</div>
+<div class="guidance neg"><div class="direction icon-arrow-down"></div></div>
+</div>
+<div class="unselectedoptions" id="O-AMKR" onclick="toggleoptions('O-AMKR');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=AMKR'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-AMKR" onclick="watchthis('W-AMKR','AMKR');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://ir.amkor.com'" title="conference call is available at 5:00:00 PM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$AMKR%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:05%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/amkr');" title="Tweet AMKR's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('AMKR');" title="share AMKR's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is AMKR's stock going now?</div>
+<div class="sentbotheading" id="S-AMKR"><div class="yourovote" onclick="price('AMKR','3')">Down</div><div class="yourovote" onclick="price('AMKR','2')">Flat</div><div class="yourovote" onclick="price('AMKR','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-NOTV">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/notv'">Inotiv, Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/notv'">NOTV</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/notv'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/notv'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/notv'">($0.44)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/notv'">$120.17 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/notv'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/notv'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/notv'">($1.28)</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/notv'">$122.75 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-NOTV" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-NOTV');" width="100"></canvas><script>showsurprise("s-NOTV","-190.9%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-NOTV" onclick="changeGrowth('T-NOTV');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-NOTV');" width="100"></canvas><script>showgrowth("re-NOTV"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-NOTV" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-NOTV');" width="100"></canvas><script>showsurprise("rs-NOTV","2.2%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-NOTV" onclick="changeGrowth('T-NOTV');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-NOTV');" width="100"></canvas><script>showgrowth("rr-NOTV","45.8%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">2.2%</div><div class="revgrowthfull green">45.8%</div>
+<div class="epssurpfull red">-190.9%</div><div class="epsgrowthfull"> - </div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-NOTV" onclick="toggleoptions('O-NOTV');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=NOTV'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-NOTV" onclick="watchthis('W-NOTV','NOTV');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://www.inotivco.com/investors'" title="conference call is available at 12:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$NOTV%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:05%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/notv');" title="Tweet NOTV's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('NOTV');" title="share NOTV's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is NOTV's stock going now?</div>
+<div class="sentbotheading" id="S-NOTV"><div class="yourovote" onclick="price('NOTV','3')">Down</div><div class="yourovote" onclick="price('NOTV','2')">Flat</div><div class="yourovote" onclick="price('NOTV','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-AIN">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/ain'">Albany International Corp.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/ain'">AIN</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/ain'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/ain'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/ain'">$0.70</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/ain'">$242.33 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/ain'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/ain'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/ain'">$0.75</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/ain'">$268.79 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-AIN" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-AIN');" width="100"></canvas><script>showsurprise("s-AIN","7.1%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-AIN" onclick="changeGrowth('T-AIN');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-AIN');" width="100"></canvas><script>showgrowth("re-AIN","-11.8%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-AIN" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-AIN');" width="100"></canvas><script>showsurprise("rs-AIN","10.9%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-AIN" onclick="changeGrowth('T-AIN');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-AIN');" width="100"></canvas><script>showgrowth("rr-AIN","12.0%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">10.9%</div><div class="revgrowthfull green">12.0%</div>
+<div class="epssurpfull green">7.1%</div><div class="epsgrowthfull red">-11.8%</div>
+<div class="guidance neg"><div class="direction icon-arrow-down"></div></div>
+</div>
+<div class="unselectedoptions" id="O-AIN" onclick="toggleoptions('O-AIN');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=AIN'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-AIN" onclick="watchthis('W-AIN','AIN');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://ir.albint.com'" title="conference call is available at 9:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$AIN%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:20%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/ain');" title="Tweet AIN's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('AIN');" title="share AIN's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is AIN's stock going now?</div>
+<div class="sentbotheading" id="S-AIN"><div class="yourovote" onclick="price('AIN','3')">Down</div><div class="yourovote" onclick="price('AIN','2')">Flat</div><div class="yourovote" onclick="price('AIN','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-OTTR">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/ottr'">Otter Tail Corp.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/ottr'">OTTR</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/ottr'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/ottr'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/ottr'">$0.83</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/ottr'">$324.80 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/ottr'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/ottr'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/ottr'">$1.00</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/ottr'">$301.41 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-OTTR" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OTTR');" width="100"></canvas><script>showsurprise("s-OTTR","20.5%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-OTTR" onclick="changeGrowth('T-OTTR');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OTTR');" width="100"></canvas><script>showgrowth("re-OTTR","-18.7%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-OTTR" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OTTR');" width="100"></canvas><script>showsurprise("rs-OTTR","-7.2%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-OTTR" onclick="changeGrowth('T-OTTR');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OTTR');" width="100"></canvas><script>showgrowth("rr-OTTR","-9.6%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-7.2%</div><div class="revgrowthfull red">-9.6%</div>
+<div class="epssurpfull green">20.5%</div><div class="epsgrowthfull red">-18.7%</div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-OTTR" onclick="toggleoptions('O-OTTR');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=OTTR'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-OTTR" onclick="watchthis('W-OTTR','OTTR');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://www.ottertail.com/investors.cfm'" title="conference call is available at 11:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$OTTR%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%206:00%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/ottr');" title="Tweet OTTR's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('OTTR');" title="share OTTR's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is OTTR's stock going now?</div>
+<div class="sentbotheading" id="S-OTTR"><div class="yourovote" onclick="price('OTTR','3')">Down</div><div class="yourovote" onclick="price('OTTR','2')">Flat</div><div class="yourovote" onclick="price('OTTR','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-VNO">
+<div class="confirm icon-check" title="Last confirmed on 1/16/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/vno'">Vornado Realty Trust</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/vno'">VNO</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/vno'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/vno'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/vno'">$0.67</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/vno'">$438.91 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/vno'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/vno'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/vno'">$0.72</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/vno'">$446.94 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-VNO" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-VNO');" width="100"></canvas><script>showsurprise("s-VNO","7.5%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-VNO" onclick="changeGrowth('T-VNO');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-VNO');" width="100"></canvas><script>showgrowth("re-VNO","-11.1%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-VNO" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-VNO');" width="100"></canvas><script>showsurprise("rs-VNO","1.8%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-VNO" onclick="changeGrowth('T-VNO');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-VNO');" width="100"></canvas><script>showgrowth("rr-VNO","6.1%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">1.8%</div><div class="revgrowthfull green">6.1%</div>
+<div class="epssurpfull green">7.5%</div><div class="epsgrowthfull red">-11.1%</div>
+</div>
+<div class="unselectedoptions" id="O-VNO" onclick="toggleoptions('O-VNO');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=VNO'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-VNO" onclick="watchthis('W-VNO','VNO');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://www.vno.com/investor-relations/stock-info'" title="conference call is available at 10:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$VNO%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:25%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/vno');" title="Tweet VNO's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('VNO');" title="share VNO's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is VNO's stock going now?</div>
+<div class="sentbotheading" id="S-VNO"><div class="yourovote" onclick="price('VNO','3')">Down</div><div class="yourovote" onclick="price('VNO','2')">Flat</div><div class="yourovote" onclick="price('VNO','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-NTB">
+<div class="confirm icon-check" title="Last confirmed on 1/24/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/ntb'">Bank of N.T. Butterfield &amp; Son Limited</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/ntb'">NTB</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/ntb'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/ntb'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/ntb'">$1.10</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/ntb'">$140.30 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/ntb'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/ntb'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/ntb'">$1.27</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/ntb'">$148.50 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-NTB" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-NTB');" width="100"></canvas><script>showsurprise("s-NTB","15.5%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-NTB" onclick="changeGrowth('T-NTB');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-NTB');" width="100"></canvas><script>showgrowth("re-NTB","51.2%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-NTB" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-NTB');" width="100"></canvas><script>showsurprise("rs-NTB","5.8%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-NTB" onclick="changeGrowth('T-NTB');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-NTB');" width="100"></canvas><script>showgrowth("rr-NTB","17.7%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">5.8%</div><div class="revgrowthfull green">17.7%</div>
+<div class="epssurpfull green">15.5%</div><div class="epsgrowthfull green">51.2%</div>
+</div>
+<div class="unselectedoptions" id="O-NTB" onclick="toggleoptions('O-NTB');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=NTB'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-NTB" onclick="watchthis('W-NTB','NTB');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://investors.butterfieldgroup.com'" title="conference call is available at 10:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$NTB%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:30%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/ntb');" title="Tweet NTB's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('NTB');" title="share NTB's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is NTB's stock going now?</div>
+<div class="sentbotheading" id="S-NTB"><div class="yourovote" onclick="price('NTB','3')">Down</div><div class="yourovote" onclick="price('NTB','2')">Flat</div><div class="yourovote" onclick="price('NTB','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-DENN">
+<div class="confirm icon-check" title="Last confirmed on 1/16/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/denn'">Denny's, Corp.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/denn'">DENN</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/denn'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/denn'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/denn'">$0.16</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/denn'">$120.67 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/denn'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/denn'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/denn'">$0.18</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/denn'">$120.85 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-DENN" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-DENN');" width="100"></canvas><script>showsurprise("s-DENN","12.5%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-DENN" onclick="changeGrowth('T-DENN');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-DENN');" width="100"></canvas><script>showgrowth("re-DENN","12.5%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-DENN" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-DENN');" width="100"></canvas><script>showsurprise("rs-DENN","0.1%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-DENN" onclick="changeGrowth('T-DENN');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-DENN');" width="100"></canvas><script>showgrowth("rr-DENN","12.3%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">0.1%</div><div class="revgrowthfull green">12.3%</div>
+<div class="epssurpfull green">12.5%</div><div class="epsgrowthfull green">12.5%</div>
+</div>
+<div class="unselectedoptions" id="O-DENN" onclick="toggleoptions('O-DENN');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=DENN'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-DENN" onclick="watchthis('W-DENN','DENN');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://investor.dennys.com/'" title="conference call is available at 4:30:00 PM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$DENN%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:05%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/denn');" title="Tweet DENN's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('DENN');" title="share DENN's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is DENN's stock going now?</div>
+<div class="sentbotheading" id="S-DENN"><div class="yourovote" onclick="price('DENN','3')">Down</div><div class="yourovote" onclick="price('DENN','2')">Flat</div><div class="yourovote" onclick="price('DENN','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-ACGL">
+<div class="confirm icon-check" title="Last confirmed on 2/11/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/acgl'">Arch Capital Group Ltd.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/acgl'">ACGL</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/acgl'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/acgl'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/acgl'">$1.34</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/acgl'">$2.41 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/acgl'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/acgl'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/acgl'">$2.14</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/acgl'">$2.95 B</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-ACGL" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ACGL');" width="100"></canvas><script>showsurprise("s-ACGL","59.7%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-ACGL" onclick="changeGrowth('T-ACGL');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ACGL');" width="100"></canvas><script>showgrowth("re-ACGL","68.5%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-ACGL" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ACGL');" width="100"></canvas><script>showsurprise("rs-ACGL","22.4%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-ACGL" onclick="changeGrowth('T-ACGL');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ACGL');" width="100"></canvas><script>showgrowth("rr-ACGL","27.6%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">22.4%</div><div class="revgrowthfull green">27.6%</div>
+<div class="epssurpfull green">59.7%</div><div class="epsgrowthfull green">68.5%</div>
+</div>
+<div class="unselectedoptions" id="O-ACGL" onclick="toggleoptions('O-ACGL');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=ACGL'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-ACGL" onclick="watchthis('W-ACGL','ACGL');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://ir.archcapgroup.com'" title="conference call is available at 11:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$ACGL%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:15%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/acgl');" title="Tweet ACGL's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('ACGL');" title="share ACGL's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is ACGL's stock going now?</div>
+<div class="sentbotheading" id="S-ACGL"><div class="yourovote" onclick="price('ACGL','3')">Down</div><div class="yourovote" onclick="price('ACGL','2')">Flat</div><div class="yourovote" onclick="price('ACGL','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-SKYT">
+<div class="confirm icon-check" title="Last confirmed on 1/23/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/skyt'">SkyWater Technology</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/skyt'">SKYT</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/skyt'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/skyt'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/skyt'">($0.17)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/skyt'">$55.60 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/skyt'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/skyt'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/skyt'">($0.07)</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/skyt'">$65.09 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-SKYT" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SKYT');" width="100"></canvas><script>showsurprise("s-SKYT","58.8%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-SKYT" onclick="changeGrowth('T-SKYT');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SKYT');" width="100"></canvas><script>showgrowth("re-SKYT"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-SKYT" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SKYT');" width="100"></canvas><script>showsurprise("rs-SKYT","17.1%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-SKYT" onclick="changeGrowth('T-SKYT');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-SKYT');" width="100"></canvas><script>showgrowth("rr-SKYT","68.9%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">17.1%</div><div class="revgrowthfull green">68.9%</div>
+<div class="epssurpfull green">58.8%</div><div class="epsgrowthfull"> - </div>
+</div>
+<div class="unselectedoptions" id="O-SKYT" onclick="toggleoptions('O-SKYT');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=SKYT'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-SKYT" onclick="watchthis('W-SKYT','SKYT');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://ir.skywatertechnology.com'" title="conference call is available at 12:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$SKYT%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:05%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/skyt');" title="Tweet SKYT's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('SKYT');" title="share SKYT's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is SKYT's stock going now?</div>
+<div class="sentbotheading" id="S-SKYT"><div class="yourovote" onclick="price('SKYT','3')">Down</div><div class="yourovote" onclick="price('SKYT','2')">Flat</div><div class="yourovote" onclick="price('SKYT','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-ASTL">
+<div class="confirm icon-check" title="Last confirmed on 2/4/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/astl'">Algoma Steel Group Inc</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/astl'">ASTL</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/astl'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/astl'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/astl'">($0.32)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/astl'">$510.22 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/astl'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/astl'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/astl'">($0.47)</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/astl'">$418.26 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-ASTL" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ASTL');" width="100"></canvas><script>showsurprise("s-ASTL","-46.9%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-ASTL" onclick="changeGrowth('T-ASTL');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ASTL');" width="100"></canvas><script>showgrowth("re-ASTL","-164.4%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-ASTL" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ASTL');" width="100"></canvas><script>showsurprise("rs-ASTL","-18.0%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-ASTL" onclick="changeGrowth('T-ASTL');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ASTL');" width="100"></canvas><script>showgrowth("rr-ASTL","-50.5%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-18.0%</div><div class="revgrowthfull red">-50.5%</div>
+<div class="epssurpfull red">-46.9%</div><div class="epsgrowthfull red">-164.4%</div>
+</div>
+<div class="unselectedoptions" id="O-ASTL" onclick="toggleoptions('O-ASTL');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=ASTL'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-ASTL" onclick="watchthis('W-ASTL','ASTL');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" title="conference call is available at 12:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$ASTL%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%205:35%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/astl');" title="Tweet ASTL's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('ASTL');" title="share ASTL's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is ASTL's stock going now?</div>
+<div class="sentbotheading" id="S-ASTL"><div class="yourovote" onclick="price('ASTL','3')">Down</div><div class="yourovote" onclick="price('ASTL','2')">Flat</div><div class="yourovote" onclick="price('ASTL','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-ES">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/es'">Eversource Energy</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/es'">ES</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/es'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/es'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/es'">$0.94</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/es'">$2.70 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/es'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/es'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/es'">$0.92</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/es'">$3.03 B</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-ES" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ES');" width="100"></canvas><script>showsurprise("s-ES","-2.1%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-ES" onclick="changeGrowth('T-ES');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ES');" width="100"></canvas><script>showgrowth("re-ES","1.1%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-ES" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ES');" width="100"></canvas><script>showsurprise("rs-ES","12.2%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-ES" onclick="changeGrowth('T-ES');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ES');" width="100"></canvas><script>showgrowth("rr-ES","22.1%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">12.2%</div><div class="revgrowthfull green">22.1%</div>
+<div class="epssurpfull red">-2.1%</div><div class="epsgrowthfull green">1.1%</div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-ES" onclick="toggleoptions('O-ES');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=ES'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-ES" onclick="watchthis('W-ES','ES');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" title="conference call is available at 9:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$ES%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:15%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/es');" title="Tweet ES's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('ES');" title="share ES's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is ES's stock going now?</div>
+<div class="sentbotheading" id="S-ES"><div class="yourovote" onclick="price('ES','3')">Down</div><div class="yourovote" onclick="price('ES','2')">Flat</div><div class="yourovote" onclick="price('ES','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-ICMB">
+<div class="confirm icon-check" title="Last confirmed on 1/25/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/icmb'">Investcorp Credit Management BDC, Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/icmb'">ICMB</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/icmb'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/icmb'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/icmb'">$0.18</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/icmb'">$6.91 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/icmb'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/icmb'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/icmb'">$0.16</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/icmb'">$6.78 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-ICMB" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ICMB');" width="100"></canvas><script>showsurprise("s-ICMB","-11.1%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-ICMB" onclick="changeGrowth('T-ICMB');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ICMB');" width="100"></canvas><script>showgrowth("re-ICMB","6.7%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-ICMB" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ICMB');" width="100"></canvas><script>showsurprise("rs-ICMB","-1.9%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-ICMB" onclick="changeGrowth('T-ICMB');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ICMB');" width="100"></canvas><script>showgrowth("rr-ICMB","9.2%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-1.9%</div><div class="revgrowthfull green">9.2%</div>
+<div class="epssurpfull red">-11.1%</div><div class="epsgrowthfull green">6.7%</div>
+</div>
+<div class="unselectedoptions" id="O-ICMB" onclick="toggleoptions('O-ICMB');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=ICMB'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-ICMB" onclick="watchthis('W-ICMB','ICMB');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://icmbdc.com/'" title="conference call is available"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$ICMB%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:30%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/icmb');" title="Tweet ICMB's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('ICMB');" title="share ICMB's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is ICMB's stock going now?</div>
+<div class="sentbotheading" id="S-ICMB"><div class="yourovote" onclick="price('ICMB','3')">Down</div><div class="yourovote" onclick="price('ICMB','2')">Flat</div><div class="yourovote" onclick="price('ICMB','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-BLKB">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/blkb'">Blackbaud Inc</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/blkb'">BLKB</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/blkb'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/blkb'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/blkb'">$0.60</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/blkb'">$278.20 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/blkb'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/blkb'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/blkb'">$0.68</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/blkb'">$274.76 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-BLKB" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-BLKB');" width="100"></canvas><script>showsurprise("s-BLKB","13.3%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-BLKB" onclick="changeGrowth('T-BLKB');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-BLKB');" width="100"></canvas><script>showgrowth("re-BLKB"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-BLKB" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-BLKB');" width="100"></canvas><script>showsurprise("rs-BLKB","-1.2%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-BLKB" onclick="changeGrowth('T-BLKB');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-BLKB');" width="100"></canvas><script>showgrowth("rr-BLKB","10.8%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-1.2%</div><div class="revgrowthfull green">10.8%</div>
+<div class="epssurpfull green">13.3%</div><div class="epsgrowthfull"> - </div>
+<div class="guidance pos"><div class="direction icon-arrow-up"></div></div>
+</div>
+<div class="unselectedoptions" id="O-BLKB" onclick="toggleoptions('O-BLKB');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=BLKB'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-BLKB" onclick="watchthis('W-BLKB','BLKB');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://investor.blackbaud.com/'" title="conference call is available at 8:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$BLKB%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:10%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/blkb');" title="Tweet BLKB's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('BLKB');" title="share BLKB's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is BLKB's stock going now?</div>
+<div class="sentbotheading" id="S-BLKB"><div class="yourovote" onclick="price('BLKB','3')">Down</div><div class="yourovote" onclick="price('BLKB','2')">Flat</div><div class="yourovote" onclick="price('BLKB','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-BRX">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/brx'">Brixmor Property Group Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/brx'">BRX</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/brx'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/brx'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/brx'">$0.49</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/brx'">$310.58 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/brx'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/brx'">Reported</div>
+<div class="actual" onclick="javascript:location.href='epsdetails/brx'">$0.49</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/brx'">$308.57 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-BRX" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-BRX');" width="100"></canvas><script>showsurprise("s-BRX","0.0%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-BRX" onclick="changeGrowth('T-BRX');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-BRX');" width="100"></canvas><script>showgrowth("re-BRX","6.5%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-BRX" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-BRX');" width="100"></canvas><script>showsurprise("rs-BRX","-0.6%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-BRX" onclick="changeGrowth('T-BRX');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-BRX');" width="100"></canvas><script>showgrowth("rr-BRX","4.5%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-0.6%</div><div class="revgrowthfull green">4.5%</div>
+<div class="epssurpfull">0.0%</div><div class="epsgrowthfull green">6.5%</div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-BRX" onclick="toggleoptions('O-BRX');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=BRX'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-BRX" onclick="watchthis('W-BRX','BRX');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://investors.brixmor.com'" title="conference call is available at 10:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$BRX%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:05%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/brx');" title="Tweet BRX's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('BRX');" title="share BRX's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is BRX's stock going now?</div>
+<div class="sentbotheading" id="S-BRX"><div class="yourovote" onclick="price('BRX','3')">Down</div><div class="yourovote" onclick="price('BRX','2')">Flat</div><div class="yourovote" onclick="price('BRX','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-ANGI">
+<div class="confirm icon-check" title="Last confirmed on 1/17/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/angi'">ANGI Homeservices</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/angi'">ANGI</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/angi'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/angi'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/angi'">($0.04)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/angi'">$444.99 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/angi'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/angi'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/angi'">($0.07)</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/angi'">$441.55 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-ANGI" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ANGI');" width="100"></canvas><script>showsurprise("s-ANGI","-75.0%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-ANGI" onclick="changeGrowth('T-ANGI');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ANGI');" width="100"></canvas><script>showgrowth("re-ANGI"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-ANGI" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ANGI');" width="100"></canvas><script>showsurprise("rs-ANGI","-0.8%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-ANGI" onclick="changeGrowth('T-ANGI');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-ANGI');" width="100"></canvas><script>showgrowth("rr-ANGI","6.2%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-0.8%</div><div class="revgrowthfull green">6.2%</div>
+<div class="epssurpfull red">-75.0%</div><div class="epsgrowthfull"> - </div>
+</div>
+<div class="unselectedoptions" id="O-ANGI" onclick="toggleoptions('O-ANGI');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=ANGI'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-ANGI" onclick="watchthis('W-ANGI','ANGI');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://ir.angi.com'" title="conference call is available at 8:30:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$ANGI%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:10%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/angi');" title="Tweet ANGI's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('ANGI');" title="share ANGI's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is ANGI's stock going now?</div>
+<div class="sentbotheading" id="S-ANGI"><div class="yourovote" onclick="price('ANGI','3')">Down</div><div class="yourovote" onclick="price('ANGI','2')">Flat</div><div class="yourovote" onclick="price('ANGI','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-IAC">
+<div class="confirm icon-check" title="Last confirmed on 1/17/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/iac'">IAC</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/iac'">IAC</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/iac'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/iac'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/iac'">($0.24)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/iac'">$1.24 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/iac'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/iac'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/iac'">($0.05)</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/iac'">$1.25 B</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-IAC" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-IAC');" width="100"></canvas><script>showsurprise("s-IAC","79.2%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-IAC" onclick="changeGrowth('T-IAC');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-IAC');" width="100"></canvas><script>showgrowth("re-IAC"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-IAC" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-IAC');" width="100"></canvas><script>showsurprise("rs-IAC","0.5%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-IAC" onclick="changeGrowth('T-IAC');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-IAC');" width="100"></canvas><script>showgrowth("rr-IAC","7.5%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">0.5%</div><div class="revgrowthfull green">7.5%</div>
+<div class="epssurpfull green">79.2%</div><div class="epsgrowthfull"> - </div>
+</div>
+<div class="unselectedoptions" id="O-IAC" onclick="toggleoptions('O-IAC');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=IAC'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-IAC" onclick="watchthis('W-IAC','IAC');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://www.iac.com/Investors'" title="conference call is available at 8:30:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$IAC%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:10%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/iac');" title="Tweet IAC's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('IAC');" title="share IAC's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is IAC's stock going now?</div>
+<div class="sentbotheading" id="S-IAC"><div class="yourovote" onclick="price('IAC','3')">Down</div><div class="yourovote" onclick="price('IAC','2')">Flat</div><div class="yourovote" onclick="price('IAC','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-CGRN">
+<div class="confirm icon-check" title="Last confirmed on 1/30/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/cgrn'">Capstone Green Energy Corporation</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/cgrn'">CGRN</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/cgrn'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/cgrn'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/cgrn'">($0.18)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/cgrn'">$22.50 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/cgrn'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/cgrn'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/cgrn'">($0.28)</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/cgrn'">$19.61 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-CGRN" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CGRN');" width="100"></canvas><script>showsurprise("s-CGRN","-55.6%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-CGRN" onclick="changeGrowth('T-CGRN');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CGRN');" width="100"></canvas><script>showgrowth("re-CGRN"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-CGRN" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CGRN');" width="100"></canvas><script>showsurprise("rs-CGRN","-12.9%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-CGRN" onclick="changeGrowth('T-CGRN');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-CGRN');" width="100"></canvas><script>showgrowth("rr-CGRN","-4.9%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-12.9%</div><div class="revgrowthfull red">-4.9%</div>
+<div class="epssurpfull red">-55.6%</div><div class="epsgrowthfull"> - </div>
+</div>
+<div class="unselectedoptions" id="O-CGRN" onclick="toggleoptions('O-CGRN');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=CGRN'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-CGRN" onclick="watchthis('W-CGRN','CGRN');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://ir.capstonegreenenergy.com'" title="conference call is available"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$CGRN%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:15%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/cgrn');" title="Tweet CGRN's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('CGRN');" title="share CGRN's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is CGRN's stock going now?</div>
+<div class="sentbotheading" id="S-CGRN"><div class="yourovote" onclick="price('CGRN','3')">Down</div><div class="yourovote" onclick="price('CGRN','2')">Flat</div><div class="yourovote" onclick="price('CGRN','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-JHX">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/jhx'">James Hardie Industries N.V.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/jhx'">JHX</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/jhx'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/jhx'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/jhx'"> - </div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/jhx'">$4.05 B</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/jhx'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/jhx'">Reported</div>
+<div class="actual" onclick="javascript:location.href='epsdetails/jhx'">$0.29</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/jhx'">$860.80 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-JHX" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-JHX');" width="100"></canvas><script>showsurprise("s-JHX"," - ","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-JHX" onclick="changeGrowth('T-JHX');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-JHX');" width="100"></canvas><script>showgrowth("re-JHX","-14.7%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-JHX" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-JHX');" width="100"></canvas><script>showsurprise("rs-JHX","-78.7%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-JHX" onclick="changeGrowth('T-JHX');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-JHX');" width="100"></canvas><script>showgrowth("rr-JHX","-4.4%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-78.7%</div><div class="revgrowthfull red">-4.4%</div>
+<div class="epssurpfull"> - </div><div class="epsgrowthfull red">-14.7%</div>
+<div class="guidance neg"><div class="direction icon-arrow-down"></div></div>
+</div>
+<div class="unselectedoptions" id="O-JHX" onclick="toggleoptions('O-JHX');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=JHX'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-JHX" onclick="watchthis('W-JHX','JHX');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://ir.jameshardie.com.au/'" title="conference call is available at 6:00:00 PM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$JHX%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:25%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/jhx');" title="Tweet JHX's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('JHX');" title="share JHX's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is JHX's stock going now?</div>
+<div class="sentbotheading" id="S-JHX"><div class="yourovote" onclick="price('JHX','3')">Down</div><div class="yourovote" onclick="price('JHX','2')">Flat</div><div class="yourovote" onclick="price('JHX','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-MRC">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/mrc'">MRC Global Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/mrc'">MRC</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/mrc'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/mrc'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/mrc'">$0.28</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/mrc'">$872.18 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/mrc'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/mrc'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/mrc'">$0.32</div>
+<div class="revactual red" onclick="javascript:location.href='epsdetails/mrc'">$869.00 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-MRC" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MRC');" width="100"></canvas><script>showsurprise("s-MRC","14.3%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-MRC" onclick="changeGrowth('T-MRC');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MRC');" width="100"></canvas><script>showgrowth("re-MRC","88.2%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-MRC" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MRC');" width="100"></canvas><script>showsurprise("rs-MRC","-0.4%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-MRC" onclick="changeGrowth('T-MRC');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-MRC');" width="100"></canvas><script>showgrowth("rr-MRC","26.7%","Revenue");</script></div>
+</div>
+<div class="revsurpfull red">-0.4%</div><div class="revgrowthfull green">26.7%</div>
+<div class="epssurpfull green">14.3%</div><div class="epsgrowthfull green">88.2%</div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-MRC" onclick="toggleoptions('O-MRC');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=MRC'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-MRC" onclick="watchthis('W-MRC','MRC');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://investor.mrcglobal.com'" title="conference call is available at 10:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$MRC%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:15%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/mrc');" title="Tweet MRC's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('MRC');" title="share MRC's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is MRC's stock going now?</div>
+<div class="sentbotheading" id="S-MRC"><div class="yourovote" onclick="price('MRC','3')">Down</div><div class="yourovote" onclick="price('MRC','2')">Flat</div><div class="yourovote" onclick="price('MRC','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-INST">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/inst'">Instructure, Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/inst'">INST</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/inst'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/inst'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/inst'">$0.19</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/inst'">$121.31 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/inst'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/inst'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/inst'">$0.12</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/inst'">$124.73 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-INST" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-INST');" width="100"></canvas><script>showsurprise("s-INST","-36.8%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-INST" onclick="changeGrowth('T-INST');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-INST');" width="100"></canvas><script>showgrowth("re-INST","-57.1%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-INST" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-INST');" width="100"></canvas><script>showsurprise("rs-INST","2.8%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-INST" onclick="changeGrowth('T-INST');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-INST');" width="100"></canvas><script>showgrowth("rr-INST","12.8%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">2.8%</div><div class="revgrowthfull green">12.8%</div>
+<div class="epssurpfull red">-36.8%</div><div class="epsgrowthfull red">-57.1%</div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-INST" onclick="toggleoptions('O-INST');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=INST'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-INST" onclick="watchthis('W-INST','INST');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://ir.instructure.com'" title="conference call is available at 5:00:00 PM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$INST%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:05%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/inst');" title="Tweet INST's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('INST');" title="share INST's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is INST's stock going now?</div>
+<div class="sentbotheading" id="S-INST"><div class="yourovote" onclick="price('INST','3')">Down</div><div class="yourovote" onclick="price('INST','2')">Flat</div><div class="yourovote" onclick="price('INST','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-KRG">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/krg'">Kite Realty Group Trust</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/krg'">KRG</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/krg'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/krg'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/krg'">$0.46</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/krg'">$200.00 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/krg'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/krg'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/krg'">$0.50</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/krg'">$204.69 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-KRG" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-KRG');" width="100"></canvas><script>showsurprise("s-KRG","8.7%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-KRG" onclick="changeGrowth('T-KRG');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-KRG');" width="100"></canvas><script>showgrowth("re-KRG","16.3%","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-KRG" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-KRG');" width="100"></canvas><script>showsurprise("rs-KRG","2.3%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-KRG" onclick="changeGrowth('T-KRG');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-KRG');" width="100"></canvas><script>showgrowth("rr-KRG","25.6%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">2.3%</div><div class="revgrowthfull green">25.6%</div>
+<div class="epssurpfull green">8.7%</div><div class="epsgrowthfull green">16.3%</div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-KRG" onclick="toggleoptions('O-KRG');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=KRG'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-KRG" onclick="watchthis('W-KRG','KRG');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='http://ir.kiterealty.com'" title="conference call is available at 10:00:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$KRG%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:15%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/krg');" title="Tweet KRG's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('KRG');" title="share KRG's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is KRG's stock going now?</div>
+<div class="sentbotheading" id="S-KRG"><div class="yourovote" onclick="price('KRG','3')">Down</div><div class="yourovote" onclick="price('KRG','2')">Flat</div><div class="yourovote" onclick="price('KRG','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-OM">
+<div class="confirm icon-check" title="Last confirmed on 2/13/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/om'">Outset Medical, Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/om'">OM</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/om'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/om'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/om'">($0.88)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/om'">$31.51 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/om'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/om'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/om'">($0.86)</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/om'">$32.01 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-OM" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OM');" width="100"></canvas><script>showsurprise("s-OM","2.3%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-OM" onclick="changeGrowth('T-OM');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OM');" width="100"></canvas><script>showgrowth("re-OM"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-OM" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OM');" width="100"></canvas><script>showsurprise("rs-OM","1.6%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-OM" onclick="changeGrowth('T-OM');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-OM');" width="100"></canvas><script>showgrowth("rr-OM","13.7%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">1.6%</div><div class="revgrowthfull green">13.7%</div>
+<div class="epssurpfull green">2.3%</div><div class="epsgrowthfull"> - </div>
+<div class="guidance neut"><div class="direction icon-secondaries"></div></div>
+</div>
+<div class="unselectedoptions" id="O-OM" onclick="toggleoptions('O-OM');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=OM'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-OM" onclick="watchthis('W-OM','OM');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://investors.outsetmedical.com'" title="conference call is available"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$OM%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:05%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/om');" title="Tweet OM's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('OM');" title="share OM's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is OM's stock going now?</div>
+<div class="sentbotheading" id="S-OM"><div class="yourovote" onclick="price('OM','3')">Down</div><div class="yourovote" onclick="price('OM','2')">Flat</div><div class="yourovote" onclick="price('OM','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-RBOT">
+<div class="confirm icon-check" title="Last confirmed on 1/30/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/rbot'">Vicarious Surgical Inc.</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/rbot'">RBOT</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/rbot'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/rbot'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/rbot'">($0.18)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/rbot'"> - </div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/rbot'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/rbot'">Reported</div>
+<div class="actual green" onclick="javascript:location.href='epsdetails/rbot'">($0.16)</div>
+<div class="revactual" onclick="javascript:location.href='epsdetails/rbot'">$0.00 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-RBOT" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-RBOT');" width="100"></canvas><script>showsurprise("s-RBOT","11.1%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-RBOT" onclick="changeGrowth('T-RBOT');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-RBOT');" width="100"></canvas><script>showgrowth("re-RBOT"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-RBOT" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-RBOT');" width="100"></canvas><script>showsurprise("rs-RBOT"," - ","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-RBOT" onclick="changeGrowth('T-RBOT');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-RBOT');" width="100"></canvas><script>showgrowth("rr-RBOT","NaN","Revenue");</script></div>
+</div>
+<div class="revsurpfull"> - </div><div class="revgrowthfull">NaN</div>
+<div class="epssurpfull green">11.1%</div><div class="epsgrowthfull"> - </div>
+</div>
+<div class="unselectedoptions" id="O-RBOT" onclick="toggleoptions('O-RBOT');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=RBOT'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-RBOT" onclick="watchthis('W-RBOT','RBOT');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://investor.vicarioussurgical.com'" title="conference call is available"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$RBOT%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20at%204:05%20PM%20ET%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/rbot');" title="Tweet RBOT's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('RBOT');" title="share RBOT's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is RBOT's stock going now?</div>
+<div class="sentbotheading" id="S-RBOT"><div class="yourovote" onclick="price('RBOT','3')">Down</div><div class="yourovote" onclick="price('RBOT','2')">Flat</div><div class="yourovote" onclick="price('RBOT','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cors amc showconf nwh"><div id="T-IFS">
+<div class="confirm icon-check" title="Last confirmed on 1/26/2023"></div>
+<div class="company" onclick="javascript:location.href='stocks/ifs'">Intercorp Financial Services Inc.</div>
+<div class="ticker" onclick="javascript:location.href='stocks/ifs'">IFS</div>
+<div class="time" onclick="javascript:location.href='stocks/ifs'">AMC</div>
+<div class="epstitle" onclick="javascript:location.href='stocks/ifs'">EPS:</div>
+<div class="revtitle" onclick="javascript:location.href='stocks/ifs'">Rev:</div>
+<div class="estimate" onclick="javascript:location.href='stocks/ifs'">$1.04</div>
+<div class="revest" onclick="javascript:location.href='stocks/ifs'">$384.75 M</div>
+<div class="revgrowthprint">51.7%</div>
+<div class="growth"><canvas class="calgrowth" height="100" id="e-IFS" onclick="changeGrowth('T-IFS');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-IFS');" width="100"></canvas><script>showepsgrowth("e-IFS","85.7%");</script></div>
+<div class="revgrowth"><canvas class="calgrowth" height="100" id="r-IFS" onclick="changeGrowth('T-IFS');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-IFS');" width="100"></canvas><script>showrevgrowth("r-IFS","51.7%");</script></div>
+</div>
+<div class="vote"><div class="votebutton" id="IFS"><div class="yourvote" onclick="surprise('IFS','1')"><span class="bigvote">Beat</span><span class="smallvote">+</span></div><div class="yourvote" onclick="surprise('IFS','2')"><span class="bigvote">Meet</span><span class="smallvote">=</span></div><div class="yourvote" onclick="surprise('IFS','3')"><span class="bigvote">Miss</span><span class="smallvote">-</span></div></div></div>
+<div class="unselectedoptions" id="O-IFS" onclick="toggleoptions('O-IFS');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=IFS'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-IFS" onclick="watchthis('W-IFS','IFS');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$IFS%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20AMC%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/ifs');" title="Tweet IFS's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('IFS');" title="share IFS's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is IFS's stock going now?</div>
+<div class="sentbotheading" id="S-IFS"><div class="yourovote" onclick="price('IFS','3')">Down</div><div class="yourovote" onclick="price('IFS','2')">Flat</div><div class="yourovote" onclick="price('IFS','1')">Up</div></div>
+</div>
+</div>
+</li>, <li class="cor amc showconf nwh"><div id="T-IRBT">
+<div class="confirm icon-check" title="Last confirmed on 2/10/2023"></div>
+<div class="company" onclick="javascript:location.href='epsdetails/irbt'">iRobot Corp</div>
+<div class="ticker" onclick="javascript:location.href='epsdetails/irbt'">IRBT</div>
+<div class="actepstitle" onclick="javascript:location.href='epsdetails/irbt'">EPS:</div>
+<div class="actrevtitle" onclick="javascript:location.href='epsdetails/irbt'">Rev:</div>
+<div class="actestimate" onclick="javascript:location.href='epsdetails/irbt'">($0.33)</div>
+<div class="actrevest" onclick="javascript:location.href='epsdetails/irbt'">$298.76 M</div>
+<div class="contitle" onclick="javascript:location.href='epsdetails/irbt'">Estimate</div>
+<div class="acttitle" onclick="javascript:location.href='epsdetails/irbt'">Reported</div>
+<div class="actual red" onclick="javascript:location.href='epsdetails/irbt'">($1.82)</div>
+<div class="revactual green" onclick="javascript:location.href='epsdetails/irbt'">$357.87 M</div>
+<div class="epsresults">
+<div class="epssurp"><canvas height="100" id="s-IRBT" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-IRBT');" width="100"></canvas><script>showsurprise("s-IRBT","-451.5%","Earnings");</script></div>
+<div class="repepsgrowth"><canvas height="100" id="re-IRBT" onclick="changeGrowth('T-IRBT');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-IRBT');" width="100"></canvas><script>showgrowth("re-IRBT"," - ","Earnings");</script></div>
+</div>
+<div class="revresults">
+<div class="revsurp"><canvas height="100" id="rs-IRBT" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-IRBT');" width="100"></canvas><script>showsurprise("rs-IRBT","19.8%","Revenue");</script></div>
+<div class="reprevgrowth"><canvas height="100" id="rr-IRBT" onclick="changeGrowth('T-IRBT');" ontouchcancel="touchCancel(event);" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchstart="touchStart(event,'T-IRBT');" width="100"></canvas><script>showgrowth("rr-IRBT","-21.4%","Revenue");</script></div>
+</div>
+<div class="revsurpfull green">19.8%</div><div class="revgrowthfull red">-21.4%</div>
+<div class="epssurpfull red">-451.5%</div><div class="epsgrowthfull"> - </div>
+</div>
+<div class="unselectedoptions" id="O-IRBT" onclick="toggleoptions('O-IRBT');"><div class="optionbutton icon-add"></div><div class="topoptions"><div class="optionbuttons ewtip" onclick="javascript:location.href='webcal://beta.earningswhispers.com/jsdata/ical?symbol=IRBT'" title="add to your calendar"><div class="icon-addcalendar"></div></div><div class="optionbuttons ewtip" id="W-IRBT" onclick="watchthis('W-IRBT','IRBT');" title="add to your watchlist"><div class="icon-watch"></div></div><div class="optionbuttons ewtip" title="add to your portfolio"><div class="icon-folder112"></div></div><div class="optionbuttons ewtip" onclick="javascript:location.href='https://investor.irobot.com'" title="conference call is available at 8:30:00 AM ET"><div class="icon-phone"></div></div><div class="optionbuttons ewtip" onclick="tweetthis('https://twitter.com/share?text=$IRBT%20is%20scheduled%20to%20report%20%23EPS%20on%20Monday,%20February%2013,%202023%20AMC%20via%20%40eWhispers%20&amp;url=http://eps.sh/s/irbt');" title="Tweet IRBT's earnings date"><div class="icon-twitter"></div></div><div class="optionbuttons ewtip" onclick="sharethis('IRBT');" title="share IRBT's earnings date"><div class="icon-facebook"></div></div></div>
+<div class="bottomoptions">
+<div class="boicon icon-sentiment"></div><div class="senttopheading">Where is IRBT's stock going now?</div>
+<div class="sentbotheading" id="S-IRBT"><div class="yourovote" onclick="price('IRBT','3')">Down</div><div class="yourovote" onclick="price('IRBT','2')">Flat</div><div class="yourovote" onclick="price('IRBT','1')">Up</div></div>
+</div>
+</div>
+</li>]

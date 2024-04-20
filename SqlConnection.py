@@ -6,9 +6,27 @@ import pyodbc
 import sqlalchemy as sql
 from sqlalchemy.orm import sessionmaker
 
+'''
+This module is meant to be a utility for connecting to a Sql Server database.
+The purpose of this approach is to maintain a single code base for connection so any changes to
+the connection string or process can be made in one place.
+
+To utilitze this module, you must have the following environment variables set:
+    MSSQL_DB: the name of the database
+    MSSQL_TABLE: the name of the table
+    MSSQL_SERVER: the name of the server
+    params: the connection string parameters
+    engine: the sqlalchemy engine
+    Session: the sqlalchemy sessionmaker
+        session: the sqlalchemy session
+
+'''
+
+
 # environment variables
 # load_dotenv()   # loads the .env file containing your "hidden" environment variables
 os.environ['MSSQL_DB'] = 'HistoricalPriceDB'
+# os.environ['MSSQL_TABLE'] = 'PfdStocks3'
 os.environ['MSSQL_TABLE'] = 'PfdStocks3'
 
 # database connection parameters

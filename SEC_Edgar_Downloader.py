@@ -6,7 +6,7 @@ import tabula
 
 destination_path = r'C:\Users\Ken\Google Drive\Trading\SourceFiles'
 filing_type = 'NPORT-P'
-symbol = 'ZTR'
+symbol = 'BGY'
 start_date = '2023-01-01'
 sharadar_csv = r'C:\Users\Ken\Google Drive\Trading\Research\Sharadar_Cusip_Ticker.csv'
 
