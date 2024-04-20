@@ -14,12 +14,18 @@ the connection string or process can be made in one place.
 To utilitze this module, you must have the following environment variables set:
     MSSQL_DB: the name of the database
     MSSQL_TABLE: the name of the table
-    MSSQL_SERVER: the name of the server
-    params: the connection string parameters
-    engine: the sqlalchemy engine
-    Session: the sqlalchemy sessionmaker
-        session: the sqlalchemy session
 
+    Example:
+    # environment variables
+    os.environ['MSSQL_DB'] = 'HistoricalPriceDB'
+    os.environ['MSSQL_TABLE'] = 'CEF_price_nav_history'
+
+    sc.database = os.environ['MSSQL_DB']
+    sc.db_table = os.environ['MSSQL_TABLE']
+
+** I was unsure if I'd need to parameterize the 'database' and 'db_table' variables in each of
+    the functions.  It appears that using the syntax/structure provided in the example above, I
+    can specify those parameters at the level of the file/script/program requesting the access!!!
 '''
 
 
@@ -32,7 +38,9 @@ os.environ['MSSQL_TABLE'] = 'PfdStocks3'
 # database connection parameters
 database = os.environ['MSSQL_DB']
 db_table = os.environ['MSSQL_TABLE']
-server = r'FRANKENSTEIN\SQLEXPRESS'
+# server = r'FRANKENSTEIN\SQLEXPRESS'
+# I believe the 2024 Frankenstein rebuild necessitated this change in the server name?
+server = r'FRANKENSTEIN'
 
 params = urllib.parse.quote_plus('DRIVER={ODBC Driver 17 for Sql Server};SERVER='+server+';DATABASE='
                                     +database+";Trusted_Connection=yes;")
