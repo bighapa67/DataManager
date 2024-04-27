@@ -18,7 +18,16 @@ os.environ['MSSQL_TABLE'] = 'CEF_price_nav_history'
 sc.database = os.environ['MSSQL_DB']
 sc.db_table = os.environ['MSSQL_TABLE']
 
+symbol_source_df  = pd.DataFrame()
+
 
 test_df = pd.DataFrame()
 test_df = sc.read_from_sqlserver()
 print(test_df)
+
+def load_symbols():
+    """
+    This function is meant to load the symbols of the CEFs that I want to track.
+    :return: a list of symbols
+    """
+    symbols = 
