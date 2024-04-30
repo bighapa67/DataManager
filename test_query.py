@@ -14,7 +14,8 @@ def test_read():
     # select_stmt = text('select(table.c.Symbol, table.c.MFQSSym, table.c.ClosePx, table.c.NAV)')
     # select_stmt = 'select(table.c.Symbol, table.c.MFQSSym, table.c.ClosePx, table.c.NAV)'
     column_names = ['Symbol', 'MFQSSym', 'ClosePx', 'NAV']
-    results = db_connector.read_from_mssql("CEF_price_nav_history", column_names)
+    filters = [('ClosePx', 'gt', '14')]
+    results = db_connector.read_from_mssql("CEF_price_nav_history", column_names, filters)
     # results = db_connector.read2("CEF_price_nav_history")
     print("Test Read Results:")
     for row in results:

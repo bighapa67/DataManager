@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Table, MetaData, select, text
+from sqlalchemy import create_engine, Table, MetaData, select, and_
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
 import os
@@ -55,16 +55,28 @@ class DatabaseConnector:
         # self.metadata.reflect(bind=self.engine)
         # self.metadata.reflect()
 
-    def read_from_mssql(self, table_name, column_names):
+    def read_from_mssql(self, table_name, column_names, filters=None):
         """
         Queries the table and returns the column data specified by the user.
 
         Args:
             table_name (str): The name of the table to query.
             column_names (list): A list of column names to return.
+            filters (list of tuples): Conditions in the form of (column_name, operator, value).
+
+        Filter Map:
+            eq: Equal to
+            ne: Not equal to
+            lt: Less than
+            le: Less than or equal to
+            gt: Greater than
+            ge: Greater than or equal to
+            in: In the list
+            like: Like a pattern (e.g., 'John%', would match 'John Doe' or 'Johnny')
 
         Returns:
             results (list): A list of tuples containing the data from the specified columns.
+
         """
 
         # Define Metadata and Reflect the table
@@ -80,6 +92,31 @@ class DatabaseConnector:
         # Create a select statement with the specified columns
         stmt = select(*columns_to_select)
 
+        # Add filters to the query
+        if filters:
+            # Apply filter conditions dynamically based on tuple definitions
+            conditions = []
+            for column_name, op, value in filters:
+                column = getattr(table.c, column_name)
+                if op == 'eq':
+                    conditions.append(column == value)
+                elif op == 'ne':
+                    conditions.append(column != value)
+                elif op == 'lt':
+                    conditions.append(column < value)
+                elif op == 'le':
+                    conditions.append(column <= value)
+                elif op == 'gt':
+                    conditions.append(column > value)
+                elif op == 'ge':
+                    conditions.append(column >= value)
+                elif op == 'in':
+                    conditions.append(column.in_(value))
+                elif op == 'like':
+                    conditions.append(column.like(value))
+
+            stmt = stmt.where(and_(*conditions))
+
         # Execute the query using a session
         try:
             with Session() as session:
@@ -94,5 +131,4 @@ class DatabaseConnector:
         except SQLAlchemyError as e:
             print(f"Error occurred: {e}")
             return None
-    
     
