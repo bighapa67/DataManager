@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Table, MetaData
+from sqlalchemy import create_engine, Table, MetaData, select, text
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
 import os
@@ -44,19 +44,55 @@ class DatabaseConnector:
 
         # Construct the database_url and initialize the engine, session and metadata.
         self.database_url = f"mssql+pyodbc://{db_user}:{db_pswd}@{db_host}:{db_port}/{db_name}?driver={db_driver}"
+                                # "mssql+pyodbc://Ken:Skando!23Q@localhost:1433/HistoricalPriceDB?driver=ODBC Driver 17 for Sql Server"
+        # self.database_url = os.getenv("DATABASE_URL")
         self.engine = create_engine(self.database_url)
-        self.Session = sessionmaker(bind=self.engine)
+        # self.Session = sessionmaker(bind=self.engine)
         # self.metadata = MetaData(bind=self.engine)
         self.metadata = MetaData()
-        self.metadata.bind = self.engine
+        # self.metadata.bind = self.engine
+        # from GPT4
+        # self.metadata.reflect(bind=self.engine)
+        # self.metadata.reflect()
 
+    def read_from_mssql(self, table_name, column_names):
+        """
+        Queries the table and returns the column data specified by the user.
 
-    def read(self, table_name, **filters):
-        # table = Table(table_name, self.metadata, autoload_with=self.engine)
-        table = Table(table_name, self.metadata, self.engine)
+        Args:
+            table_name (str): The name of the table to query.
+            column_names (list): A list of column names to return.
+
+        Returns:
+            results (list): A list of tuples containing the data from the specified columns.
+        """
+
+        # Define Metadata and Reflect the table
+        table = Table(table_name, self.metadata, autoload_with=self.engine)
+
+        # Create a session for transactions
+        Session = sessionmaker(bind=self.engine)
+
+        # Query the DB with a Select stmt
+        # Generate the column list for the select statement
+        columns_to_select = [getattr(table.c, column_name) for column_name in column_names]
+
+        # Create a select statement with the specified columns
+        stmt = select(*columns_to_select)
+
+        # Execute the query using a session
         try:
-            with self.Session() as session:
-                result = session.execute(table.select().where_by(**filters))
-                return [dict(row) for row in result]
+            with Session() as session:
+                # Wow.  Without fetchall(), "results", when returned to the calling function, isn't usable.
+                results = session.execute(stmt).fetchall()
+                print('Running read2() query...')
+                # print(type(results))
+                # for row in results:
+                #     print(row)
+                session.commit()  # Ensure any transactions are committed
+                return results
         except SQLAlchemyError as e:
             print(f"Error occurred: {e}")
+            return None
+    
+    
