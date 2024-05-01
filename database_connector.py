@@ -14,7 +14,7 @@ class DatabaseConnector:
     """
     This class requires a fully formed database_url (connection string) to connect to a Sql Server database.
     Since the only thing that changes from one call to the next are the database name and the table name,
-    I'm going to parameterize those values in the constructor while obtainint the rest of the connection
+    I'm going to parameterize those values in the constructor while obtaining the rest of the connection
     string from the .env file.
 
     SQLAlchemy Connections (from GPT4):
@@ -28,6 +28,17 @@ class DatabaseConnector:
     Any change made against the objects in the session won't be persisted into the database until you call 
     session.commit(). If something goes wrong, you can revert all changes back to the last commit by calling 
     session.rollback().
+
+    Raw SQL:
+    SQLAlchemy allows you to execute raw SQL queries using the Session object.
+    
+    from sqlalchemy.orm import Session
+
+    with Session(engine) as session:
+        result = session.execute("SELECT * FROM user WHERE age BETWEEN 25 AND 35")
+        for row in result:
+            print(row)
+
     """
 
     def __init__(self, db_name):
@@ -73,6 +84,7 @@ class DatabaseConnector:
             ge: Greater than or equal to
             in: In the list
             like: Like a pattern (e.g., 'John%', would match 'John Doe' or 'Johnny')
+            between: Between two values (e.g., (10, 20) would match values between 10 and 20)
 
         Returns:
             results (list): A list of tuples containing the data from the specified columns.
@@ -114,6 +126,10 @@ class DatabaseConnector:
                     conditions.append(column.in_(value))
                 elif op == 'like':
                     conditions.append(column.like(value))
+                elif op == 'between':
+                    # Ensure value is a tuple or list with exactly two elements
+                    if isinstance(value, (list, tuple)) and len(value) == 2:
+                        conditions.append(column.between(value[0], value[1]))
 
             stmt = stmt.where(and_(*conditions))
 

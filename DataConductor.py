@@ -30,4 +30,4 @@ def load_symbols():
     This function is meant to load the symbols of the CEFs that I want to track.
     :return: a list of symbols
     """
-    symbols = 
+    # symbols = 
