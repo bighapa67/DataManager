@@ -1,6 +1,6 @@
-from sqlalchemy import create_engine, Table, MetaData, select, and_
+from sqlalchemy import create_engine, Table, MetaData, select, and_, insert, update
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.exc import SQLAlchemyError, NoResultFound
 import os
 import pyodbc
 import sqlalchemy as sql
@@ -138,7 +138,7 @@ class DatabaseConnector:
             with Session() as session:
                 # Wow.  Without fetchall(), "results", when returned to the calling function, isn't usable.
                 results = session.execute(stmt).fetchall()
-                print('Running read2() query...')
+                print('Running read_from_mssql() query...')
                 # print(type(results))
                 # for row in results:
                 #     print(row)
@@ -148,3 +148,47 @@ class DatabaseConnector:
             print(f"Error occurred: {e}")
             return None
     
+
+    def upsert_price_record_mssql(self, table_name, new_data):
+        print('Running upsert_to_mssql()...')
+
+        # Define Metadata and Reflect the table
+        table = Table(table_name, self.metadata, autoload_with=self.engine)
+
+        # Create a session for transactions
+        Session = sessionmaker(bind=self.engine)
+
+        with Session() as session:
+            # Check if the record already exists
+            print('Checking if record exists...')
+            match_query = select(table).where(table.c.Symbol == new_data['Symbol'], table.c.Date == new_data['Date'])
+            result = session.execute(match_query).fetchone()
+
+            if result:
+                # Record exists, perform an update
+                print('Record exists, performing an update...')
+                update_stmt = (
+                    update(table).
+                    where(table.c.Symbol == new_data['Symbol'], table.c.Date == new_data['Date']).
+                    values(new_data)
+                )
+                session.execute(update_stmt)
+            else:
+                # Record does not exist, perform an insert
+                print('Record does not exist, performing an insert...')
+                insert_stmt = insert(table).values(new_data)
+                session.execute(insert_stmt)
+
+            session.commit()
+
+            # try:
+            #     existing_record = session.query(table).filter(table.c.Symbol == new_data['Symbol']).one()
+            #     # Update existing user
+            #     for key, value in table.items():
+            #         setattr(existing_record, key, value)
+            # except NoResultFound:
+            #     # Insert new user
+            #     new_record = table(**new_data)
+            #     session.add(new_record)
+
+            # session.commit()
