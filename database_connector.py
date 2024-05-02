@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, Table, MetaData, select, and_, insert, update
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.exc import SQLAlchemyError, NoResultFound
+from sqlalchemy.exc import SQLAlchemyError, NoResultFound, IntegrityError
 import os
 import pyodbc
 import sqlalchemy as sql
@@ -42,6 +42,11 @@ class DatabaseConnector:
     """
 
     def __init__(self, db_name):
+        # I'm running into an issue when I want to join tables from different databases.
+        # It seems possible that I could make the db_name an optional parameter?
+        # The idea would be to create a connection to the server and NOT a specific database
+        # if no db_name is provided.
+
         # Retrieve environment variables
         db_user = os.getenv("DB_USER")
         db_pswd = os.getenv("DB_PSWD")
@@ -181,14 +186,39 @@ class DatabaseConnector:
 
             session.commit()
 
-            # try:
-            #     existing_record = session.query(table).filter(table.c.Symbol == new_data['Symbol']).one()
-            #     # Update existing user
-            #     for key, value in table.items():
-            #         setattr(existing_record, key, value)
-            # except NoResultFound:
-            #     # Insert new user
-            #     new_record = table(**new_data)
-            #     session.add(new_record)
 
-            # session.commit()
+    def upsert_price_record_mssql_bulk(self, table_name, new_data):
+        # THIS CURRENTLY DOES NOT WORK
+        # GPT4 IS SAYING I NEED TO DEFINE AN ORM CLASS THAT MAPS TO THE TABLE.
+        # GOING TO TEST THE ITERATIVE VERSION TO SEE IF IT'S FAST ENOUGH.
+        print('Running upsert_to_mssql2()...')
+
+        # Define Metadata and Reflect the table
+        table = Table(table_name, self.metadata, autoload_with=self.engine)
+
+        # Create a session for transactions
+        Session = sessionmaker(bind=self.engine)
+
+        with Session() as session:
+            try:
+                # Attempt to bulk insert
+                print('Attempting bulk insert...')
+                session.bulk_insert_mappings(table, new_data)
+                session.commit()
+            except IntegrityError:
+                # If there's an integrity error, likely due to a duplicate key, perform upsert
+                print('Integrity error, performing upsert...')
+                session.rollback()
+                for data in new_data:
+                    stmt = select(table).where(table.c.Symbol == data['Symbol'], table.c.Date == data['Date'])
+                    existing_record = session.execute(stmt).fetchone()
+                    if existing_record:
+                        update_stmt = (
+                            update(table).
+                            where(table.c.Symbol == data['Symbol'], table.c.Date == data['Date']).
+                            values(data)
+                        )
+                        session.execute(update_stmt)
+                    else:
+                        session.execute(insert(table).values(data))
+                session.commit()

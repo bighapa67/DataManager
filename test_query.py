@@ -27,19 +27,28 @@ def test_read():
 
 def test_upsert():
     # Define the table name and the new data to upsert
-    new_data = {
+    new_data = [{
         'Symbol': 'TEST',
-        'Date': '2024-05-02',
+        'Date': '2024-05-04',
         'MFQSSym': 'XTESTX',
-        'OpenPx': 65.00,
-        'HighPx': 90.00,
-        'LowPx': 70.00,
-        'ClosePx': 69.69,
-        'NAV': 115.00
-    }
+        'OpenPx': 70.00,
+        'HighPx': 95.00,
+        'LowPx': 65.00,
+        'ClosePx': 74.69,
+        'NAV': 120.00
+    }, {
+        'Symbol': 'TEST',
+        'Date': '2024-05-05',
+        'MFQSSym': 'XTESTX',
+        'OpenPx': 70.00,
+        'HighPx': 95.00,
+        'LowPx': 65.00,
+        'ClosePx': 75.69,
+        'NAV': 120.00
+    }]
 
     # Upsert the new data to the table
-    HistoricalPriceDB_conn.upsert_price_record_mssql("CEF_price_nav_history", new_data)
+    HistoricalPriceDB_conn.upsert_price_record_mssql2("CEF_price_nav_history", new_data)
 
 
 if __name__ == "__main__":
