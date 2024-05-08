@@ -66,21 +66,17 @@ def retrieve_joined_data(data_filter=None):
                         [getattr(price_table_obj.c, col) for col in price_table_columns] + \
                         [getattr(nav_table_obj.c, col) for col in nav_table_columns]
 
-    # stmt = select(*columns_to_select).select_from(
-    #     join(symbol_table_obj, price_table_obj, join_condition)
-    #     ).where(price_table_obj.c.Symbol == symbol_table_obj.c.Symbol)  # Applying date filter to the join
-
+    # Build the SELECT statement
     stmt = select(*columns_to_select).select_from(
         symbol_table_obj.join(price_table_obj, symbol_table_obj.c.Symbol == price_table_obj.c.Symbol).join(
             nav_table_obj, symbol_table_obj.c.MFQSSym == nav_table_obj.c.Symbol))
       
-    # symbol_table and nav_table will join on symbol_table's "MFQSSym" and nav_table's "Symbol".
-    
     # Execute the query
     Session = sessionmaker(bind=RealTick_LiveData_conn.engine)
     with Session() as session:
         results = session.execute(stmt).fetchall()
         return results
+
 
 def fetch_data(db_connector, table_name, columns):
     """ Fetches data from a specific table and returns it as a DataFrame. """
@@ -92,29 +88,26 @@ def fetch_data(db_connector, table_name, columns):
         df = pd.read_sql(query, db_connector.engine)
     return df
 
+
 def merge_dataframes(symbol_df, price_df, nav_df):
     """ Merges DataFrames on specified keys. """
-    # merged_df = symbol_df.merge(price_df, on="Symbol").merge(df3, on=join_keys)
+
     merged_df = pd.merge(symbol_df, price_df, on="Symbol").merge(nav_df, left_on="MFQSSym", right_on="Symbol")
     return merged_df
+
 
 def process_columns_cef_price_nav_history(df):
     """ 
     Renames columns in a DataFrame.
     The column names have been chosen to reflect the columns in the dbo.CEF_price_nav_history table.
     """
-    # print(df)
-    # print()
 
     df.rename(columns={"Symbol_x": "Symbol", "Open": "OpenPx", "DayHigh": "HighPx", "DayLow": "LowPx", "ClosePx":"NAV", "CurrentPrice":"ClosePx"}, inplace=True)
     df.drop(columns=["Symbol_y"], inplace=True)
     # print(df)
 
-    # Ended up doing date conversions upstream during date validation: price_nav_validation().
-    # df['TimeUpdated'] = pd.to_datetime(df['TimeUpdated'])
-    # df['TimeUpdated'] = pd.to_datetime(df['TimeUpdated'], format='%Y-%m-%d')
-    # df['TimeUpdated'] = df['TimeUpdated'].dt.date
     return df
+
 
 def final_date_check(df):
     """
@@ -135,6 +128,7 @@ def final_date_check(df):
     print()
 
     return df
+
 
 def determine_session():
     """
@@ -158,45 +152,19 @@ def determine_session():
 
     return validation_date
 
-def price_nav_validation(validation_date, price_validation_symbols, nav_validation_symbols, price_df, nav_df):
-    # Filter DataFrames for specified symbols
-    # validation_date = validation_date + timedelta(days=1)
-    # print(f"validation_date: {validation_date}")
 
+def price_nav_validation(validation_date, price_validation_symbols, nav_validation_symbols, price_df, nav_df):
+    
     validation_test = 0
     validation_result = None
-
+    
+    # Filter DataFrames for specified symbols
     price_check = price_df[price_df['Symbol'].isin(price_validation_symbols)]
     nav_check = nav_df[nav_df['Symbol'].isin(nav_validation_symbols)]
 
-    # price_date_format = price_check['TimeUpdated']
-    # nav_date_format = nav_check['Date']
-    
-    # Normalize date columns to ensure only date part is considered
-    # print(price_check)
-    # print(nav_check)
-    # print()
-    # print(price_check['TimeUpdated'])
-    # print(nav_check['Date'])
-
-    # price_check['TimeUpdated'] = price_check['TimeUpdated'].dt.normalize()
-    # nav_check['Date'] = nav_check['Date'].dt.normalize()
-    # price_check.loc[:, 'TimeUpdated'] = price_check['TimeUpdated'].dt.normalize()
-    # nav_check.loc[:, 'Date'] = nav_check['Date'].dt.normalize()
-
     # Compare dates
-    # print(price_check['TimeUpdated'])
-    # print(validation_date)
     price_check['PriceDateMatch'] = price_check['TimeUpdated'] == validation_date
     nav_check['NavDateMatch'] = nav_check['Date'] == validation_date
-    # price_check.loc[:, 'PriceDateMatch'] = price_check['TimeUpdated'] == validation_date
-    # nav_check.loc[:, 'NavDateMatch'] = nav_check['Date'] == validation_date
-    # price_check.loc[:, 'PriceDateMatch'] = price_check.loc[:, 'TimeUpdated'] == validation_date
-    # nav_check.loc[:, 'NavDateMatch'] = nav_check.loc[:, 'Date'] == validation_date
-
-    # print(price_check)
-    # print(nav_check)
-    # print()
 
     if price_check['PriceDateMatch'].sum() == len(price_check['PriceDateMatch']):
         print("Price date validation = PASS")
@@ -220,6 +188,7 @@ def price_nav_validation(validation_date, price_validation_symbols, nav_validati
         validation_result = False
     
     return validation_result
+
 
 def create_df_instances(row):
     return CEF_price_nav_history(**row)
@@ -284,7 +253,7 @@ if __name__ == "__main__":
         # Convert each row of the df into an instance of our data class for SQL table insertion.
         data_class_instances = upsert_ready_df.apply(create_df_instances, axis=1)
 
-        # Make two separate dfs for the records that match and those that don't.
+        # TODO: Make two separate dfs for the records that match and those that don't.
         # The matching records will be bulk inserted into the CEF_price_nav_history table.
         # I do need to run a check on the history table and/or have an alert sent if there's an issue.
         # I need to account for the variability of when this script runs.
