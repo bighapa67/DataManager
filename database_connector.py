@@ -4,7 +4,9 @@ from sqlalchemy.exc import SQLAlchemyError, NoResultFound, IntegrityError
 import os
 import pyodbc
 import sqlalchemy as sql
+import time
 from dotenv import load_dotenv
+from dataclasses import asdict
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -70,6 +72,7 @@ class DatabaseConnector:
         # from GPT4
         # self.metadata.reflect(bind=self.engine)
         # self.metadata.reflect()
+
 
     def read_from_mssql(self, table_name, column_names, filters=None):
         """
@@ -152,10 +155,15 @@ class DatabaseConnector:
         except SQLAlchemyError as e:
             print(f"Error occurred: {e}")
             return None
-    
 
-    def upsert_price_record_mssql(self, table_name, new_data):
-        print('Running upsert_to_mssql()...')
+
+    def upsert_price_record_instances_mssql(self, table_name, dataclass_instances):
+        """
+        This function expects the data to be instances of an @dataclass.
+        """
+        print('Running upsert_price_record_instances_mssql()...')
+
+        start_timer = time.time()
 
         # Define Metadata and Reflect the table
         table = Table(table_name, self.metadata, autoload_with=self.engine)
@@ -164,34 +172,47 @@ class DatabaseConnector:
         Session = sessionmaker(bind=self.engine)
 
         with Session() as session:
-            # Check if the record already exists
-            print('Checking if record exists...')
-            match_query = select(table).where(table.c.Symbol == new_data['Symbol'], table.c.Date == new_data['Date'])
-            result = session.execute(match_query).fetchone()
+            for instance in dataclass_instances:
+                instance_dict = asdict(instance)
+    
+                # Check if the record already exists
+                print('Checking if record exists...')
 
-            if result:
-                # Record exists, perform an update
-                print('Record exists, performing an update...')
-                update_stmt = (
-                    update(table).
-                    where(table.c.Symbol == new_data['Symbol'], table.c.Date == new_data['Date']).
-                    values(new_data)
+                # We are essentially copying our table's composite PK schema to check for record existence.
+                match_query = select(table).where(
+                    table.c.Symbol == instance_dict['Symbol'], 
+                    table.c.Date == instance_dict['Date']
                 )
-                session.execute(update_stmt)
-            else:
-                # Record does not exist, perform an insert
-                print('Record does not exist, performing an insert...')
-                insert_stmt = insert(table).values(new_data)
-                session.execute(insert_stmt)
+
+                # Why are we using scalar() here?
+                existing_record = session.execute(match_query).scalar()
+
+                if existing_record:
+                    # Record exists, perform an update
+                    print(f'Record exists, performing an update on {instance_dict['Symbol']}...')
+                    update_stmt = (
+                        update(table).
+                        where(table.c.Symbol == instance_dict['Symbol'], table.c.Date == instance_dict['Date']).
+                        values(instance_dict)
+                    )
+                    session.execute(update_stmt)
+                else:
+                    # Record does not exist, perform an insert
+                    print(f'Record does not exist, performing an insert on {instance_dict['Symbol']}...')
+                    insert_stmt = insert(table).values(instance_dict)
+                    session.execute(insert_stmt)
 
             session.commit()
+
+        end_timer = time.time()
+        print(f"Upserted {instance_dict['Symbol'].count} in: {end_timer - start_timer} seconds.")
 
 
     def upsert_price_record_mssql_bulk(self, table_name, new_data):
         # THIS CURRENTLY DOES NOT WORK
         # GPT4 IS SAYING I NEED TO DEFINE AN ORM CLASS THAT MAPS TO THE TABLE.
         # GOING TO TEST THE ITERATIVE VERSION TO SEE IF IT'S FAST ENOUGH.
-        print('Running upsert_to_mssql2()...')
+        print('Running upsert_price_record_mssql_bulk()...')
 
         # Define Metadata and Reflect the table
         table = Table(table_name, self.metadata, autoload_with=self.engine)

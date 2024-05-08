@@ -7,6 +7,8 @@ import sqlalchemy as sql
 from sqlalchemy.orm import sessionmaker
 
 '''
+** I've currently deprecated the use of this module in favor of my database_connector.py.
+
 This module is meant to be a utility for connecting to a Sql Server database.
 The purpose of this approach is to maintain a single code base for connection so any changes to
 the connection string or process can be made in one place.
