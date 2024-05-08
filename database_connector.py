@@ -1,3 +1,4 @@
+import sys
 from sqlalchemy import create_engine, Table, MetaData, select, and_, insert, update
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError, NoResultFound, IntegrityError
@@ -176,7 +177,8 @@ class DatabaseConnector:
                 instance_dict = asdict(instance)
     
                 # Check if the record already exists
-                print('Checking if record exists...')
+                # print('Checking if record exists...')
+                sys.stdout.write('\rChecking if record exists...')
 
                 # We are essentially copying our table's composite PK schema to check for record existence.
                 match_query = select(table).where(
@@ -189,7 +191,8 @@ class DatabaseConnector:
 
                 if existing_record:
                     # Record exists, perform an update
-                    print(f'Record exists, performing an update on {instance_dict['Symbol']}...')
+                    # print(f'Record exists, performing an update on {instance_dict['Symbol']}...')
+                    sys.stdout.write(f'\rRecord exists, performing an update on {instance_dict['Symbol']}...')
                     update_stmt = (
                         update(table).
                         where(table.c.Symbol == instance_dict['Symbol'], table.c.Date == instance_dict['Date']).
@@ -198,14 +201,15 @@ class DatabaseConnector:
                     session.execute(update_stmt)
                 else:
                     # Record does not exist, perform an insert
-                    print(f'Record does not exist, performing an insert on {instance_dict['Symbol']}...')
+                    # print(f'Record does not exist, performing an insert on {instance_dict['Symbol']}...')
+                    sys.stdout.write(f'\rRecord does not exist, performing an insert on {instance_dict['Symbol']}...')
                     insert_stmt = insert(table).values(instance_dict)
                     session.execute(insert_stmt)
 
             session.commit()
 
         end_timer = time.time()
-        print(f"Upserted {instance_dict['Symbol'].count} in: {end_timer - start_timer} seconds.")
+        print(f"\nUpserted {len(dataclass_instances)} records in: {end_timer - start_timer} seconds.\n")
 
 
     def upsert_price_record_mssql_bulk(self, table_name, new_data):

@@ -254,6 +254,8 @@ if __name__ == "__main__":
         data_class_instances = upsert_ready_df.apply(create_df_instances, axis=1)
 
         # TODO: Make two separate dfs for the records that match and those that don't.
+        # TODO: The program runs so fast that it's not possible to read the console output.
+        #   Need to create a log file that captures summary data for the run.
         # The matching records will be bulk inserted into the CEF_price_nav_history table.
         # I do need to run a check on the history table and/or have an alert sent if there's an issue.
         # I need to account for the variability of when this script runs.
