@@ -142,7 +142,7 @@ def determine_session():
     if today.hour < 19:
         # NOTE: This must be run prior to turning LDUS on on the morning of "Date T" or else 
         # "CurrentPrice" in dbo.RealTimeData will be incorrect.
-        print("Running the ""Date T-1"" session (i.e. grabbing yesterday's final NAV data).")
+        print("\nRunning the ""Date T-1"" session (i.e. grabbing yesterday's final NAV data).")
         validation_date = today.date() - timedelta(days=1)
         print(f'validation_date: {validation_date}\n')
     else:
@@ -167,10 +167,10 @@ def price_nav_validation(validation_date, price_validation_symbols, nav_validati
     nav_check['NavDateMatch'] = nav_check['Date'] == validation_date
 
     if price_check['PriceDateMatch'].sum() == len(price_check['PriceDateMatch']):
-        print("Price date validation = PASS")
+        print("\nPrice date validation = PASS")
         validation_test += 1
     else:
-        print("Price date validation = FAIL")
+        print("\nPrice date validation = FAIL")
         validation_test -= 1
 
     if nav_check['NavDateMatch'].sum() == len(nav_check['NavDateMatch']):
@@ -237,13 +237,13 @@ if __name__ == "__main__":
         # the NAV date (coming from RealtickNAVs) before running our upsert.
         # TODO: I need to figure out how to handle the records where the dates don't match.
         date_checked_df = final_date_check(processed_df)
-        print(f"date_checked_df:\n{date_checked_df}\n")
+        # print(f"date_checked_df:\n{date_checked_df}\n")
 
         # For now I'm going to filter date_checked_df to only include rows where the price and NAV dates match.
         date_checked_df = date_checked_df[date_checked_df['date_matches'] == True]
         print(f"date_checked_df:\n{date_checked_df}\n")
 
-        # Incredible GPT4 technique leveraging dataclasses.
+        # NOTE: Incredible GPT4 technique leveraging dataclasses.
         # We use list comprehension to grab the names of the fields we require to satisfy our table schema.
         # Then we filter the dataframe to only include those columns!!!
         required_columns = [field.name for field in fields(CEF_price_nav_history)]
