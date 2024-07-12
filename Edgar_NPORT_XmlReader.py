@@ -3,6 +3,9 @@ import requests
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as MD
 
+# DEPRECATED!!!!!
+# I'm not sure when I created this file, but it appears that the SEC_Edgar_Downloader.py file
+# does everything that I want it to.
 # url of the EDGAR filing
 # this will need to be edited for each filing you which to parse
 # url = 'https://www.sec.gov/Archives/edgar/data/1268533/000114554921044394/primary_doc.xml'
