@@ -3,25 +3,42 @@ import pandas as pd
 from sec_edgar_downloader import Downloader
 import os
 import tabula
+from datetime import datetime
+import sys
 
-destination_path = r'C:\Users\Ken\Google Drive\Trading\SourceFiles'
+# destination_path = r'C:\Users\Ken\Google Drive\Trading\SourceFiles'
+destination_path = r'E:\My Drive\Trading\SourceFiles'
 filing_type = 'NPORT-P'
-symbol = 'BGY'
-start_date = '2023-01-01'
-sharadar_csv = r'C:\Users\Ken\Google Drive\Trading\Research\Sharadar_Cusip_Ticker.csv'
+symbol = 'STEW'
+start_date = '2024-02-01'
+sharadar_csv = r'E:\My Drive\Trading\Research\Sharadar_Cusip_Ticker.csv'
 
 # The xml_path must be copied from the folder, in the source directory, that the sec_edgar_downloader library created.
 # Since the sec_edgar_downloader library creates a folder for each download, there must be a way to get the path to the
 # folder that was created.  I don't know how to do that yet.
 xml_path = r'\sec-edgar-filings'
-xml_path_extension = r'\filing-details.xml'
+
+# It appears that the name of the xml file that is returned is changed occassionally... for no fucking reason :/
+# xml_path_extension = r'\filing-details.xml'
+xml_path_extension = r'\primary-document.xml'
+
 xml_file_path = destination_path + xml_path + fr'\{symbol}' + fr'\{filing_type}'
 
 
 # Download the XML file from the SEC Edgar website
 def download_xml_file():
-    dl = Downloader(destination_path)
-    dl.get(filing_type, symbol, after=start_date, download_details=True)
+    # This is subject to change, but as-of 7/12/24, the sec_edgar_downloader library requires the user to provide
+    # a company name AND an email address.
+    # dl = Downloader("MyCompanyName", "my.email@domain.com", "/path/to/save/location")
+
+    dl = Downloader("Jones Trading", "kjones67@gmail.com", destination_path)
+    downloaded_files = dl.get(filing_type, symbol, after=start_date, download_details=True)
+
+    if not downloaded_files:
+        print("No files were downloaded.")
+        sys.exit(1)
+    else:
+        print("File download successful.")
 
     # Retrieve the path to the downloaded XML file
     # It's nice to know that the directory created by the sec_edgar_downloader library is unique to the specific
@@ -29,12 +46,34 @@ def download_xml_file():
     # will have the same name each time.
     download_folders = [d for d in os.listdir(xml_file_path) if os.path.isdir(os.path.join(xml_file_path, d))]
 
-    if len(download_folders) == 1:
-        download_dir = download_folders[0]
-        return download_dir
-    else:
-        print('Error:  More than one folder in the download directory')
-        return
+    # if len(download_folders) == 1:
+    #     download_dir = download_folders[0]
+    #     return download_dir
+    # else:
+    #     print('Error:  More than one folder in the download directory')
+    #     return
+
+    if not download_folders:
+        print("No folders found in the download directory.")
+        sys.exit(1)
+
+    # Sort folders by creation time (most recent first)
+    sorted_folders = sorted(
+        [(folder, os.path.getctime(os.path.join(xml_file_path, folder))) 
+        for folder in download_folders],
+        key=lambda x: x[1],
+        reverse=True
+    )
+
+    print(f"Number of folders in the directory: {len(sorted_folders)}")
+    
+    most_recent_folder, creation_time = sorted_folders[0]
+    creation_date = datetime.fromtimestamp(creation_time).strftime('%Y-%m-%d %H:%M:%S')
+    
+    print(f"Returning the most recent folder: {most_recent_folder}")
+    print(f"Created on: {creation_date}")
+
+    return most_recent_folder
 
 
 def process_xml_file(xml_file):
