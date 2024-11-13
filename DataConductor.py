@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import urllib
 # import SqlConnection as sc
-from database_connector import DatabaseConnector
+from database_connector_v1 import DatabaseConnector
 from table_schemas.CEF_price_nav_history import CEF_price_nav_history
 from sqlalchemy import Table, select, join
 from sqlalchemy.orm import sessionmaker
