@@ -2,6 +2,7 @@ import sys
 import pandas as pd
 import os
 import urllib
+import argparse # Added for command-line arguments
 # import SqlConnection as sc
 from database_connector_v1 import DatabaseConnector
 from table_schemas.CEF_price_nav_history import CEF_price_nav_history
@@ -195,73 +196,138 @@ def create_df_instances(row):
 
 
 if __name__ == "__main__":
-    # Create an instance of the DatabaseConnector class
-    # Note: Ensure that your .env file or environment has all the required variables.
+    # --- Argument Parsing ---
+    parser = argparse.ArgumentParser(description="Fetches, processes, and upserts CEF price/NAV data.")
+    parser.add_argument("--historical", action="store_true", help="Run in historical mode using input CSV files.")
+    parser.add_argument("--price-input", help="Path to the historical price data CSV file (required for historical mode).")
+    parser.add_argument("--nav-input", help="Path to the historical NAV data CSV file (required for historical mode).")
+    args = parser.parse_args()
+    
+        # --- CLI Example ---
+        #python DataConductor.py --historical --price-input ./output/price_file_2025_04_09.csv --nav-input ./output/nav_file_2025_04_09.csv
+
+    # --- Database Connection ---
     HistoricalPriceDB_conn = DatabaseConnector("HistoricalPriceDB")
+    RealTick_LiveData_conn = DatabaseConnector("RealTick_LiveData") # Keep this for live mode
 
-    # Determine which "session" we're in based on the time of day.
-    validation_date = determine_session()
-
-    # Fetch the desired tables and columns from the databases.
+    # --- Data Loading ---
     symbol_df = fetch_data(HistoricalPriceDB_conn, "CEF_Setup", ["Symbol", "MFQSSym"])
-    price_df = fetch_data(RealTick_LiveData_conn, "RealTimeData", ["Symbol", "TimeUpdated", "[Open]", "DayHigh", "DayLow", "CurrentPrice"])
-    nav_df = fetch_data(HistoricalPriceDB_conn, "RealtickNAVs", ["Symbol", "Date", "ClosePx"])
+    price_df = pd.DataFrame() # Initialize empty
+    nav_df = pd.DataFrame()   # Initialize empty
+    validation_result = False # Default to False, will be set True for historical or if live validation passes
 
-    # The "TimeUpdated" column in dbo.RealTimeData has nanosecond resolution that we need to strip.
-    # Before performing the final step of specifying formatting ALL three date fields, boolean comparisons
-    # would always return False.
-    price_df['TimeUpdated'] = pd.to_datetime(price_df['TimeUpdated'], errors='coerce', format='%Y-%m-%d')
-    price_df['TimeUpdated'] = price_df['TimeUpdated'].dt.normalize()
+    if args.historical:
+        print("--- Running in Historical Mode ---")
+        if not args.price_input or not args.nav_input:
+            print("Error: --price-input and --nav-input are required for historical mode.")
+            sys.exit(1)
+        try:
+            # Load historical data, ensuring dates are parsed correctly
+            price_df = pd.read_csv(args.price_input, parse_dates=['TimeUpdated'])
+            nav_df = pd.read_csv(args.nav_input, parse_dates=['Date'])
+            print(f"Loaded {len(price_df)} records from {args.price_input}")
+            print(f"Loaded {len(nav_df)} records from {args.nav_input}")
 
-    nav_df['Date'] = pd.to_datetime(nav_df['Date'], format='%Y-%m-%d')
-    nav_df['Date'] = nav_df['Date'].dt.normalize()
-    
-    validation_date = pd.to_datetime(validation_date, format='%Y-%m-%d')
-    
-    # Before we get into proccessing the data, let's run a quick verification on our price
-    # and NAV dates for select liquid funds.
-    price_validation_symbols = ["STEW", "QQQX"]
-    nav_validation_symbols = ["XSTEX", "XQQQX"]
-    validation_result = price_nav_validation(validation_date, price_validation_symbols, nav_validation_symbols, price_df, nav_df)
-    # price_df, nav_df = price_nav_validation(validation_date, price_validation_symbols, nav_validation_symbols, price_df, nav_df)
-    
+            # Basic validation for loaded data
+            if price_df.empty or nav_df.empty:
+                 print("Warning: One or both input files are empty.")
+                 # Allow processing to continue, final_date_check might handle it or result in no upserts
+
+            # Ensure date columns are normalized (read_csv with parse_dates might include time)
+            price_df['TimeUpdated'] = price_df['TimeUpdated'].dt.normalize()
+            nav_df['Date'] = nav_df['Date'].dt.normalize()
+
+            validation_result = True # Assume historical data is 'valid' for processing
+
+        except FileNotFoundError as e:
+            print(f"Error loading historical data: {e}")
+            sys.exit(1)
+        except Exception as e:
+            print(f"Error processing historical files: {e}")
+            sys.exit(1)
+
+    else:
+        print("--- Running in Live Mode ---")
+        # Determine which "session" we're in based on the time of day.
+        validation_date = determine_session()
+
+        # Fetch the desired tables and columns from the databases.
+        price_df = fetch_data(RealTick_LiveData_conn, "RealTimeData", ["Symbol", "TimeUpdated", "[Open]", "DayHigh", "DayLow", "CurrentPrice"])
+        nav_df = fetch_data(HistoricalPriceDB_conn, "RealtickNAVs", ["Symbol", "Date", "ClosePx"])
+
+        # Normalize dates for live data
+        try:
+            price_df['TimeUpdated'] = pd.to_datetime(price_df['TimeUpdated'], errors='coerce').dt.normalize()
+            nav_df['Date'] = pd.to_datetime(nav_df['Date'], format='%Y-%m-%d', errors='coerce').dt.normalize()
+            validation_date = pd.to_datetime(validation_date, format='%Y-%m-%d') # Already a date, convert to datetime for comparison
+        except Exception as e:
+            print(f"Error normalizing live dates: {e}")
+            # Decide whether to exit or attempt to continue
+            sys.exit(1) # Exit for now, safer
+
+        # Validate live data
+        price_validation_symbols = ["STEW", "QQQX"]
+        nav_validation_symbols = ["XSTEX", "XQQQX"]
+        validation_result = price_nav_validation(validation_date, price_validation_symbols, nav_validation_symbols, price_df, nav_df)
+
+    # --- Data Processing (Common to both modes if validation passed or historical) ---
     if validation_result:
-        print("Validation successful. Proceeding with data processing.\n")
+        if price_df.empty or nav_df.empty:
+            print("Price or NAV data is empty, cannot proceed with merge. Exiting.")
+            sys.exit(0) # Not an error, just no data to process
+
+        print("Validation successful or historical mode. Proceeding with data processing.\n")
         merged_df = merge_dataframes(symbol_df, price_df, nav_df)
 
         # Process the columns of the merged df to match the CEF_price_nav_history table schema.
         processed_df = process_columns_cef_price_nav_history(merged_df)
         # print(f"processed_df:\n{processed_df}\n")
-        
-        # This is a good time to do a final check on the price date (coming from RealTimeData) vs
-        # the NAV date (coming from RealtickNAVs) before running our upsert.
-        # TODO: I need to figure out how to handle the records where the dates don't match.
+
+        # Final date check
+        # Ensure date columns exist before checking
+        if 'TimeUpdated' not in processed_df.columns or 'Date' not in processed_df.columns:
+             print("Error: Missing date columns ('TimeUpdated', 'Date') after processing. Cannot perform final check.")
+             sys.exit(1)
         date_checked_df = final_date_check(processed_df)
         # print(f"date_checked_df:\n{date_checked_df}\n")
 
-        # For now I'm going to filter date_checked_df to only include rows where the price and NAV dates match.
+        # Filter for matching dates
         date_checked_df = date_checked_df[date_checked_df['date_matches'] == True]
-        print(f"date_checked_df:\n{date_checked_df}\n")
+        print(f"Rows after filtering for matching dates:\n{date_checked_df}\n")
 
-        # NOTE: Incredible GPT4 technique leveraging dataclasses.
-        # We use list comprehension to grab the names of the fields we require to satisfy our table schema.
-        # Then we filter the dataframe to only include those columns!!!
+        if date_checked_df.empty:
+            print("No records found with matching Price and NAV dates. No data to upsert.")
+            sys.exit(0)
+
+        # Prepare for upsert
         required_columns = [field.name for field in fields(CEF_price_nav_history)]
+        # Ensure all required columns are present before selecting
+        missing_cols = [col for col in required_columns if col not in date_checked_df.columns]
+        if missing_cols:
+            print(f"Error: Missing required columns for upsert after processing: {missing_cols}")
+            sys.exit(1)
+
         upsert_ready_df = date_checked_df[required_columns]
-        print(f"upsert_ready_df:\n{upsert_ready_df}\n")
+        print(f"Final DataFrame ready for upsert:\n{upsert_ready_df}\n")
 
         # Convert each row of the df into an instance of our data class for SQL table insertion.
-        data_class_instances = upsert_ready_df.apply(create_df_instances, axis=1)
+        data_class_instances = upsert_ready_df.apply(create_df_instances, axis=1).tolist() # Convert to list
 
         # TODO: Make two separate dfs for the records that match and those that don't.
         # TODO: The program runs so fast that it's not possible to read the console output.
         #   Need to create a log file that captures summary data for the run.
         # The matching records will be bulk inserted into the CEF_price_nav_history table.
         # I do need to run a check on the history table and/or have an alert sent if there's an issue.
-        # I need to account for the variability of when this script runs.
+        # I need to account for the variability of when this script runs.        
+        if not data_class_instances:
+             print("No data class instances created for upsert.")
+             sys.exit(0)
 
         # Upsert the new data to the table
+        print(f"Attempting to upsert {len(data_class_instances)} records...")
         HistoricalPriceDB_conn.upsert_price_record_instances_mssql("CEF_price_nav_history", data_class_instances)
+        print("Upsert process completed.")
+
     else:
-        print("Final date validation failed. Data processing will not proceed.")
-        sys.exit()
+        print("Live data validation failed or required data missing. Data processing will not proceed.")
+        sys.exit(1) # Exit with error status if validation failed

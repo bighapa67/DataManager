@@ -114,7 +114,7 @@ def transform_price_data(df):
         if col not in df_renamed.columns:
             df_renamed[col] = None # Or pd.NA
 
-    df_transformed = df_renamed[required_columns]
+    df_transformed = df_renamed[required_columns].copy() # Explicitly create a copy
 
     # Ensure date format consistency (though fetch should handle this)
     df_transformed['TimeUpdated'] = pd.to_datetime(df_transformed['TimeUpdated']).dt.normalize()
@@ -142,7 +142,7 @@ def transform_nav_data(df):
         if col not in df.columns:
             df[col] = None # Or pd.NA
 
-    df_transformed = df[required_columns]
+    df_transformed = df[required_columns].copy() # Explicitly create a copy
 
     # Ensure date format consistency (though fetch should handle this)
     df_transformed['Date'] = pd.to_datetime(df_transformed['Date']).dt.normalize()

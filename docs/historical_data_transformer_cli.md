@@ -16,7 +16,7 @@ Finally, it saves these transformed datasets as CSV files into a designated outp
 ```bash
 python historical_data_transformer.py --date <YYYY-MM-DD> --price-output <path/to/output.csv> --nav-output <path/to/output.csv>
 
-python historical_data_transformer.py --date 2025-04-10 --price-output ./output/price_file_2025_04_10.csv --nav-output ./output/nav_file_2025_04_10.csv
+python historical_data_transformer.py --date 2025-04-09 --price-output ./output/price_file_2025_04_09.csv --nav-output ./output/nav_file_2025_04_09.csv
 ```
 
 ## Arguments
